@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import MenuItem from '@/components/Shared/MenuItem';
-import useDisableScroll from '@/hooks/useDisableScroll';
+//import useDisableScroll from '@/hooks/useDisableScroll';
 import { menuItems } from '@/constants';
 
 const MobileHeader = () => {
@@ -11,7 +11,7 @@ const MobileHeader = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  useDisableScroll(isOpen);
+  //useDisableScroll(isOpen);
 
   useEffect(() => {
     if (isOpen) {
@@ -53,12 +53,12 @@ const MobileHeader = () => {
         </button>
         {/* Full Screen Menu */}
         <nav
-          className={`fixed inset-0 top-[70px] bg-gradient-to-br from-teal-500 via-tropical to-cyan-500 z-10 transition-transform duration-300 ease-in-out transform backdrop-blur-md shadow-xl ${
-            isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
-          }`}
+          className={`fixed inset-0 top-[4.3rem] bg-gradient-to-br from-teal-500 via-tropical to-cyan-500 z-10 transition-all duration-300 ease-in-out ${
+            isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          } overflow-y-auto`}
           aria-hidden={!isOpen}
         >
-          <ul className="flex flex-col justify-center items-center h-full">
+          <ul className="flex flex-col justify-start items-center min-h-screen pt-4 pb-20">
             {menuItems.map((item, index) => (
               <MenuItem
                 key={item.href}

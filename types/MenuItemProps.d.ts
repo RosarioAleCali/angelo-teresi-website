@@ -3,5 +3,6 @@ export interface MenuItemProps {
   children: React.ReactNode;
   imageSrc: string;
   delay: number;
+  className?: string;
   isVisible: boolean;
 }
