@@ -1,54 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import MenuItem from '@/components/Shared/MenuItem';
 import useDisableScroll from '@/hooks/useDisableScroll';
-
-interface MenuItemProps {
-  href: string;
-  children: React.ReactNode;
-  imageSrc: string; // Campo per l'immagine di sfondo
-  delay: number;
-  isVisible: boolean;
-}
-
-const MenuItem = ({ href, children, imageSrc, delay, isVisible }: MenuItemProps) => (
-  <li
-    className={`relative flex justify-center items-center bg-gray-100 rounded-lg shadow-lg w-5/6 h-32 mx-auto mb-4 transition-all duration-300 transform bg-cover bg-center ${
-      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-    }`}
-    style={{
-      backgroundImage: `url(${imageSrc})`, // Imposta l'immagine come sfondo
-      transitionDelay: `${delay}ms`,
-    }}
-  >
-    {/* Overlay per migliorare la leggibilità del testo */}
-    <div className="absolute inset-0 bg-black opacity-65 rounded-lg"></div>
-
-    {/* Link con il testo sopra l'immagine */}
-    <Link
-      href={href}
-      className="relative z-10 block w-full h-full flex justify-center items-center text-white text-lg font-semibold transition-transform duration-150 hover:scale-100 active:scale-95"
-    >
-      {children}
-    </Link>
-  </li>
-);
+import { menuItems } from '@/constants';
 
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
 
-  const menuItems = [
-    { href: '/chi-sono', label: 'Chi Sono', imageSrc: '/teresi_imgs/teresi-1.png' },
-    { href: '/medicina-estetica', label: 'Medicina Estetica', imageSrc: '/images/medicina-estetica.png' },
-    { href: '/nutrizione', label: 'Nutrizione', imageSrc: '/images/nutrizione.png' },
-    { href: '/allenamento', label: 'Allenamento', imageSrc: '/images/allenamento.png' },
-    { href: '/contatti', label: 'Contatti', imageSrc: '/teresi_imgs/teresi-2.png' },
-  ];
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Usa l'hook per disabilitare lo scrolling quando il menu è aperto
   useDisableScroll(isOpen);
 
   useEffect(() => {
@@ -64,7 +26,7 @@ const MobileHeader = () => {
   }, [isOpen]);
 
   return (
-    <header className="bg-teal-800 sticky top-0 w-full flex items-center justify-between px-4 py-2.5 z-20">
+    <header className="bg-tiber sticky top-0 w-full flex items-center justify-between px-4 py-2.5 z-20">
       <div className="flex-shrink-0">
         <Link href="/" className="text-white text-lg font-bold">
           <Image
@@ -91,7 +53,7 @@ const MobileHeader = () => {
         </button>
         {/* Full Screen Menu */}
         <nav
-          className={`fixed inset-0 top-[70px] bg-white z-10 transition-transform duration-300 ease-in-out transform ${
+          className={`fixed inset-0 top-[70px] bg-gradient-to-br from-teal-500 via-tropical to-cyan-500 z-10 transition-transform duration-300 ease-in-out transform backdrop-blur-md shadow-xl ${
             isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
           }`}
           aria-hidden={!isOpen}
@@ -101,7 +63,7 @@ const MobileHeader = () => {
               <MenuItem
                 key={item.href}
                 href={item.href}
-                imageSrc={item.imageSrc} // Passa l'immagine corrispondente come sfondo
+                imageSrc={item.imageSrc}
                 delay={index * 50}
                 isVisible={visibleItems.includes(index)}
               >

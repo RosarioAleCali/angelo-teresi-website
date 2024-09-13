@@ -2,17 +2,14 @@ import { useEffect } from 'react';
 
 const useDisableScroll = (isOpen: boolean) => {
   useEffect(() => {
-    if (isOpen) {
-      // Disabilita lo scroll quando il menu è aperto
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Riabilita lo scroll quando il menu è chiuso
-      document.body.style.overflow = '';
-    }
+    if (typeof window === "undefined") return; // Skip if SSR
 
-    // Pulisci l'effetto in caso di smontaggio
+    const originalOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = isOpen ? "hidden" : originalOverflow;
+
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = originalOverflow; // Restore original overflow
     };
   }, [isOpen]);
 };
