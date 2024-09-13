@@ -9,11 +9,11 @@ const links: Links = {
 };
 
 const menuItems = [
-  { href: '/about', label: 'Chi Sono', imageSrc: '/teresi_imgs/teresi-1.png' },
-  { href: '/aesthetic-medicine', label: 'Medicina Estetica', imageSrc: '/images/medicina-estetica.png' },
-  { href: '/nutrition', label: 'Nutrizione', imageSrc: '/images/nutrizione.png' },
-  { href: '/exercising', label: 'Allenamento', imageSrc: '/images/allenamento.png' },
-  { href: '/contacts', label: 'Contatti', imageSrc: '/teresi_imgs/teresi-2.png' },
+  { href: '/about', label: 'Chi Sono', imageSrc: '/imgs_menu_items/teresi.png' },
+  { href: '/aesthetic-medicine', label: 'Medicina Estetica', imageSrc: '/imgs_menu_items/labbra.png' },
+  { href: '/nutrition', label: 'Nutrizione', imageSrc: '/imgs_menu_items/nutrizione-a.png' },
+  { href: '/exercising', label: 'Allenamento', imageSrc: '/imgs_menu_items/handlebar.png' },
+  { href: '/contacts', label: 'Contatti', imageSrc: '/imgs_menu_items/contatti-with-logo.png' },
 ];
 
 export { links, menuItems };
