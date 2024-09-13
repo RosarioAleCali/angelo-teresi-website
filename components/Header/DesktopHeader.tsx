@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import BookingButton from "@/components/BookingButton/BookingButton";
 import { menuItems } from '@/constants';
 import styles from "./DesktopHeader.module.css";
 
@@ -29,7 +30,9 @@ const DesktopHeader = () => {
         ))}
       </nav>
 
-      <div className="flex-shrink-0 ml-5">CTA</div>
+      <div className="flex-shrink-0 ml-5">
+        <BookingButton />
+      </div>
     </header>
   );
 };

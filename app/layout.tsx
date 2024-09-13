@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
+import ComponentsStatusProvider from "@/context/componentsStatusContext";
 import "./globals.css";
 
 const syne = Syne({ subsets: ['latin'] })
@@ -19,7 +20,9 @@ export default function RootLayout({
       <body
         className={`${syne.className} antialiased`}
       >
-        {children}
+        <ComponentsStatusProvider>
+          {children}
+        </ComponentsStatusProvider>
       </body>
     </html>
   );
