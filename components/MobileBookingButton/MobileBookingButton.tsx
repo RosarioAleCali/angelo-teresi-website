@@ -19,7 +19,7 @@ const MobileBookingButton = () => {
     setShowPopover(!showPopover);
   };
 
-  const popoverRef = useOutsideClick<HTMLDivElement>(() => {
+  const mobileBookingButtonRef = useOutsideClick<HTMLDivElement>(() => {
     if (showPopover) {
       setShowPopover(false);
     }
@@ -29,7 +29,7 @@ const MobileBookingButton = () => {
 
   return (
     <>
-      <div className="fixed bottom-5 right-5 transition-transform duration-300 ease-in-out slide-in">
+      <div ref={mobileBookingButtonRef} className="fixed bottom-5 right-5 transition-transform duration-300 ease-in-out slide-in">
         <button
           className="bg-tiber text-white p-4 flex justify-center items-center rounded-full shadow-lg focus:outline-none hover:bg-tropical"
           onClick={togglePopover}
@@ -39,7 +39,6 @@ const MobileBookingButton = () => {
 
         {showPopover && (
           <div
-            ref={popoverRef}
             className="absolute bottom-16 right-0 bg-white shadow-lg p-4 rounded-lg"
           >
             <div className="flex flex-col space-y-4">
