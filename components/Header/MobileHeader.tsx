@@ -53,7 +53,7 @@ const MobileHeader = () => {
         </button>
         {/* Full Screen Menu */}
         <nav
-          className={`fixed inset-0 top-[4.3rem] bg-gradient-to-br from-teal-500 via-tropical to-cyan-500 z-10 transition-all duration-300 ease-in-out ${
+          className={`fixed inset-0 top-[4.3rem] bg-gradient-to-br from-teal-500/80 via-tropical/80 to-cyan-500/80 z-10 transition-all duration-300 ease-in-out ${
             isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           } overflow-y-auto`}
           aria-hidden={!isOpen}
