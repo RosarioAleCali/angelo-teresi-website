@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import MenuItem from '@/components/Shared/MenuItem';
-//import useDisableScroll from '@/hooks/useDisableScroll';
+import useDisableScroll from '@/hooks/useDisableScroll';
 import { menuItems } from '@/constants';
 
 const MobileHeader = () => {
@@ -11,7 +11,7 @@ const MobileHeader = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  //useDisableScroll(isOpen);
+  useDisableScroll(isOpen);
 
   useEffect(() => {
     if (isOpen) {
