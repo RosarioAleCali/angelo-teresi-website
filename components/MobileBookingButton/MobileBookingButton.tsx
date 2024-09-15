@@ -29,9 +29,11 @@ const MobileBookingButton = () => {
 
   return (
     <>
-      <div ref={mobileBookingButtonRef} className="fixed bottom-5 right-5 transition-transform duration-300 ease-in-out slide-in">
+      <div ref={mobileBookingButtonRef} className="fixed bottom-5 right-5 transition-transform duration-100 ease-in-out slide-in">
         <button
-          className="bg-tiber text-white p-4 flex justify-center items-center rounded-full shadow-lg focus:outline-none hover:bg-tropical"
+          className={`p-4 flex justify-center items-center rounded-full shadow-lg focus:outline-none transition-colors duration-100 ${
+            showPopover ? 'bg-tropical' : 'bg-tiber'
+          } text-white`}
           onClick={togglePopover}
         >
           <FontAwesomeIcon icon={faMessage} size="lg" />
