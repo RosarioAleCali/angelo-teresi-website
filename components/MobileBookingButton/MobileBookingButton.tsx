@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -25,11 +25,14 @@ const MobileBookingButton = () => {
     }
   });
 
-  if (!isClient || !isMobile) return <></>;
+  if (!isClient || !isMobile) return null;
 
   return (
     <>
-      <div ref={mobileBookingButtonRef} className="fixed bottom-5 right-5 transition-transform duration-100 ease-in-out slide-in">
+      <div
+        ref={mobileBookingButtonRef}
+        className="fixed bottom-5 right-5 transition-transform duration-100 ease-in-out slide-in"
+      >
         <button
           className={`p-4 flex justify-center items-center rounded-full shadow-lg focus:outline-none transition-colors duration-100 ${
             showPopover ? 'bg-tropical' : 'bg-tiber'
@@ -39,30 +42,33 @@ const MobileBookingButton = () => {
           <FontAwesomeIcon icon={faMessage} size="lg" />
         </button>
 
-        {showPopover && (
-          <div
-            className="absolute bottom-16 right-0 bg-white shadow-lg p-4 rounded-lg"
-          >
-            <div className="flex flex-col space-y-4">
-              <Link
-                className="bg-tropical flex justify-center items-center whitespace-nowrap text-white px-4 py-2 rounded-full hover:bg-tiber"
-                href={links.online}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Online
-              </Link>
-              <Link
-                className="bg-tropical flex justify-center items-center whitespace-nowrap text-white px-4 py-2 rounded-full hover:bg-tiber"
-                href={links.inPerson}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                In Persona
-              </Link>
-            </div>
+        {/* Popover always present in DOM */}
+        <div
+          className={`absolute bottom-16 right-0 bg-white shadow-lg p-4 rounded-lg transform transition-all duration-150 origin-bottom-right ${
+            showPopover
+              ? 'opacity-100 scale-100'
+              : 'opacity-0 scale-75 pointer-events-none'
+          }`}
+        >
+          <div className="flex flex-col space-y-4">
+            <Link
+              className="bg-tropical flex justify-center items-center whitespace-nowrap text-white px-4 py-2 rounded-full hover:bg-tiber"
+              href={links.online}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Online
+            </Link>
+            <Link
+              className="bg-tropical flex justify-center items-center whitespace-nowrap text-white px-4 py-2 rounded-full hover:bg-tiber"
+              href={links.inPerson}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              In Persona
+            </Link>
           </div>
-        )}
+        </div>
       </div>
 
       <style jsx>{`
