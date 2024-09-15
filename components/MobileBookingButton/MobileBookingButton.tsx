@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMessage } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import useIsClient from '@/hooks/useIsClient';
 import useIsMobile from '@/hooks/useIsMobile';
 import useOutsideClick from '@/hooks/useOutsideClick';
@@ -39,7 +39,7 @@ const MobileBookingButton = () => {
           } text-white`}
           onClick={togglePopover}
         >
-          <FontAwesomeIcon icon={faMessage} size="lg" />
+          <FontAwesomeIcon icon={faCalendar} size="lg" />
         </button>
 
         {/* Popover always present in DOM */}
