@@ -34,9 +34,7 @@ const MobileBookingButton = () => {
         className="fixed bottom-5 right-5 transition-transform duration-100 ease-in-out slide-in"
       >
         <button
-          className={`p-4 flex justify-center items-center rounded-full shadow-lg focus:outline-none transition-colors duration-100 ${
-            showPopover ? 'bg-tropical' : 'bg-tiber'
-          } text-white`}
+          className="bg-tropical p-4 flex justify-center items-center rounded-full shadow-lg focus:outline-none transition-colors duration-100 text-white"
           onClick={togglePopover}
         >
           <FontAwesomeIcon icon={faCalendar} size="lg" />
