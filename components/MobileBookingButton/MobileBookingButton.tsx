@@ -31,7 +31,7 @@ const MobileBookingButton = () => {
     <>
       <div
         ref={mobileBookingButtonRef}
-        className="fixed bottom-5 right-5 transition-transform duration-100 ease-in-out slide-in"
+        className="fixed bottom-5 right-5 transition-transform duration-100 ease-in-out slide-in z-50"
       >
         <button
           className="bg-tropical p-4 flex justify-center items-center rounded-full shadow-lg focus:outline-none transition-colors duration-100 text-white"
