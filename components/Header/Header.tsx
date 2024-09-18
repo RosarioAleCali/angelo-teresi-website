@@ -7,7 +7,7 @@ import useIsMobile from '@/hooks/useIsMobile';
 
 const Header = () => {
   const isClient = useIsClient();
-  const isMobile = useIsMobile(); 
+  const isMobile = useIsMobile();
 
   if (!isClient) {
     return <></>;
