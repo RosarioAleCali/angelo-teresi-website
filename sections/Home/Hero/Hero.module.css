@@ -52,7 +52,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Nasconde il retro durante la rotazione */
+    backface-visibility: hidden;
     border-radius: 50%;
     overflow: hidden; /* Garantisce che le immagini rimangano all'interno del cerchio */
   }
@@ -63,13 +63,14 @@
   
   .back {
     transform: rotateY(0deg); /* Faccia anteriore è coin-teresi */
+    border: 6px solid white;
   }
   
   .front img,
   .back img {
-    width: 100%; /* Occupa tutta la larghezza del contenitore */
-    height: 100%; /* Occupa tutta l'altezza del contenitore */
-    object-fit: cover; /* Assicura che entrambe le immagini coprano l'intera area senza lasciare spazi */
-    object-position: center; /* Centra l'immagine nel contenitore */
-    border-radius: 50%; /* Mantiene l'aspetto circolare */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    object-position: center; 
+    border-radius: 50%;
   }

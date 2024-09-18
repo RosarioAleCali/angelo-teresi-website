@@ -6,6 +6,8 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from '@/sections/Home/Hero/Hero'
 
+import Intro from '@/sections/Home/Intro/Intro';
+
 export default function Home() {
   return (
     <>
@@ -15,6 +17,7 @@ export default function Home() {
       <ScrollDownIndicator />
       <main className="flex flex-col items-center justify-between">
         <Hero />
+        <Intro />
       </main>
       <Footer />
     </>

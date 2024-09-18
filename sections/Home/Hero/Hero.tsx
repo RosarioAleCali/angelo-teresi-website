@@ -41,7 +41,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="bg-tiber text-white w-full flex flex-col items-center justify-start min-h-screen pt-[25vh]"
+      className="bg-tiber text-white w-full flex flex-col items-center justify-start min-h-screen pt-[25vh] z-6"
     >
       <div className={styles.coinContainer}>
         <div
@@ -53,16 +53,16 @@ const Hero = () => {
             <Image
               src="/logos/white-pictogram.png"
               alt="White Pictogram"
-              width={180}
-              height={180}
+              width={150}
+              height={150}
             />
           </div>
           <div className={styles.back}>
             <Image
-              src="/logos/coin-teresi-1.png"
+              src="/logos/coin-teresi.png"
               alt="Coin Teresi"
-              width={180}
-              height={180}
+              width={150}
+              height={150}
             />
           </div>
         </div>
