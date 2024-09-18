@@ -59,7 +59,7 @@ const Hero = () => {
           </div>
           <div className={styles.back}>
             <Image
-              src="/logos/coin-teresi.png"
+              src="/logos/coin-teresi-1.png"
               alt="Coin Teresi"
               width={180}
               height={180}
