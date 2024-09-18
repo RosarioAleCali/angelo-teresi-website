@@ -1,71 +1,75 @@
 .cursorHidden {
     display: none;
   }
-
-/* .mobile-text {
-    @apply text-sm;
-}
   
-.desktop-text {
-    @apply text-4xl;
-} */
-
-.hidden {
+  .hidden {
     opacity: 0;
-}
+  }
   
-.fadeIn {
+  .fadeIn {
     opacity: 0;
     animation: fadeInAnimation 1s forwards;
-}
+  }
   
-@keyframes fadeInAnimation {
+  @keyframes fadeInAnimation {
     to {
-        opacity: 1;
+      opacity: 1;
     }
-}
-
-
-.flipContainer {
-    perspective: 1000px;
+  }
+  
+  .coinContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .coin {
     width: 180px;
     height: 180px;
-  }
-  
-  .imageWrapper {
-    width: 100%;
-    height: 100%;
+    border-radius: 50%;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform-style: preserve-3d; /* Preserva le trasformazioni 3D */
+    perspective: 1000px; /* Aggiunge profondità al flip */
   }
   
-  .flipImage {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+  .spin {
+    animation: spin 5s cubic-bezier(0.5, 0.1, 0.25, 1) forwards; /* 5 rotazioni in 5 secondi */
   }
   
-  .coinImage {
-    width: 75% !important;  /* Adjust this value to match the circle size */
-    height: 75% !important; /* Adjust this value to match the circle size */
-  }
-  
-  .flipping .flipImage {
-    animation: flip 0.6s infinite;
-  }
-  
-  @keyframes flip {
+  @keyframes spin {
     0% {
-      transform: rotateY(0deg);
-    }
-    50% {
-      transform: rotateY(180deg);
+      transform: rotateY(0deg); /* Partenza su coin-teresi */
     }
     100% {
-      transform: rotateY(360deg);
+      transform: rotateY(1800deg); /* Si ferma nuovamente su coin-teresi */
     }
+  }
+  
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Nasconde il retro durante la rotazione */
+    border-radius: 50%;
+    overflow: hidden; /* Garantisce che le immagini rimangano all'interno del cerchio */
+  }
+  
+  .front {
+    transform: rotateY(180deg); /* Faccia posteriore è white-pictogram */
+  }
+  
+  .back {
+    transform: rotateY(0deg); /* Faccia anteriore è coin-teresi */
+  }
+  
+  .front img,
+  .back img {
+    width: 100%; /* Occupa tutta la larghezza del contenitore */
+    height: 100%; /* Occupa tutta l'altezza del contenitore */
+    object-fit: cover; /* Assicura che entrambe le immagini coprano l'intera area senza lasciare spazi */
+    object-position: center; /* Centra l'immagine nel contenitore */
+    border-radius: 50%; /* Mantiene l'aspetto circolare */
   }

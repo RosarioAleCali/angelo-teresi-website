@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react';
 const Hero = () => {
   const [showWords, setShowWords] = useState(false);
   const [visibleWords, setVisibleWords] = useState(0);
+  const [isFlipping, setIsFlipping] = useState(true);
+  const [stopRotation, setStopRotation] = useState(false);
 
   const words = ['Medicina Estetica', 'Nutrizione', 'Allenamento'];
 
@@ -27,19 +29,44 @@ const Hero = () => {
     }
   }, [showWords, words.length]);
 
+  // Ferma l'animazione esattamente dopo 5 rotazioni complete (5 secondi)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsFlipping(false);
+      setStopRotation(true); // Ferma la rotazione esattamente dopo 5 secondi
+    }, 5000); // 5 secondi per 5 rotazioni
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       id="hero"
       className="bg-tiber text-white w-full flex flex-col items-center justify-start min-h-screen pt-[25vh]"
     >
-      <Image
-        src="/logos/white-pictogram.png"
-        alt="Dr. Angelo Teresi Logo"
-        className="transition-all duration-300 ease-in-out mb-4"
-        width={180}
-        height={180}
-        priority
-      />
+      <div className={styles.coinContainer}>
+        <div
+          className={`${styles.coin} ${
+            isFlipping ? styles.spin : ''
+          } ${stopRotation ? styles.stopAtBack : ''}`}
+        >
+          <div className={styles.front}>
+            <Image
+              src="/logos/white-pictogram.png"
+              alt="White Pictogram"
+              width={180}
+              height={180}
+            />
+          </div>
+          <div className={styles.back}>
+            <Image
+              src="/logos/coin-teresi.png"
+              alt="Coin Teresi"
+              width={180}
+              height={180}
+            />
+          </div>
+        </div>
+      </div>
       <div className="text-4xl">
         <Typewriter
           onInit={(typewriter) => {
