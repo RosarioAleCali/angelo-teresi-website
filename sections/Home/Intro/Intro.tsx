@@ -1,22 +1,79 @@
-// Intro.tsx
-import React from 'react';
+"use client"
+
+import React, { useEffect, useRef, useCallback } from 'react';
+import styles from './Intro.module.css';
 
 const Intro = () => {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const setCardRef = useCallback((el: HTMLDivElement | null, index: number) => {
+    cardRefs.current[index] = el;
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.cardVisible); // Aggiunge la classe per l'animazione
+          } else {
+            entry.target.classList.remove(styles.cardVisible); // Rimuove la classe quando esce dalla viewport
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Attiva quando il 10% della card è visibile
+      }
+    );
+
+    cardRefs.current.forEach((card) => {
+      if (card) {
+        observer.observe(card);
+      }
+    });
+
+    return () => {
+      cardRefs.current.forEach((card) => {
+        if (card) {
+          observer.unobserve(card);
+        }
+      });
+    };
+  }, [setCardRef]);
+
   return (
-    <div id="intro"
-    className="bg-tiber text-white  w-full flex flex-col items-center justify-start min-h-screen px-5">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold text-white text-center mb-4 px-5">
-          Benvenuti nel sito del Dr. Angelo Teresi
-        </h2>
-        <p className="text-lg text-white text-justify mb-6 px-5">
-            Sono il dottor Angelo Teresi, un giovane medico laureato in Medicina e Chirurgia con il massimo dei voti e addentrato fin da subito nel mondo della medicina estetica attraverso diversi master e corsi. Ma la mia storia non si ferma ai titoli accademici. Da sempre, il mio vero motore è la passione per lo sport e la sana alimentazione. Fin da quando ero ragazzo, ho trovato in questo stile di vita una fonte inesauribile di energia e determinazione. La stessa che mi ha permesso di affrontare e superare ogni ostacolo che la vita mi ha posto davanti. Fare sport e mangiare sano non sono solo abitudini per me, ma dei veri e propri pilastri su cui ho costruito la mia vita personale e professionale. Ogni sfida, ogni traguardo raggiunto, mi ha insegnato che il benessere non è solo una questione fisica, ma è un profondo equilibrio tra corpo e mente. Questo approccio mi ha portato a creare e avviare numerosi progetti, tutti legati a un unico filo conduttore, la volontà di aiutare gli altri a riscoprire la propria forza interiore, che io ho scoperto attraverso un stile di vita sano e attivo.
-        </p>
-        <p className="text-lg text-white text-justify px-5">
-            Ogni giorno mi sveglio infatti con l'obiettivo di migliorare, non solo per me stesso, ma anche per chiunque scelga di seguire il mio percorso. In qualità di medico, non vedo la salute come assenza di malattia, ma proprio come un benessere totale che abbraccia ogni aspetto della vita. Credo, infatti fermamente, che ognuno di noi abbia il potenziale per trasformarsi, per superare i propri limiti e per vivere una vita piena e soddisfacente. E io sono qui per dimostrarti che con la giusta determinazione, scienza e passione, che non ci sono ostacoli e tutto è possibile.
-        </p>
+    <section id="intro" className="bg-tiber text-white w-full flex flex-col items-center justify-start min-h-screen px-5">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div className={styles.card} ref={(el) => setCardRef(el, 0)}>
+          <img src="/imgs_menu_items/labbra.png" alt="Immagine 1" className={styles.cardImage} />
+          <div className={styles.cardContent}>
+            <h3 className={styles.cardTitle}>Medicina Estetica</h3>
+            <p className={styles.cardText}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+            <div className={styles.cardButtons}>
+              <button className={styles.cardButton}>Prenota</button>
+              <button className={styles.cardButton}>Scopri di più</button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.card} ref={(el) => setCardRef(el, 1)}>
+          <img src="/imgs_menu_items/nutrizione-b.png" alt="Immagine 2" className={styles.cardImage} />
+          <div className={styles.cardContent}>
+            <h3 className={styles.cardTitle}>Nutrizione & Allenamento</h3>
+            <p className={styles.cardText}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+            <div className={styles.cardButtons}>
+              <button className={styles.cardButton}>Prenota</button>
+              <button className={styles.cardButton}>Scopri di più</button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
