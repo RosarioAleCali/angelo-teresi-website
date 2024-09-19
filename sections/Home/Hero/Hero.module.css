@@ -74,3 +74,10 @@
     object-position: center; 
     border-radius: 50%;
   }
+
+  @media (max-width: 768px) {
+    .coin {
+      width: 150px;
+      height: 150px;
+    }
+  }
