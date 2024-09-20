@@ -37,7 +37,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  padding: 20px 0;
+  padding: 30px 0;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -82,6 +82,6 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Regola l'opacità per scurire di più o di meno */
+  background-color: rgba(0, 0, 0, 0.8); /* Regola l'opacità per scurire di più o di meno */
   z-index: 5; /* Assicurati che l'overlay sia sotto il menu ma sopra il resto della pagina */
 }
