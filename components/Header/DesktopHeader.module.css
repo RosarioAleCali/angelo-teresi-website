@@ -1,44 +1,87 @@
+.nav-item {
+  position: relative;
+}
+
 .nav-link {
   position: relative;
   display: inline-block;
+  color: white; /* Mantiene il testo del menu principale bianco */
+  text-decoration: none; /* Rimuove qualsiasi sottolineatura predefinita */
 }
 
 .nav-link::before {
   content: '';
   position: absolute;
   width: 0;
-  height: 2px; /* Thickness of the underline */
+  height: 2px; /* Spessore della sottolineatura */
   bottom: 0;
-  left: 50%;
-  background-color: currentColor;
-  transition: all 0.3s ease;
+  left: 50%; /* Inizia dal centro */
+  background-color: currentColor; /* Usa il colore corrente del testo */
+  transition: all 0.3s ease; /* Aggiunge l'animazione */
+  transform: translateX(-50%); /* Trasforma l'elemento per centrare la linea */
 }
 
 .nav-link:hover::before {
-  width: 100%;
-  left: 0;
+  width: 100%; /* Espande la linea fino alla lunghezza totale della parola */
+  left: 50%; /* Mantiene l'ancoraggio al centro */
+  transform: translateX(-50%); /* Mantiene l'espansione centrata */
+}
+
+/* Rotazione dell'icona freccia */
+.rotate180 {
+  transform: rotate(180deg);
 }
 
 /* Stile del sotto-menu */
-.submenu {
-  display: none;
+.sub-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 10;
-  background-color: #fff;
-  color: #000;
+  padding: 20px 0;
   border-radius: 4px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  width: auto; /* Modifica la larghezza per adattarsi al contenuto */
 }
 
-.submenu-item {
-  padding: 8px 16px;
-  color: #000;
-  text-decoration: none;
+.sub-menu-item {
+  padding: 8px 0; /* Rimuove il padding orizzontale per evitare spazi non necessari */
+  color: white; /* Mantiene il testo del sotto-menu bianco */
+  text-decoration: none; /* Rimuove la sottolineatura predefinita */
+  position: relative;
 }
 
-.submenu-item:hover {
-  background-color: #f0f0f0;
+.sub-menu-item::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; /* Spessore della sottolineatura */
+  bottom: 0;
+  left: 50%; /* Inizia dal centro */
+  background-color: currentColor; /* Usa il colore corrente del testo */
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* Centro della parola */
+}
+
+.sub-menu-item:hover::before {
+  width: 100%; /* La linea si estende solo quanto la lunghezza del testo */
+  left: 50%;
+  transform: translateX(-50%); /* Mantiene la linea centrata */
+}
+
+.sub-menu-item:hover {
+  color: white; /* Mantiene il colore bianco anche al passaggio del mouse */
+  /* Rimuove il background color sull'hover */
+}
+
+/* Overlay che scurisce la pagina */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Regola l'opacità per scurire di più o di meno */
+  z-index: 5; /* Assicurati che l'overlay sia sotto il menu ma sopra il resto della pagina */
 }
