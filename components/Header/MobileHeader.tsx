@@ -1,32 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import MenuItem from '@/components/Shared/MenuItem';
 import useDisableScroll from '@/hooks/useDisableScroll';
 import { menuItems } from '@/constants';
+import styles from './MobileHeader.module.css'; 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const [isMedicinaEsteticaOpen, setIsMedicinaEsteticaOpen] = useState(false);
+
+  const medicinaEsteticaRef = useRef<HTMLUListElement>(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMedicinaEstetica = () => {
+    setIsMedicinaEsteticaOpen(!isMedicinaEsteticaOpen);
+  };
 
   useDisableScroll(isOpen);
 
-  useEffect(() => {
-    if (isOpen) {
-      menuItems.forEach((_, index) => {
-        setTimeout(() => {
-          setVisibleItems((prev) => [...prev, index]);
-        }, index * 20);
-      });
-    } else {
-      setVisibleItems([]);
-    }
-  }, [isOpen]);
-
   return (
-    <header className="bg-tiber sticky top-0 w-full flex items-center justify-between px-4 py-2.5 z-20">
+    <header className="bg-tiber sticky top-0 w-full flex items-center justify-between px-4 py-2.5 z-50">
       <div className="flex-shrink-0">
         <Link href="/" className="text-white text-lg font-bold">
           <Image
@@ -39,39 +35,82 @@ const MobileHeader = () => {
           />
         </Link>
       </div>
-      <div className="relative">
+      <div className="relative z-50">
         {/* Hamburger Icon */}
         <button
-          className="w-10 h-10 relative flex flex-col justify-center items-center"
+          className="w-10 h-10 relative flex flex-col justify-center items-center z-50"
           onClick={toggleMenu}
           aria-expanded={isOpen}
           aria-label="Toggle menu"
         >
-          <span className={`bg-white h-0.5 w-6 rounded transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-          <span className={`bg-white h-0.5 w-6 rounded transition-all duration-300 my-1 ${isOpen ? 'opacity-0' : ''}`} />
-          <span className={`bg-white h-0.5 w-6 rounded transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+          <span className={`bg-white h-0.5 w-6 rounded transition-all duration-300 ease-in-out absolute ${isOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'}`} />
+          <span className={`bg-white h-0.5 w-6 rounded transition-all duration-300 ease-in-out absolute ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
+          <span className={`bg-white h-0.5 w-6 rounded transition-all duration-300 ease-in-out absolute ${isOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'}`} />
         </button>
-        {/* Full Screen Menu */}
+        {/* Right Side Menu */}
         <nav
-          className={`fixed inset-0 top-[4.3rem] bg-gradient-to-br from-teal-500 via-tropical to-cyan-500 z-10 transition-all duration-300 ease-in-out ${
-            isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          className={`fixed top-0 right-0 w-2/3.1 h-full bg-gradient-to-br from-teal-500 via-tropical to-cyan-500 z-40 transition-all duration-300 ease-in-out transform ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
           } overflow-y-auto`}
           aria-hidden={!isOpen}
         >
-          <ul className="flex flex-col justify-start items-center min-h-screen pt-4 pb-20">
-            {menuItems.map((item, index) => (
-              <MenuItem
-                key={item.href}
-                href={item.href}
-                imageSrc={item.imageSrc}
-                delay={index * 50}
-                isVisible={visibleItems.includes(index)}
-              >
-                {item.label}
-              </MenuItem>
+          <ul className="flex flex-col items-start justify-start h-full py-20 px-6 space-y-6">
+            {menuItems.map((item) => (
+              <li key={item.href} className="w-full text-tiber">
+                {item.label === 'Medicina Estetica' ? (
+                  <>
+                    <button
+                      onClick={toggleMedicinaEstetica}
+                      className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200 flex items-center justify-between w-full"
+                    >
+                      Medicina Estetica
+                      <span className={`${styles.rotateIcon} ${isMedicinaEsteticaOpen ? styles.rotate180 : ''} ml-2`}>
+                        <FontAwesomeIcon
+                          icon={faAngleDown}
+                          className="text-white text-lg"
+                          title="Toggle Subcategories"
+                        />
+                      </span>
+                    </button>
+                    <ul
+                      ref={medicinaEsteticaRef}
+                      style={{
+                        height: isMedicinaEsteticaOpen ? `${medicinaEsteticaRef.current?.scrollHeight}px` : '0px',
+                      }}
+                      className={`${styles.expansion} mt-2 space-y-2 ml-4`}
+                    >
+                      {/* Sub Menu */}
+                      {item.children?.map((subItem) => {
+                        return (
+                          <li key={subItem.href}>
+                            <Link 
+                              href={subItem.href} 
+                              className="text-white hover:text-tiber transition-colors duration-200 block"
+                            >
+                              {subItem.label}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </>
+                ) : (
+                  <Link href={item.href} className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200 block">
+                    {item.label}
+                  </Link>
+                )}
+              </li>
             ))}
           </ul>
         </nav>
+        {/* Overlay */}
+        {isOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-30" 
+            onClick={toggleMenu}
+            aria-hidden="true"
+          />
+        )}
       </div>
     </header>
   );

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Typewriter from 'typewriter-effect';
 import styles from './Hero.module.css';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [showWords, setShowWords] = useState(false);
@@ -98,7 +98,7 @@ const Hero = () => {
               animationDelay: `${index * 0.5}s`,
             }}
           >
-            {index > 0 && ' • '}
+            {index > 0 && ' \u2022 '}
             {word}
           </span>
         ))}
