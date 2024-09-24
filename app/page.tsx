@@ -5,7 +5,6 @@ import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndi
 import Footer from "@/components/Footer/Footer";
 
 import Hero from '@/sections/Home/Hero/Hero'
-
 import Intro from '@/sections/Home/Intro/Intro';
 
 export default function Home() {
