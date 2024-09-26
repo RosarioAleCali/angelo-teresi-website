@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, useCallback } from 'react';
+import Image from "next/image";
 import styles from './Intro.module.css';
 
 const Intro = () => {
@@ -46,7 +47,14 @@ const Intro = () => {
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <div className={styles.card} ref={(el) => setCardRef(el, 0)}>
-          <img src="/imgs_menu_items/labbra.png" alt="Immagine 1" className={styles.cardImage} />
+          <Image
+            src="/imgs_menu_items/labbra.png"
+            alt="Immagine 1"
+            width={432}
+            height={200}
+            className={styles.cardImage}
+            priority
+          />
           <div className={styles.cardContent}>
             <h3 className={styles.cardTitle}>Medicina Estetica</h3>
             <p className={styles.cardText}>
@@ -60,7 +68,14 @@ const Intro = () => {
         </div>
 
         <div className={styles.card} ref={(el) => setCardRef(el, 1)}>
-          <img src="/imgs_menu_items/nutrizione-b.png" alt="Immagine 2" className={styles.cardImage} />
+          <Image
+            src="/imgs_menu_items/nutrizione-b.png"
+            alt="Immagine 2"
+            width={432}
+            height={200}
+            className={styles.cardImage}
+            priority
+          />
           <div className={styles.cardContent}>
             <h3 className={styles.cardTitle}>Nutrizione & Allenamento</h3>
             <p className={styles.cardText}>
