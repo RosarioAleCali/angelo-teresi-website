@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import ComponentsStatusProvider from "@/context/componentsStatusContext";
+import Header from '@/components/Header/Header';
+import BookingModal from '@/components/BookingModal/BookingModal';
+import MobileBookingButton from '@/components/MobileBookingButton/MobileBookingButton'
+import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndicator';
+import Footer from "@/components/Footer/Footer";
 import "./globals.css";
 
 const syne = Syne({ subsets: ['latin'] })
@@ -21,7 +26,12 @@ export default function RootLayout({
         className={`${syne.className} antialiased`}
       >
         <ComponentsStatusProvider>
+          <Header />
+          <BookingModal />
+          <MobileBookingButton />
+          <ScrollDownIndicator />
           {children}
+          <Footer />
         </ComponentsStatusProvider>
       </body>
     </html>
