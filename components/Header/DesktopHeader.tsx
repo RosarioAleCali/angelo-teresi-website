@@ -21,9 +21,9 @@ const DesktopHeader = () => {
   return (
     <>
       {/* Overlay */}
-      {isMedicinaEsteticaOpen && (
+      {/* {isMedicinaEsteticaOpen && (
         <div className={styles.overlay}></div>
-      )}
+      )} */}
 
       <div className="bg-tiber text-white sticky top-0 w-full flex items-center justify-between px-8 py-2.5 z-20">
         <Link href="/" className="flex-shrink-0">
@@ -62,7 +62,7 @@ const DesktopHeader = () => {
                 <ul className={styles["sub-menu"]}>
                   {item.children.map((subItem) => (
                     <li key={subItem.href} className={styles["sub-menu-item"]}>
-                      <Link href={subItem.href} className="text-white transition-colors duration-200">
+                      <Link href={subItem.href} className="text-white text-font-bold transition-colors duration-200">
                         {subItem.label}
                       </Link>
                     </li>

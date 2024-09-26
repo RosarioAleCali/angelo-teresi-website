@@ -36,17 +36,21 @@
 .sub-menu {
   position: absolute;
   top: 100%;
-  left: 0;
-  padding: 30px 0;
-  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 30px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  z-index: 10;
-  width: auto; /* Modifica la larghezza per adattarsi al contenuto */
+  z-index: 100; /* Assicurati che sia sopra gli altri elementi */
+  background: rgba(0, 0, 0, 0.6);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 20%, transparent 90%);
+  backdrop-filter: blur(10px); /* Effetto di sfocatura dello sfondo */
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.7);
 }
 
 .sub-menu-item {
-  padding: 8px 0; /* Rimuove il padding orizzontale per evitare spazi non necessari */
+  padding: 6px 0; /* Rimuove il padding orizzontale per evitare spazi non necessari */
   color: white; /* Mantiene il testo del sotto-menu bianco */
   text-decoration: none; /* Rimuove la sottolineatura predefinita */
   position: relative;
@@ -76,12 +80,12 @@
 }
 
 /* Overlay che scurisce la pagina */
-.overlay {
+/* .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8); /* Regola l'opacità per scurire di più o di meno */
-  z-index: 5; /* Assicurati che l'overlay sia sotto il menu ma sopra il resto della pagina */
-}
+  background-color: rgba(0, 0, 0, 0.8); 
+  z-index: 5; 
+} */
