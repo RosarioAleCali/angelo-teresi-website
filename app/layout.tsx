@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
+import { ReviewsProvider } from '@/context/reviewsContext';
 import ComponentsStatusProvider from "@/context/componentsStatusContext";
 import Header from '@/components/Header/Header';
 import BookingModal from '@/components/BookingModal/BookingModal';
@@ -25,14 +26,16 @@ export default function RootLayout({
       <body
         className={`${syne.className} antialiased`}
       >
-        <ComponentsStatusProvider>
-          <Header />
-          <BookingModal />
-          <MobileBookingButton />
-          <ScrollDownIndicator />
-          {children}
-          <Footer />
-        </ComponentsStatusProvider>
+        <ReviewsProvider>
+          <ComponentsStatusProvider>
+            <Header />
+            <BookingModal />
+            <MobileBookingButton />
+            <ScrollDownIndicator />
+            {children}
+            <Footer />
+          </ComponentsStatusProvider>
+        </ReviewsProvider>
       </body>
     </html>
   );
