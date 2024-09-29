@@ -1,52 +1,50 @@
-"use client"
+"use client";
 
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import Image from "next/image";
 import styles from './Intro.module.css';
 
 const Intro = () => {
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const setCardRef = useCallback((el: HTMLDivElement | null, index: number) => {
-    cardRefs.current[index] = el;
-  }, []);
 
   useEffect(() => {
+    const elements = document.querySelectorAll(`.${styles.fadeInElement}`);
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add(styles.cardVisible); // Aggiunge la classe per l'animazione
+            entry.target.classList.add(styles.fadeInVisible);
           } else {
-            entry.target.classList.remove(styles.cardVisible); // Rimuove la classe quando esce dalla viewport
+            entry.target.classList.remove(styles.fadeInVisible);
           }
         });
       },
       {
-        threshold: 0.1, // Attiva quando il 10% della card è visibile
+        threshold: 0.1,
       }
     );
-
-    cardRefs.current.forEach((card) => {
-      if (card) {
-        observer.observe(card);
-      }
+    
+    elements.forEach((el) => {
+      observer.observe(el);
     });
-
+    
     return () => {
-      cardRefs.current.forEach((card) => {
-        if (card) {
-          observer.unobserve(card);
-        }
+      elements.forEach((el) => {
+        observer.unobserve(el);
       });
     };
-  }, [setCardRef]);
+  }, []);
 
   return (
-    <section id="intro" className="bg-tiber text-white w-full flex flex-col items-center justify-start min-h-screen px-5">
+    <section id="intro" className="bg-tiber text-white w-full flex flex-col justify-start min-h-screen px-5">
+      <h2 className={`${styles.fadeInElement} text-3xl font-bold mb-4 text-center`}>
+      Raggiungi il tuo Equilibrio con Professionalità
+      </h2>
+      <p className={`text-lg text-justify mb-5 px-1 sm:px-6 md:px-8 lg:px-12 max-w-3xl mx-auto ${styles.fadeInElement}`}>
+        Il Dott.Angelo Teresi è un medico chirurgo iscritto all'albo, specializzato nel benessere completo a 360° della persona. Si occupa infatti di prescrivere non solo diete personalizzate, schede di allenamento su misura ma esegue anche specifici trattamenti di medicina estetica affinché possa aiutare i suoi pazienti a raggiungere obiettivi in primis di salute e poi bellezza, migliorando il loro equilibrio psicofisico.
+      </p>
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <div className={styles.card} ref={(el) => setCardRef(el, 0)}>
+        <div className={`${styles.card} ${styles.fadeInElement}`}>
           <Image
             src="/imgs_menu_items/labbra.png"
             alt="Immagine 1"
@@ -67,7 +65,7 @@ const Intro = () => {
           </div>
         </div>
 
-        <div className={styles.card} ref={(el) => setCardRef(el, 1)}>
+        <div className={`${styles.card} ${styles.fadeInElement}`}>
           <Image
             src="/imgs_menu_items/nutrizione-b.png"
             alt="Immagine 2"
