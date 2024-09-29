@@ -59,29 +59,39 @@ const MobileHeader = () => {
               <li key={item.href} className="w-full text-tiber">
                 {item.label === 'Medicina Estetica' ? (
                   <>
-                    <button
-                      onClick={toggleMedicinaEstetica}
-                      className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200 flex items-center justify-between w-full"
-                    >
-                      Medicina Estetica
-                      <span className={`${styles.rotateIcon} ${isMedicinaEsteticaOpen ? styles.rotate180 : ''} ml-2`}>
-                        <FontAwesomeIcon
-                          icon={faAngleDown}
-                          className="text-white text-lg"
-                          title="Toggle Subcategories"
-                        />
-                      </span>
-                    </button>
-                    <ul
-                      ref={medicinaEsteticaRef}
-                      style={{
-                        height: isMedicinaEsteticaOpen ? `${medicinaEsteticaRef.current?.scrollHeight}px` : '0px',
-                      }}
-                      className={`${styles.expansion} mt-2 space-y-2 ml-4`}
-                    >
-                      {/* Sub Menu */}
-                      {item.children?.map((subItem) => {
-                        return (
+                    <div className="flex items-center justify-between w-full">
+                      <Link
+                        href={item.href}
+                        className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200"
+                      >
+                        {item.label}
+                      </Link>
+                      {item.children && (
+                        <button
+                          onClick={toggleMedicinaEstetica}
+                          className="ml-2 focus:outline-none"
+                          aria-label="Toggle sub-menu"
+                        >
+                          <FontAwesomeIcon
+                            icon={faAngleDown}
+                            className={`text-white text-lg transform transition-transform duration-200 ${
+                              isMedicinaEsteticaOpen ? 'rotate-180' : ''
+                            }`}
+                            title="Toggle Subcategories"
+                          />
+                        </button>
+                      )}
+                    </div>
+                    {item.children && (
+                      <ul
+                        ref={medicinaEsteticaRef}
+                        style={{
+                          height: isMedicinaEsteticaOpen ? `${medicinaEsteticaRef.current?.scrollHeight}px` : '0px',
+                        }}
+                        className={`${styles.expansion} mt-2 space-y-2 ml-4 overflow-hidden transition-height duration-300`}
+                      >
+                        {/* Sub Menu */}
+                        {item.children.map((subItem) => (
                           <li key={subItem.href}>
                             <Link 
                               href={subItem.href} 
@@ -90,9 +100,9 @@ const MobileHeader = () => {
                               {subItem.label}
                             </Link>
                           </li>
-                        );
-                      })}
-                    </ul>
+                        ))}
+                      </ul>
+                    )}
                   </>
                 ) : (
                   <Link href={item.href} className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200 block">
