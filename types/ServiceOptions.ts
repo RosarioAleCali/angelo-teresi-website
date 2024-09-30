@@ -5,12 +5,17 @@ export type ServiceOptionKey =
 
 export const serviceOptions: Record<ServiceOptionKey, string[]> = {
   'Medicina Estetica': [
-    'Primo consulto Med. Estetica',
-    'Filler Labbra',
-    'Rinofiller',
     'Biostimolazione',
     'Botox',
+    'Filler Labbra',
+    'Filler Mandibolare',
+    'Filler Occhiaie',
+    'Filler Zigomi',
+    'Full Face',
+    'Microneedling',
     'Peeling',
+    'Primo consulto Med. Estetica',
+    'Rinofiller'
   ],
   'Nutrizione/Allenamento': [
     'Prima visita Nutrizione + Allenamento',
