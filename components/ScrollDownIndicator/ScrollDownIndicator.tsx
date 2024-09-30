@@ -9,7 +9,7 @@ const ScrollDownIndicator = () => {
 
   useEffect(() => {
     const handleScroll = debounce(() => {
-      const element = document.getElementById("hero");
+      const element = document.getElementById("main");
 
       if (element) {
         const { top, height } = element.getBoundingClientRect();

@@ -40,7 +40,6 @@ const Hero = () => {
 
   return (
     <div
-      id="hero"
       className="bg-tiber text-white w-full flex flex-col items-center justify-start min-h-screen pt-[25vh] z-6"
     >
       <div className={styles.coinContainer}>
