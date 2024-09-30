@@ -1,0 +1,12 @@
+.expansion {
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.rotateIcon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
