@@ -73,7 +73,7 @@ const treatmentDetails = [
   {
     "nome": "Biostimolazione",
     "descrizione": "Trattamento che stimola la rigenerazione cellulare e la produzione di collagene.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/2-prima-dopo-2.png", "/before_after/2-prima-dopo-3.png"],
     "durata": "30 minuti",
     "sedute": "3-4 sedute",
     "risultati": "Pelle più tonica e idratata",

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import TreatmentDetails from "@/components/TreatmentDetails/TreatmentDetails";
 import { menuItems } from "@/constants";
 import { treatmentDetails } from "@/constants";
+import styles from './page.module.css';
 
 export default function AestheticMedicine() {
   const filteredChildren = menuItems
@@ -22,15 +23,15 @@ export default function AestheticMedicine() {
 
   return (
     <main id="main" className="flex flex-col w-full items-center justify-between">
-      <div className="min-h-screen flex w-full">
-        {/* Colonna sinistra (1/5) */}
-        <div className="flex-1/5 flex flex-col justify-center text-center bg-gray-200 p-4">
-          <ul>
+      <div className="min-h-screen flex flex-col md:flex-row w-full">
+        {/* Menu */}
+        <div className="w-full md:w-1/5 flex flex-row md:flex-col justify-center bg-gray-100 p-4">
+          <ul className="flex flex-row md:flex-col w-full flex-wrap justify-center">
             {filteredChildren.map((child, idx) => (
-              <li key={idx} className="mb-2">
+              <li key={idx} className="mb-0 md:mb-2">
                 <button
                   onClick={() => handleTreatmentClick(child.label)}
-                  className="text-blue-500 hover:underline"
+                  className={`text-tiber text-justify ${styles.menuButton}`}
                 >
                   {child.label}
                 </button>
@@ -39,8 +40,8 @@ export default function AestheticMedicine() {
           </ul>
         </div>
 
-        {/* Colonna destra (4/5) */}
-        <div className="flex-4/5 text-justify px-6 w-full bg-gray-100 text-black p-4">
+        {/* Contenuto */}
+        <div className="w-full md:w-4/5 text-justify px-6 bg-gray-100 text-black p-4">
           {/* Mostra il trattamento selezionato */}
           <TreatmentDetails treatment={selectedTreatment} />
         </div>

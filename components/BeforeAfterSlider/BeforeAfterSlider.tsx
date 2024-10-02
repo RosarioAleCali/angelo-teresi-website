@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import useIsMobile from '@/hooks/useIsMobile'; // Assicurati che il percorso sia corretto
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -9,18 +10,41 @@ interface BeforeAfterSliderProps {
 const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afterImage }) => {
   const [position, setPosition] = useState(50); // Posizione iniziale al 50%
   const containerRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const handleMouseDown = () => {
-    isDragging.current = true;
+  const isMobile = useIsMobile();
+
+  useEffect(() => {
+    // Funzione per prevenire il comportamento predefinito di touchmove
+    const preventDefault = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+
+    if (isDragging && isMobile) {
+      // Aggiungi listener per prevenire lo scrolling
+      document.addEventListener('touchmove', preventDefault, { passive: false });
+    } else {
+      // Rimuovi listener quando non si sta trascinando
+      document.removeEventListener('touchmove', preventDefault);
+    }
+
+    // Pulizia all'unmount o quando le dipendenze cambiano
+    return () => {
+      document.removeEventListener('touchmove', preventDefault);
+    };
+  }, [isDragging, isMobile]);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragging(true);
   };
 
   const handleMouseUp = () => {
-    isDragging.current = false;
+    setIsDragging(false);
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging.current) return;
+    if (!isDragging) return;
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -30,16 +54,17 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
     }
   };
 
-  const handleTouchStart = () => {
-    isDragging.current = true;
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragging(true);
   };
 
   const handleTouchEnd = () => {
-    isDragging.current = false;
+    setIsDragging(false);
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!isDragging.current) return;
+    if (!isDragging) return;
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       const x = e.touches[0].clientX - rect.left;
@@ -52,7 +77,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-96 overflow-hidden"
+      className="relative w-full h-96 overflow-hidden select-none touch-none" // Aggiunto touch-none
       onMouseMove={handleMouseMove}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}

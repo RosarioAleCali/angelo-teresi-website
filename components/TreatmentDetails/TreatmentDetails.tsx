@@ -36,7 +36,6 @@ const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment 
                 afterImage={treatment.immagini[1]}
                 />
           ) : (
-            // Se non ci sono abbastanza immagini, mostra un messaggio o un'immagine di default
             <p>Immagini non disponibili</p>
           )}
         </div>
