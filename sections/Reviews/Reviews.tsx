@@ -81,7 +81,7 @@ const Reviews = () => {
           ))}
         </Slider>
       )}
-      <div className="flex justify-center mt-7">
+      <div className="flex justify-center my-7">
         <Link
           href="https://maps.app.goo.gl/Wy4t5npXsJmcvK7T6"
           target="_blank"

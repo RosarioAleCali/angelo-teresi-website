@@ -3,7 +3,7 @@ import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider'
 
 const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center w-full">
       <div className="bg-tiber p-5 text-white text-sm flex flex-col md:flex-row w-full max-w-7xl rounded-lg">
         {/* Sinistra: Titolo, Descrizione e Dettagli */}
         <div className="md:w-1/2">

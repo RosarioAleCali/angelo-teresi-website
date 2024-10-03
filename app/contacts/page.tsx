@@ -9,7 +9,7 @@ import ContactForm from "@/components/ContactForm/ContactForm";
 
 export default function Contacts() {
   return (
-    <div className="flex flex-col md:flex-row w-full flex-grow gap-6 bg-tiber text-black p-10">
+    <div className="flex flex-col md:flex-row w-full h-[calc(100vh-70px)] md:h-[calc(100vh-80px)] flex-grow gap-6 bg-tiber text-black p-10">
       <div id="map" className="flex-1 p-4 bg-white border rounded-lg shadow z-10">
         <Map />
       </div>

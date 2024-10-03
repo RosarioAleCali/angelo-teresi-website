@@ -34,7 +34,7 @@ export default function RootLayout({
             <ScrollDownIndicator />
             <main
               id="main"
-              className="flex flex-col w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)]"
+              className="flex flex-col w-full"
             >
               {children}
             </main>

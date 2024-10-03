@@ -22,7 +22,7 @@ export default function AestheticMedicine() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row w-full">
+    <div className="flex flex-col md:flex-row w-full h-[calc(100vh-70px)] md:h-[calc(100vh-80px)]">
       {/* Menu */}
       <div className="w-full md:w-1/5 flex flex-row md:flex-col justify-center bg-gray-100 p-4">
         <ul className="flex flex-row md:flex-col w-full flex-wrap justify-center">
@@ -40,7 +40,7 @@ export default function AestheticMedicine() {
       </div>
 
       {/* Contenuto */}
-      <div className="w-full md:w-4/5 text-justify px-6 bg-gray-100 text-black p-4">
+      <div className="flex items-center justify-center w-full md:w-4/5 text-justify px-6 bg-gray-100 text-black p-4">
         {/* Mostra il trattamento selezionato */}
         <TreatmentDetails treatment={selectedTreatment} />
       </div>
