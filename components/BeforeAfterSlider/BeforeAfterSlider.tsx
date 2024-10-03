@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import useIsMobile from '@/hooks/useIsMobile'; // Assicurati che il percorso sia corretto
+import useIsMobile from '@/hooks/useIsMobile';
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -77,7 +77,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-96 overflow-hidden select-none touch-none" // Aggiunto touch-none
+      className="relative w-full h-96 overflow-hidden select-none touch-none"
       onMouseMove={handleMouseMove}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}

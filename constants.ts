@@ -55,7 +55,7 @@ const menuItems = [
         href: '/aesthetic-medicine#rinofiller', 
         label: 'Rinofiller' 
       }
-    ]    
+    ]
   },
   { 
     href: '/nutrition-and-exercising', 

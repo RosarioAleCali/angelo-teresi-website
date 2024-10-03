@@ -1,5 +1,4 @@
 import TreatmentDetail from "@/types/TreatmentDetail";
-// import Image from 'next/image';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 
 const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment }) => {
