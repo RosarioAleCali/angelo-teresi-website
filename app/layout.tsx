@@ -32,7 +32,12 @@ export default function RootLayout({
             <BookingModal />
             <MobileBookingButton />
             <ScrollDownIndicator />
-            {children}
+            <main
+              id="main"
+              className="flex flex-col w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)]"
+            >
+              {children}
+            </main>
             <Footer />
           </ComponentsStatusProvider>
         </ReviewsProvider>

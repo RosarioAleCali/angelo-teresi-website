@@ -22,30 +22,28 @@ export default function AestheticMedicine() {
   };
 
   return (
-    <main id="main" className="flex flex-col w-full items-center justify-between">
-      <div className="min-h-screen flex flex-col md:flex-row w-full">
-        {/* Menu */}
-        <div className="w-full md:w-1/5 flex flex-row md:flex-col justify-center bg-gray-100 p-4">
-          <ul className="flex flex-row md:flex-col w-full flex-wrap justify-center">
-            {filteredChildren.map((child, idx) => (
-              <li key={idx} className="mb-0 md:mb-2">
-                <button
-                  onClick={() => handleTreatmentClick(child.label)}
-                  className={`text-tiber text-justify ${styles.menuButton}`}
-                >
-                  {child.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contenuto */}
-        <div className="w-full md:w-4/5 text-justify px-6 bg-gray-100 text-black p-4">
-          {/* Mostra il trattamento selezionato */}
-          <TreatmentDetails treatment={selectedTreatment} />
-        </div>
+    <div className="flex flex-col md:flex-row w-full">
+      {/* Menu */}
+      <div className="w-full md:w-1/5 flex flex-row md:flex-col justify-center bg-gray-100 p-4">
+        <ul className="flex flex-row md:flex-col w-full flex-wrap justify-center">
+          {filteredChildren.map((child, idx) => (
+            <li key={idx} className="mb-0 md:mb-2">
+              <button
+                onClick={() => handleTreatmentClick(child.label)}
+                className={`text-tiber text-justify ${styles.menuButton}`}
+              >
+                {child.label}
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
-    </main>
+
+      {/* Contenuto */}
+      <div className="w-full md:w-4/5 text-justify px-6 bg-gray-100 text-black p-4">
+        {/* Mostra il trattamento selezionato */}
+        <TreatmentDetails treatment={selectedTreatment} />
+      </div>
+    </div>
   );
 }
