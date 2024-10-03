@@ -19,6 +19,10 @@ const MobileHeader = () => {
     setIsMedicinaEsteticaOpen(!isMedicinaEsteticaOpen);
   };
 
+  const handleMenuClick = () => {
+    setIsOpen(false); // Chiude il menu dopo il click
+  };
+
   useDisableScroll(isOpen);
 
   return (
@@ -63,6 +67,7 @@ const MobileHeader = () => {
                       <Link
                         href={item.href}
                         className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200"
+                        onClick={handleMenuClick} // Chiude il menu
                       >
                         {item.label}
                       </Link>
@@ -96,6 +101,7 @@ const MobileHeader = () => {
                             <Link 
                               href={subItem.href} 
                               className="text-white hover:text-tiber transition-colors duration-200 block"
+                              onClick={handleMenuClick} // Chiude il menu per i sotto-link
                             >
                               {subItem.label}
                             </Link>
@@ -105,7 +111,7 @@ const MobileHeader = () => {
                     )}
                   </>
                 ) : (
-                  <Link href={item.href} className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200 block">
+                  <Link href={item.href} className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200 block" onClick={handleMenuClick}>
                     {item.label}
                   </Link>
                 )}

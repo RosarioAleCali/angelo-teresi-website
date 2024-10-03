@@ -1,48 +1,23 @@
-.menuButton {
-  position: relative;
-  display: block;
-  text-transform: uppercase;
-  margin: 10px 0;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #262626;
-  font-size: 18px;
-  font-weight: 600;
-  z-index: 1;
-  background: none;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  transition: color 0.3s ease-in-out;
-  border-radius: 5px;
-}
-
-.menuButton::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #073B3B, #3E9A9A);
-  transition: left 0.5s ease;
-  z-index: -1;
-}
-
-.menuButton:hover {
-  color: #fff;
-}
-
-.menuButton:hover::before {
-  left: 0;
-}
-
-/* Mobile Styles */
-@media (max-width: 767px) {
-  .menuButton {
+.nav-link {
+    position: relative;
     display: inline-block;
-    font-size: 16px;
-    padding: 8px 16px;
-    margin: 0 8px;
+    color: #00695c; /* Puoi modificare il colore secondo le tue esigenze */
   }
-}
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Spessore della sottolineatura */
+    bottom: 0;
+    left: 50%; /* Inizia dal centro */
+    background-color: currentColor; /* Usa il colore corrente del testo */
+    transition: width 0.3s ease, left 0.3s ease; /* Aggiunge l'animazione */
+    transform: translateX(-50%); /* Trasforma l'elemento per centrare la linea */
+  }
+  
+  .nav-link:hover::before {
+    width: 100%; /* Espande la linea fino alla lunghezza totale della parola */
+    left: 50%; /* Mantiene l'ancoraggio al centro */
+    transform: translateX(-50%); /* Mantiene l'espansione centrata */
+  }

@@ -4,6 +4,11 @@ import React, { useEffect } from 'react';
 import Image from "next/image";
 import styles from './Intro.module.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
+
 const Intro = () => {
 
   useEffect(() => {
@@ -36,7 +41,7 @@ const Intro = () => {
   }, []);
 
   return (
-    <section id="intro" className="bg-tiber text-white w-full flex flex-col justify-start min-h-screen px-5">
+    <section id="intro" className="bg-tiber text-tiber w-full flex flex-col justify-start min-h-screen px-5">
       <h2 className={`${styles.fadeInElement} text-3xl font-bold mb-4 text-center`}>
       Raggiungi il tuo Equilibrio con Professionalità
       </h2>
@@ -56,11 +61,17 @@ const Intro = () => {
           <div className={styles.cardContent}>
             <h3 className={styles.cardTitle}>Medicina Estetica</h3>
             <p className={styles.cardText}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              La medicina estetica è una branca medica che si occupa di migliorare la qualità della vita di chi vive un disagio per un inestetismo. Offre molteplici soluzioni volte a migliorare il benessere psicofisico di ciascun paziente attraverso interventi non invasivi che ne valorizzano la naturale bellezza, senza stravolgerne l’immagine. Inoltre propone un programma di prevenzione e terapia dell’invecchiamento generale e cutaneo e si occupa della correzione degli inestetismi dell'intero organismo.
             </p>
             <div className={styles.cardButtons}>
-              <button className={styles.cardButton}>Prenota</button>
-              <button className={styles.cardButton}>Scopri di più</button>
+            <button className={styles.cardButton}>
+                <FontAwesomeIcon icon={faCalendar} style={{ marginRight: "8px" }} />
+                Prenota
+              </button>
+              <button className={styles.cardButton}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} style={{ marginRight: "8px" }} />
+                Scopri di più
+              </button>
             </div>
           </div>
         </div>
@@ -77,11 +88,17 @@ const Intro = () => {
           <div className={styles.cardContent}>
             <h3 className={styles.cardTitle}>Nutrizione & Allenamento</h3>
             <p className={styles.cardText}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              La medicina estetica è una branca medica che si occupa di migliorare la qualità della vita di chi vive un disagio per un inestetismo. Offre molteplici soluzioni volte a migliorare il benessere psicofisico di ciascun paziente attraverso interventi non invasivi che ne valorizzano la naturale bellezza, senza stravolgerne l’immagine. Inoltre propone un programma di prevenzione e terapia dell’invecchiamento generale e cutaneo e si occupa della correzione degli inestetismi dell'intero organismo.
             </p>
             <div className={styles.cardButtons}>
-              <button className={styles.cardButton}>Prenota</button>
-              <button className={styles.cardButton}>Scopri di più</button>
+            <button className={styles.cardButton}>
+                <FontAwesomeIcon icon={faCalendar} style={{ marginRight: "8px" }} />
+                Prenota
+              </button>
+              <button className={styles.cardButton}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} style={{ marginRight: "8px" }} />
+                Scopri di più
+              </button>
             </div>
           </div>
         </div>
