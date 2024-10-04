@@ -3,22 +3,22 @@ import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider'
 
 const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment }) => {
   return (
-    <div className="flex items-center justify-center w-full">
-      <div className="bg-tiber p-5 text-white text-sm flex flex-col md:flex-row w-full max-w-7xl rounded-lg">
+    <div className="flex items-center justify-center w-full min-h-screen">
+      <div className="bg-tiber p-5 text-white text-sm flex flex-col md:flex-row w-full max-w-7xl rounded-lg gap-8">
         {/* Sinistra: Titolo, Descrizione e Dettagli */}
         <div className="md:w-1/2">
           {/* Titolo al centro */}
-          <div className="w-full mb-4 md:mb-0">
-            <h1 className="text-xl font-bold">{treatment.nome}</h1>
+          <div className="w-full mb-4 md:mb-6">
+            <h1 className="text-2xl font-bold text-center md:text-left">{treatment.nome}</h1>
           </div>
           {/* Contenuto sottostante */}
-          <div className="flex flex-col md:flex-row">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
             {/* Descrizione a sinistra */}
-            <div className="md:w-1/2 text-left">
+            <div className="text-left">
               <p>{treatment.descrizione}</p>
             </div>
             {/* Dettagli a destra */}
-            <div className="md:w-1/2 text-left space-y-2">
+            <div className="space-y-2">
               <p><strong>Durata:</strong> {treatment.durata}</p>
               <p><strong>Sedute:</strong> {treatment.sedute}</p>
               <p><strong>Risultati:</strong> {treatment.risultati}</p>
