@@ -40,8 +40,9 @@ const Hero = () => {
 
   return (
     <div
-      className="bg-tiber text-white w-full flex flex-col items-center justify-start min-h-screen pt-[25vh] z-6"
+      className="bg-tiber text-white w-full flex flex-col items-center justify-center h-[calc(100vh-70px)] md:h-[calc(100vh-80px)]"
     >
+      <div className="flex flex-col items-center">
       <div className={styles.coinContainer}>
         <div
           className={`${styles.coin} ${
@@ -102,6 +103,7 @@ const Hero = () => {
           </span>
         ))}
       </p>
+    </div>
     </div>
   );
 };
