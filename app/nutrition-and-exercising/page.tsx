@@ -1,5 +1,3 @@
-
-
 export default function NutritionAndExercising() {
   return (
     <div className="flex w-full h-[calc(100vh-70px)] md:h-[calc(100vh-80px)] flex-grow gap-6 bg-tiber text-black p-10">

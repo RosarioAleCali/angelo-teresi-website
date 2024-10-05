@@ -10,11 +10,6 @@ import {
   faCalendarDays
 } from '@fortawesome/free-solid-svg-icons';
 
-// To prevent icons from becoming huge on page refresh
-import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa i CSS
-import { config } from '@fortawesome/fontawesome-svg-core';
-config.autoAddCss = false;
-
 const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment }) => {
   return (
     <div className="flex items-center justify-center w-full min-h-screen">

@@ -1,23 +1,23 @@
 .nav-link {
-    position: relative;
-    display: inline-block;
-    color: #00695c; /* Puoi modificare il colore secondo le tue esigenze */
-  }
-  
-  .nav-link::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px; /* Spessore della sottolineatura */
-    bottom: 0;
-    left: 50%; /* Inizia dal centro */
-    background-color: currentColor; /* Usa il colore corrente del testo */
-    transition: width 0.3s ease, left 0.3s ease; /* Aggiunge l'animazione */
-    transform: translateX(-50%); /* Trasforma l'elemento per centrare la linea */
-  }
-  
-  .nav-link:hover::before {
-    width: 100%; /* Espande la linea fino alla lunghezza totale della parola */
-    left: 50%; /* Mantiene l'ancoraggio al centro */
-    transform: translateX(-50%); /* Mantiene l'espansione centrata */
-  }
+  position: relative;
+  display: inline-block;
+  color: #00695c; /* Puoi modificare il colore secondo le tue esigenze */
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; /* Spessore della sottolineatura */
+  bottom: 0;
+  left: 50%; /* Inizia dal centro */
+  background-color: currentColor; /* Usa il colore corrente del testo */
+  transition: width 0.3s ease, left 0.3s ease; /* Aggiunge l'animazione */
+  transform: translateX(-50%); /* Trasforma l'elemento per centrare la linea */
+}
+
+.nav-link:hover::before {
+  width: 100%; /* Espande la linea fino alla lunghezza totale della parola */
+  left: 50%; /* Mantiene l'ancoraggio al centro */
+  transform: translateX(-50%); /* Mantiene l'espansione centrata */
+}
