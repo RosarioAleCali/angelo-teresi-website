@@ -1,6 +1,20 @@
 import TreatmentDetail from "@/types/TreatmentDetail";
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faSyringe, 
+  faClockRotateLeft,
+  faClock,
+  faClipboardCheck,
+  faCalendarDays
+} from '@fortawesome/free-solid-svg-icons';
+
+// To prevent icons from becoming huge on page refresh
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa i CSS
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
+
 const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment }) => {
   return (
     <div className="flex items-center justify-center w-full min-h-screen">
@@ -17,14 +31,31 @@ const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment 
             <div className="text-left">
               <p>{treatment.descrizione}</p>
             </div>
+
             {/* Dettagli a destra */}
-            <div className="space-y-2">
-              <p><strong>Durata:</strong> {treatment.durata}</p>
-              <p><strong>Sedute:</strong> {treatment.sedute}</p>
-              <p><strong>Risultati:</strong> {treatment.risultati}</p>
-              <p><strong>Prodotti:</strong> {treatment.prodotti}</p>
-              <p><strong>Durata Risultati:</strong> {treatment.durataRisultati}</p>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <FontAwesomeIcon icon={faClock} className="mr-2" />
+                <p className="text-sm text-start"><strong>Durata:</strong> {treatment.durata}</p>
+              </div>
+              <div className="flex items-start">
+                <FontAwesomeIcon icon={faCalendarDays} className="mr-2" />
+                <p className="text-sm text-start"><strong>Sedute:</strong> {treatment.sedute}</p>
+              </div>
+              <div className="flex items-start">
+                <FontAwesomeIcon icon={faClipboardCheck} className="mr-2" />
+                <p className="text-sm text-start"><strong>Risultati:</strong> {treatment.risultati}</p>
+              </div>
+              <div className="flex items-start">
+                <FontAwesomeIcon icon={faSyringe} className="mr-2" />
+                <p className="text-sm text-start"><strong>Prodotti:</strong> {treatment.prodotti}</p>
+              </div>
+              <div className="flex items-start">
+                <FontAwesomeIcon icon={faClockRotateLeft} className="mr-2" />
+                <p className="text-sm text-start"><strong>Durata Risultati:</strong> {treatment.durataRisultati}</p>
+              </div>
             </div>
+
           </div>
         </div>
         {/* Destra: Immagini */}
