@@ -56,7 +56,7 @@ const DesktopHeader = () => {
               <ul className={styles["sub-menu"]}>
                 {item.children.map((subItem) => (
                   <li key={subItem.href} className={styles["sub-menu-item"]}>
-                    <Link href={subItem.href} className="text-white text-font-bold transition-colors duration-200">
+                    <Link href={subItem.href} className="text-tiber transition-colors duration-200">
                       {subItem.label}
                     </Link>
                   </li>
