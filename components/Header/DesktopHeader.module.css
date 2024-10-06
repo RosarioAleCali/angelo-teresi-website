@@ -49,7 +49,7 @@
 
 .sub-menu-item {
   padding: 6px 0; /* Rimuove il padding orizzontale per evitare spazi non necessari */
-  color: #073B3B; /* Mantiene il testo del sotto-menu bianco */
+  color: white; /* Mantiene il testo del sotto-menu bianco */
   text-decoration: none; /* Rimuove la sottolineatura predefinita */
   position: relative;
 }
@@ -73,8 +73,7 @@
 }
 
 .sub-menu-item:hover {
-  color: #073B3B; /* Mantiene il colore bianco anche al passaggio del mouse */
-  /* Rimuove il background color sull'hover */
+  color: white; /* Mantiene il colore bianco anche al passaggio del mouse */
 }
 
 
