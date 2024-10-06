@@ -123,7 +123,7 @@ export default function ContactForm() {
         <textarea
           {...register('message', { required: 'Message is required' })}
           rows={5}
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm"
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm resize-none"
         ></textarea>
         {errors.message && <p className="text-red-600 text-sm">{errors.message.message}</p>}
       </div>

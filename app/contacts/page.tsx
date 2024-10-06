@@ -9,14 +9,14 @@ import ContactForm from "@/components/ContactForm/ContactForm";
 
 export default function Contacts() {
   return (
-    <div className="flex flex-col md:flex-row w-full h-[calc(100vh-70px)] md:h-[calc(100vh-80px)] flex-grow gap-6 bg-tiber text-black p-10">
-      <div id="map" className="flex-1 p-4 bg-white border rounded-lg shadow z-10">
+    <div className="flex flex-col md:flex-row w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] flex-grow gap-6 bg-tiber text-black p-10">
+      <div id="map" className="flex-1 p-4 bg-white border rounded-lg shadow z-10 order-3 md:order-1">
         <Map />
       </div>
 
       <div
         id="contacts"
-        className="flex-1 flex flex-col p-4 gap-6 bg-white border rounded-lg shadow"
+        className="flex-1 flex flex-col p-4 gap-6 bg-white border rounded-lg shadow order-2"
       >
         <div id="address">
           <h3 className="text-xl font-semibold mb-2 text-gray-800">Indirizzo</h3>
@@ -65,7 +65,7 @@ export default function Contacts() {
         </div>
       </div>
 
-      <div className="flex-1 p-4 bg-white border rounded-lg shadow">
+      <div id="contact-form" className="flex-1 p-4 bg-white border rounded-lg shadow order-1 md:order-3">
         <ContactForm />
       </div>
     </div>

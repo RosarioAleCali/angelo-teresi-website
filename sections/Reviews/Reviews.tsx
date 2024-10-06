@@ -73,7 +73,7 @@ const Reviews = () => {
   }, [data, reviews, setReviews]);
 
   return (
-    <section id="reviews" className="flex flex-col w-full justify-center items-center bg-tiber">
+    <section id="reviews" className="flex flex-col w-full px-5 justify-center items-center bg-tiber">
       {reviews && reviews?.length > 0 && (
         <Slider className='w-11/12' {...settings}>
           {reviews.map((review: ReviewType) => (
