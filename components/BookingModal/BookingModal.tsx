@@ -30,6 +30,7 @@ const BookingModal = () => {
               href={links.online}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={closeModal}
             >
               <FontAwesomeIcon title="Online" titleId="Online" className="text-tropical text-4xl p-2" icon={faEarthEurope} />
               <span className="mt-2 text-sm text-inherit">Online</span>
@@ -37,8 +38,8 @@ const BookingModal = () => {
             <Link
               className="flex flex-col items-center text-center border border-[#746d75]/30 rounded p-2.5 w-[6.85rem] bg-white text-black hover:bg-[#F5F5F5] hover:text-[#333333] hover:underline hover:decoration-tropical hover:decoration-2 hover:underline-offset-1"
               href={links.inPerson}
-              target="_blank"
               rel="noopener noreferrer"
+              onClick={closeModal}
             >
               <FontAwesomeIcon title="Airbnb" titleId="Airbnb" className="text-tropical text-4xl p-2" icon={faUserDoctor} />
               <span className="mt-2 text-sm text-inherit">In Persona</span>

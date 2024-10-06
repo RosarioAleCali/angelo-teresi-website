@@ -44,21 +44,19 @@ const Treatments = () => {
         </div>
 
         {/* Menu Mobile (mostrato solo su dispositivi mobili) */}
-        <div className="w-full flex md:hidden justify-center bg-gray-100 p-4">
-          <select
-            onChange={(e) => handleTreatmentClick(e.target.value)}
-            className="w-[90%] h-[48px] p-4 border-2 border-tiber rounded-lg bg-white text-tiber font-bold focus:outline-none focus:ring-2 focus:ring-tiber focus:border-transparent transition duration-300 ease-in-out"
-          >
-            {filteredChildren.map((child, idx) => (
-              <option key={idx} value={child.label}>
-                {child.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        <select
+          onChange={(e) => handleTreatmentClick(e.target.value)}
+          className="w-full flex md:hidden h-full p-4 border-2 border-tiber rounded-lg text-tiber font-bold focus:outline-none focus:ring-2 focus:ring-tiber focus:border-transparent transition duration-300 ease-in-out"
+        >
+          {filteredChildren.map((child, idx) => (
+            <option key={idx} value={child.label}>
+              {child.label}
+            </option>
+          ))}
+        </select>
 
         {/* Colonna destra (contenuto) */}
-        <div className="w-full md:w-4/5 text-justify px-6 text-black p-4">
+        <div className="w-full md:w-4/5 text-justify text-black py-6">
           <TreatmentDetails treatment={selectedTreatment} />
         </div>
       </div>

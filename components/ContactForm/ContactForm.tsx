@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
+import useIsMobile from '@/hooks/useIsMobile';
 import FormData from '@/types/FormData';
 import { serviceOptions, ServiceOptionKey } from '@/types/ServiceOptions';
 
@@ -10,6 +11,8 @@ export default function ContactForm() {
   const [captchaVerified, setCaptchaVerified] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [formStatus, setFormStatus] = useState<string | null>(null);
+
+  const isMobile = useIsMobile();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     if (!captchaVerified) {
@@ -128,9 +131,10 @@ export default function ContactForm() {
         {errors.message && <p className="text-red-600 text-sm">{errors.message.message}</p>}
       </div>
 
-      {/* CAPTCHA */}
+      {/* CAPTCHA - NOT MOBILE RESPONSIVE */}
       <div className="mt-6">
         <ReCAPTCHA
+          size={isMobile ? "compact" : "normal"}
           sitekey={process.env.RECAPTCHA_SITE_KEY as string}
           onChange={onCaptchaChange}
         />
