@@ -67,11 +67,11 @@ const Intro = () => {
             </p>
             <div className={styles.cardButtons}>
               <button onClick={openModal} className={styles.cardButton}>
-                <FontAwesomeIcon icon={faCalendar} style={{ marginRight: "8px" }} />
+                <FontAwesomeIcon icon={faCalendar} />
                 Prenota
               </button>
               <Link href="/aesthetic-medicine" className={styles.cardButton}>
-                <FontAwesomeIcon icon={faMagnifyingGlass} style={{ marginRight: "8px" }} />
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
                 Scopri di più
               </Link>
             </div>
@@ -94,11 +94,11 @@ const Intro = () => {
             </p>
             <div className={styles.cardButtons}>
               <button onClick={openModal} className={styles.cardButton}>
-                <FontAwesomeIcon icon={faCalendar} style={{ marginRight: "8px" }} />
+                <FontAwesomeIcon icon={faCalendar} />
                 Prenota
               </button>
               <Link href="/nutrition-and-exercising" className={styles.cardButton}>
-                <FontAwesomeIcon icon={faMagnifyingGlass} style={{ marginRight: "8px" }} />
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
                 Scopri di più
               </Link>
             </div>

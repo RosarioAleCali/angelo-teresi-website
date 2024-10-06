@@ -37,13 +37,13 @@ export default function Contacts() {
             <h3 className="text-xl font-semibold mb-2 text-gray-800">Contatti</h3>
             <ul className="text-gray-700 flex flex-col gap-2">
               <li>
-                <a href="https://wa.me/393342161073" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
+                <a href="https://wa.me/393333219346" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
                   <FontAwesomeIcon icon={faWhatsapp} className="mr-2" size="xl" color="#31ACA6" />
                   WhatsApp
                 </a>
               </li>
               <li>
-                <a href="tel:+393342161073" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
+                <a href="tel:+393333219346" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
                   <FontAwesomeIcon icon={faPhone} className="mr-2" size="lg" color="#31ACA6" />
                   Telefono
                 </a>
@@ -60,7 +60,7 @@ export default function Contacts() {
             <h3 className="text-xl font-semibold mb-2 text-gray-800">Social Media</h3>
             <ul className="text-gray-700">
               <li>
-                <a href="https://www.instagram.com/airam.apartment_?igsh=d3RnYWZnM2t1Yzhn" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
+                <a href="https://www.instagram.com/dr.angeloteresi?igsh=cXowN2I1MmphZDh0" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
                   <FontAwesomeIcon icon={faInstagram} className="mr-2" size="xl" color="#31ACA6" />
                   Instagram
                 </a>

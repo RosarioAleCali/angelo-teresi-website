@@ -7,7 +7,7 @@ import styles from './page.module.css';
 export default function AestheticMedicine() {
   return (
     <div
-      className="flex flex-col w-full items-center justify-between min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] py-10 px-14 bg-tiber"
+      className="flex flex-col w-full items-center justify-between min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] py-10 px-6 md:px-14 bg-tiber"
     >
       <h2 className={`text-3xl text-white font-bold mb-4 text-center ${styles.fadeIn}`}>
         Medicina Estetica

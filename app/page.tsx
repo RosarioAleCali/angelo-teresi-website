@@ -7,7 +7,9 @@ export default function Home() {
     <>
       <Hero />
       <Intro />
-      <Reviews />
+      <div className="bg-tiber px-6 md:px-14">
+        <Reviews />
+      </div>
     </>
   );
 }
