@@ -6,6 +6,8 @@
   z-index: 100;
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  will-change: opacity, visibility;
 }
 
 .arrow-scroll.show {
@@ -27,25 +29,18 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
+  -webkit-transform: translateX(-50%) rotate(45deg); /* Safari */
+  will-change: top, opacity;
 }
 
 .arrow:nth-child(2) {
   animation: arrow1 1.5s ease-in-out infinite;
+  -webkit-animation: arrow1 1.5s ease-in-out infinite; /* Safari */
 }
 
 .arrow:nth-child(3) {
   animation: arrow2 1.5s ease-in-out infinite;
-}
-
-@keyframes scroll {
-  0% {
-    bottom: 80%;
-    opacity: 1;
-  }
-  100% {
-    bottom: 20%;
-    opacity: 0;
-  }
+  -webkit-animation: arrow2 1.5s ease-in-out infinite; /* Safari */
 }
 
 @keyframes arrow1 {
@@ -55,7 +50,21 @@
   }
 }
 
+@-webkit-keyframes arrow1 { /* Safari */
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
 @keyframes arrow2 {
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow2 { /* Safari */
   100% {
     top: 50%;
     opacity: 0;

@@ -4,10 +4,10 @@ import Reviews from '@/sections/Reviews/Reviews';
 
 export default function Home() {
   return (
-    <main id="main" className="flex flex-col items-center justify-between">
+    <>
       <Hero />
       <Intro />
       <Reviews />
-    </main>
+    </>
   );
 }

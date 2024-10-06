@@ -9,15 +9,16 @@ const ScrollDownIndicator = () => {
 
   useEffect(() => {
     const handleScroll = debounce(() => {
-      const element = document.getElementById("main");
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
-      if (element) {
-        const { top, height } = element.getBoundingClientRect();
-        if (window.scrollY >= top + height - window.innerHeight) {
-          setShowIndicator(false);
-        } else {
-          setShowIndicator(true);
-        }
+      const scrolledPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
+
+      if (scrolledPercentage >= 10) {
+        setShowIndicator(false);
+      } else {
+        setShowIndicator(true);
       }
     }, 100);
 

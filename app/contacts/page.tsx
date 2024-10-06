@@ -9,18 +9,18 @@ import ContactForm from "@/components/ContactForm/ContactForm";
 
 export default function Contacts() {
   return (
-    <main id="main" className="flex flex-col min-h-screen items-center justify-center bg-tiber text-black p-10">
-      {/* Main content container with flex-row on larger screens */}
-      <div className="flex flex-col md:flex-row w-full max-w-6xl gap-6">
-        {/* Map Section */}
-        <div id="map" className="flex-1 p-4 bg-white border rounded-lg shadow">
+    <div className="flex flex-col w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] bg-tiber p-10">
+      <h2 className="text-3xl text-white font-bold mb-4 text-center">
+        Contatti
+      </h2>
+      <div className="flex flex-col md:flex-row w-full flex-grow gap-6 text-black">
+        <div id="map" className="flex-1 p-4 bg-white border rounded-lg shadow z-10 order-3 md:order-1">
           <Map />
         </div>
 
-        {/* Contact Info Section */}
         <div
           id="contacts"
-          className="flex-1 flex flex-col p-4 gap-6 bg-white border rounded-lg shadow"
+          className="flex-1 flex flex-col p-4 gap-6 bg-white border rounded-lg shadow order-2"
         >
           <div id="address">
             <h3 className="text-xl font-semibold mb-2 text-gray-800">Indirizzo</h3>
@@ -69,11 +69,10 @@ export default function Contacts() {
           </div>
         </div>
 
-        {/* Contact Form Section */}
-        <div className="flex-1 p-4 bg-white border rounded-lg shadow">
+        <div id="contact-form" className="flex-1 p-4 bg-white border rounded-lg shadow order-1 md:order-3">
           <ContactForm />
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -21,7 +21,7 @@
 }
 
 .card {
-  background-color: #ADDAD8;
+  background-color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -60,6 +60,8 @@
 .cardText {
   font-size: 1rem;
   margin-bottom: 20px;
+  text-align: justify;
+  min-height: 18rem;
 }
 
 .cardButtons {
@@ -69,16 +71,41 @@
 }
 
 .cardButton {
-  background-color: #ffffff;
-  color: #1a2b3c;
+  background-color: #28a097;
+  color: white; /* Colore del testo iniziale */
+  font-weight: bold;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  border: 2px solid transparent;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  
+  /* Aggiungi il flexbox per allineare l'icona e il testo orizzontalmente */
+  display: inline-flex;
+  align-items: center; /* Allinea verticalmente l'icona con il testo */
+  justify-content: center; /* Allinea l'icona e il testo al centro */
+  gap: 8px; /* Spazio tra l'icona e il testo */
 }
 
 .cardButton:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-4px);
+  background-color: #2a8d8a; /* Cambia lo sfondo quando si passa sopra */
+  border-color: #28a097; /* Cambia il colore del bordo */
+  color: white; /* Assicura che il testo rimanga bianco durante l'hover */
+  transform: translateY(-4px); /* Leggero sollevamento */
+}
+
+.cardButton:active {
+  background-color: #228e8d;
+}
+
+.cardButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(40, 160, 151, 0.3); 
+}
+
+@media (max-width: 660px) {
+  .cardButton {
+    padding: 8px 16px; 
+    font-size: 0.900rem;
+  }
 }
