@@ -1,4 +1,5 @@
 import Reviews from "@/sections/Reviews/Reviews";
+import Image from "next/image";
 
 export default function NutritionAndExercising() {
   return (
@@ -7,28 +8,40 @@ export default function NutritionAndExercising() {
         Nutrizione e Allenamento
       </h2>
       <p className="text-lg text-white mb-4 text-justify">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis, ante a mollis pulvinar, sem sem scelerisque arcu, sed dignissim eros erat vitae neque. Aenean est nisl, lacinia ut urna ac, aliquam dictum elit. Aliquam vehicula dolor turpis, vel semper neque sagittis at. Donec cursus euismod turpis, non interdum ligula ultricies vel. Fusce faucibus, eros vel vulputate ullamcorper, nisi ipsum ornare felis, sed pulvinar ipsum libero sed mi. Praesent mattis scelerisque tortor, hendrerit pretium orci gravida non. Donec congue mauris sem, quis consectetur nisi molestie quis. Phasellus hendrerit lectus velit, vel imperdiet nisl elementum a. Nunc ullamcorper accumsan commodo. Proin dignissim, felis ut fringilla faucibus, felis orci posuere metus, eu scelerisque metus mauris eu tortor.
+        La nutrizione e l{"\'"}allenamento sono elementi fondamentali e complementari per raggiungere un benessere duraturo. Offro piani nutrizionali personalizzati per soddisfare le esigenze individuali, aiutando le persone a perdere peso, migliorare le prestazioni fisiche o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Allo stesso modo, progetto schede di allenamento su misura, adattabili a diversi livelli di forma fisica e obiettivi personali, che mirano a massimizzare l{"\'"}efficacia degli esercizi e a ridurre il rischio di infortuni. Combinando una corretta alimentazione con un allenamento efficace, mi impegno a supportare il benessere fisico e la qualità di vita di ogni persona, sviluppando abitudini sostenibili e integrate nello stile di vita quotidiano.
       </p>
 
       <div className="flex">
-        <div className="w-1/2 h-64 bg-white mb-5">
+        <div className="">
+          <Image
+              src="/nutrizione_allenamento/nutrizione.jpeg"
+              alt="Nutrizione"
+              width={1500}
+              height={1500}
+              priority
+            />
         </div>
         <div className="text-white ml-4">
-          Nutrizioni
+          La nutrizione è il punto di partenza per un benessere ottimale e duraturo. Credo che ogni persona sia unica, e per questo motivo offro piani nutrizionali personalizzati, sviluppati per soddisfare le tue esigenze specifiche, sia che tu stia cercando di perdere peso, migliorare le tue prestazioni fisiche o semplicemente adottare uno stile di vita più sano. Ogni percorso nutrizionale è pensato per garantire un apporto equilibrato di nutrienti, aiutandoti a raggiungere i tuoi obiettivi di salute e a sentirti al meglio. Durante le consulenze, in studio o online, mi impegno a comprendere le tue abitudini e le tue preferenze, fornendoti il supporto necessario per adottare cambiamenti sostenibili e migliorare la tua qualità di vita.
         </div>
       </div>
 
       <div className="flex">
         <div className="flex-1 text-white">
-          Allenamento
+          L{"\'"}allenamento è un altro elemento essenziale del percorso verso il benessere completo. Progetto schede di allenamento su misura, adattabili al tuo livello di forma fisica e ai tuoi obiettivi personali. Che tu voglia aumentare la massa muscolare, migliorare la resistenza o semplicemente sentirti meglio nel tuo corpo, ogni programma è studiato nei minimi dettagli per massimizzare l{"\'"}efficacia degli esercizi e ridurre al minimo il rischio di infortuni. Offro soluzioni adatte sia per chi preferisce allenarsi in studio sia per chi preferisce farlo a casa, garantendo un allenamento sicuro e produttivo. Il mio obiettivo è aiutarti a sviluppare una routine di allenamento che diventi parte integrante del tuo stile di vita, contribuendo a migliorare la tua salute fisica e il tuo benessere generale.
         </div>
-        <div className="flex-1 w-1/2 h-64 bg-white mb-5">
+        <div className="flex-1">
+        <Image
+              src="/nutrizione_allenamento/allenamento.jpeg"
+              alt="Nutrizione"
+              width={1000}
+              height={1000}
+              priority
+            />
         </div>
       </div>
 
-      <div className="w-full h-80 bg-white">
-        {/* Immagini con lo slider prima e dopo*/}
-      </div>
+      
 
       <Reviews />
     </div>

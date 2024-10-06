@@ -24,15 +24,12 @@ const Treatments = () => {
       id="treatments"
       className="flex flex-col w-full items-start mt-5"
     >
-      <p className="text-2xl text-white font-bold mb-4 text-center">
-        Trattamenti
-      </p>
       <div className="flex flex-col md:flex-row w-full items-center justify-between">
         {/* Colonna sinistra (menu) */}
         <div
           className="w-full md:w-1/5 hidden flex-col justify-center items-center text-center p-4 md:flex"
         >
-          <ul className="flex flex-col justify-center h-full">
+          <ul className="flex flex-col justify-center h-full text-white">
             {filteredChildren.map((child, idx) => (
               <li key={idx} className="mb-2">
                 <button

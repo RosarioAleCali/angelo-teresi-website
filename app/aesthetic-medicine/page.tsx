@@ -2,17 +2,18 @@
 
 import Reviews from "@/sections/Reviews/Reviews";
 import Treatments from "@/sections/Treatments/Treatments";
+import styles from './page.module.css';
 
 export default function AestheticMedicine() {
   return (
     <div
       className="flex flex-col w-full items-center justify-between min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] py-10 px-14 bg-tiber"
     >
-      <h2 className="text-3xl text-white font-bold mb-4 text-center">
+      <h2 className={`text-3xl text-white font-bold mb-4 text-center ${styles.fadeIn}`}>
         Medicina Estetica
       </h2>
-      <p className="text-lg text-white mb-4 text-justify">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis, ante a mollis pulvinar, sem sem scelerisque arcu, sed dignissim eros erat vitae neque. Aenean est nisl, lacinia ut urna ac, aliquam dictum elit. Aliquam vehicula dolor turpis, vel semper neque sagittis at. Donec cursus euismod turpis, non interdum ligula ultricies vel. Fusce faucibus, eros vel vulputate ullamcorper, nisi ipsum ornare felis, sed pulvinar ipsum libero sed mi. Praesent mattis scelerisque tortor, hendrerit pretium orci gravida non. Donec congue mauris sem, quis consectetur nisi molestie quis. Phasellus hendrerit lectus velit, vel imperdiet nisl elementum a. Nunc ullamcorper accumsan commodo. Proin dignissim, felis ut fringilla faucibus, felis orci posuere metus, eu scelerisque metus mauris eu tortor.
+      <p className={`text-lg text-white mb-4 text-justify ${styles.fadeIn}`}>
+        Nel mio approccio al benessere, la Medicina Estetica Avanzata gioca un ruolo fondamentale nel valorizzare e mantenere la tua bellezza naturale. Credo che ogni trattamento debba essere in perfetta armonia con la tua unicità, per garantire risultati che siano tanto efficaci quanto naturali. Grazie a tecniche all{"\'"}avanguardia e a prodotti di alta qualità, i miei trattamenti sono mirati a migliorare l{"\'"}aspetto del viso e del corpo, donandoti un{"\'"}immagine fresca e giovane. <br></br><br></br>Offro una varietà di trattamenti, tra cui filler dermici per ridefinire i volumi e correggere le imperfezioni evidenziando la tua bellezza naturale, peeling chimici per una pelle liscia, luminosa e uniforme eliminando macchie e segni del tempo, biostimolazione per stimolare la produzione naturale di collagene ed elastina e restituire tonicità e luminosità alla pelle, e botox per attenuare le rughe d{"\'"}espressione mantenendo la naturalezza delle espressioni. <br></br><br></br>Il mio obiettivo è offrirti un percorso completo e personalizzato, in cui ogni trattamento risponde alle tue esigenze specifiche, garantendo risultati armoniosi e duraturi.
       </p>
       <Treatments />
       <Reviews />

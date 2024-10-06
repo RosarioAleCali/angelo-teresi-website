@@ -60,6 +60,8 @@
 .cardText {
   font-size: 1rem;
   margin-bottom: 20px;
+  text-align: justify;
+  min-height: 18rem;
 }
 
 .cardButtons {
