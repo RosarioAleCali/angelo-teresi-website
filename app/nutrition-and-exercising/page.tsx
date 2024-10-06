@@ -1,9 +1,8 @@
-
+import Reviews from "@/sections/Reviews/Reviews";
 
 export default function NutritionAndExercising() {
   return (
-    <div className="flex w-full h-[calc(100vh-70px)] md:h-[calc(100vh-80px)] flex-grow gap-6 bg-tiber text-black p-10">
-      <div className="bg-tiber w-full flex flex-col justify-start min-h-screen px-5">
+    <div className="flex flex-col justify-start w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] bg-tiber text-black py-10 px-14">
       <h2 className="text-3xl text-white font-bold mb-4 text-center">
         Nutrizione e Allenamento
       </h2>
@@ -31,7 +30,7 @@ export default function NutritionAndExercising() {
         {/* Immagini con lo slider prima e dopo*/}
       </div>
 
-      </div>
+      <Reviews />
     </div>
   );
 }

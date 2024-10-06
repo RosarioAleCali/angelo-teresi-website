@@ -38,14 +38,13 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  padding: 28px;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   z-index: 100; /* Assicurati che sia sopra gli altri elementi */
-  background: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  /* #31ACA6 #073B3B */
+  background-color: rgb(49, 172, 166);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.7);
 }
 
 .sub-menu-item {

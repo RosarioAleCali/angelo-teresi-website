@@ -9,6 +9,11 @@ import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndi
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
 
+// To prevent icons from becoming huge on page refresh
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa i CSS
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
+
 const syne = Syne({ subsets: ['latin'] })
 
 export const metadata: Metadata = {

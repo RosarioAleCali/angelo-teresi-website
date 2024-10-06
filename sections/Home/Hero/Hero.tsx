@@ -40,70 +40,70 @@ const Hero = () => {
 
   return (
     <div
-      className="bg-tiber text-white w-full flex flex-col items-center justify-center h-[calc(100vh-70px)] md:h-[calc(100vh-80px)]"
+      className="bg-tiber text-white w-full flex flex-col items-center justify-center h-[calc(100vh-4.375rem)] md:h-[calc(100vh-5rem)]"
     >
-      <div className="flex flex-col items-center">
-      <div className={styles.coinContainer}>
-        <div
-          className={`${styles.coin} ${
-            isFlipping ? styles.spin : ''
-          } ${stopRotation ? styles.stopAtBack : ''}`}
-        >
-          <div className={styles.front}>
-            <Image
-              src="/logos/white-pictogram.png"
-              alt="White Pictogram"
-              width={150}
-              height={150}
-            />
-          </div>
-          <div className={styles.back}>
-            <Image
-              src="/logos/coin-teresi.png"
-              alt="Coin Teresi"
-              width={150}
-              height={150}
-            />
+      <div className="flex flex-col items-center -mt-[4.375rem] md:-mt-20">
+        <div className={styles.coinContainer}>
+          <div
+            className={`${styles.coin} ${
+              isFlipping ? styles.spin : ''
+            } ${stopRotation ? styles.stopAtBack : ''}`}
+          >
+            <div className={styles.front}>
+              <Image
+                src="/logos/white-pictogram.png"
+                alt="White Pictogram"
+                width={150}
+                height={150}
+              />
+            </div>
+            <div className={styles.back}>
+              <Image
+                src="/logos/coin-teresi.png"
+                alt="Coin Teresi"
+                width={150}
+                height={150}
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="text-4xl">
-        <Typewriter
-          onInit={(typewriter) => {
-            typewriter
-              .typeString('Dr. Angelo Teresi')
-              .pauseFor(0)
-              .callFunction(() => {
-                const cursorElement = document.querySelector('.Typewriter__cursor');
-                if (cursorElement) {
-                  cursorElement.classList.add(styles.cursorHidden);
-                }
-                setShowWords(true);
-              })
-              .start();
-          }}
-          options={{
-            cursor: '|',
-            loop: false,
-            delay: 50,
-          }}
-        />
-      </div>
-      <p className="text-sm md:text-2xl">
-        {words.map((word, index) => (
-          <span
-            key={index}
-            className={visibleWords > index ? styles.fadeIn : styles.hidden}
-            style={{
-              animationDelay: `${index * 0.5}s`,
+        <div className="text-4xl">
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString('Dr. Angelo Teresi')
+                .pauseFor(0)
+                .callFunction(() => {
+                  const cursorElement = document.querySelector('.Typewriter__cursor');
+                  if (cursorElement) {
+                    cursorElement.classList.add(styles.cursorHidden);
+                  }
+                  setShowWords(true);
+                })
+                .start();
             }}
-          >
-            {index > 0 && ' \u2022 '}
-            {word}
-          </span>
-        ))}
-      </p>
-    </div>
+            options={{
+              cursor: '|',
+              loop: false,
+              delay: 50,
+            }}
+          />
+        </div>
+        <p className="text-sm md:text-2xl">
+          {words.map((word, index) => (
+            <span
+              key={index}
+              className={visibleWords > index ? styles.fadeIn : styles.hidden}
+              style={{
+                animationDelay: `${index * 0.5}s`,
+              }}
+            >
+              {index > 0 && ' \u2022 '}
+              {word}
+            </span>
+          ))}
+        </p>
+      </div>
     </div>
   );
 };

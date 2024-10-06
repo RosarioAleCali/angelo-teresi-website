@@ -1,68 +1,21 @@
 "use client"
 
-import { useState } from 'react';
-import TreatmentDetails from "@/components/TreatmentDetails/TreatmentDetails";
-import { menuItems } from "@/constants";
-import { treatmentDetails } from "@/constants";
-import styles from './page.module.css';
+import Reviews from "@/sections/Reviews/Reviews";
+import Treatments from "@/sections/Treatments/Treatments";
 
 export default function AestheticMedicine() {
-  const filteredChildren = menuItems
-    .find(item => item.label === 'Medicina Estetica')?.children || [];
-
-  // Stato per tenere traccia del trattamento selezionato
-  const [selectedTreatment, setSelectedTreatment] = useState(treatmentDetails[0]);
-
-  // Funzione per cambiare il trattamento corrente in base al clic sull'elemento del menu
-  const handleTreatmentClick = (label: string) => {
-    const selected = treatmentDetails.find(treatment => treatment.nome === label);
-    if (selected) {
-      setSelectedTreatment(selected); // Aggiorna lo stato con il trattamento selezionato
-    }
-  };
-
   return (
-    <main id="main" className="flex flex-col w-full items-center justify-between">
-      <div className="min-h-screen w-full flex flex-col md:flex-row">
-        {/* Colonna sinistra (menu) */}
-        <div className="w-full md:w-1/5 flex flex-col justify-center items-center     text-center bg-gray-100 p-4 md:flex hidden">
-          <ul className="flex flex-col justify-center h-full">
-            {filteredChildren.map((child, idx) => (
-              <li key={idx} className="mb-2">
-                <button
-                  onClick={() => handleTreatmentClick(child.label)}
-                  className={`${styles['nav-link']} text-tiber font-bold`}
-                >
-                  {child.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-
-        {/* Menu Mobile (mostrato solo su dispositivi mobili) */}
-        <div className="w-full flex md:hidden justify-center bg-gray-100 p-4">
-          <select
-            onChange={(e) => handleTreatmentClick(e.target.value)}
-            className="w-[90%] h-[48px] p-4 border-2 border-tiber rounded-lg bg-white text-tiber font-bold focus:outline-none focus:ring-2 focus:ring-tiber focus:border-transparent transition duration-300 ease-in-out"
-          >
-            {filteredChildren.map((child, idx) => (
-              <option key={idx} value={child.label}>
-                {child.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-
-
-        {/* Colonna destra (contenuto) */}
-        <div className="w-full md:w-4/5 text-justify px-6 bg-gray-100 text-black p-4">
-          {/* Mostra il trattamento selezionato */}
-          <TreatmentDetails treatment={selectedTreatment} />
-        </div>
-      </div>
-    </main>
+    <div
+      className="flex flex-col w-full items-center justify-between min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] py-10 px-14 bg-tiber"
+    >
+      <h2 className="text-3xl text-white font-bold mb-4 text-center">
+        Medicina Estetica
+      </h2>
+      <p className="text-lg text-white mb-4 text-justify">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis, ante a mollis pulvinar, sem sem scelerisque arcu, sed dignissim eros erat vitae neque. Aenean est nisl, lacinia ut urna ac, aliquam dictum elit. Aliquam vehicula dolor turpis, vel semper neque sagittis at. Donec cursus euismod turpis, non interdum ligula ultricies vel. Fusce faucibus, eros vel vulputate ullamcorper, nisi ipsum ornare felis, sed pulvinar ipsum libero sed mi. Praesent mattis scelerisque tortor, hendrerit pretium orci gravida non. Donec congue mauris sem, quis consectetur nisi molestie quis. Phasellus hendrerit lectus velit, vel imperdiet nisl elementum a. Nunc ullamcorper accumsan commodo. Proin dignissim, felis ut fringilla faucibus, felis orci posuere metus, eu scelerisque metus mauris eu tortor.
+      </p>
+      <Treatments />
+      <Reviews />
+    </div>
   );
 }
