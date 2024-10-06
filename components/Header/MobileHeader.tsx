@@ -1,23 +1,23 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import useDisableScroll from '@/hooks/useDisableScroll';
 import { menuItems } from '@/constants';
-import styles from './MobileHeader.module.css'; 
+// import styles from './MobileHeader.module.css'; 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMedicinaEsteticaOpen, setIsMedicinaEsteticaOpen] = useState(false);
+  // const [isMedicinaEsteticaOpen, setIsMedicinaEsteticaOpen] = useState(false);
 
-  const medicinaEsteticaRef = useRef<HTMLUListElement>(null);
+  // const medicinaEsteticaRef = useRef<HTMLUListElement>(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const toggleMedicinaEstetica = () => {
-    setIsMedicinaEsteticaOpen(!isMedicinaEsteticaOpen);
-  };
+  // const toggleMedicinaEstetica = () => {
+  //   setIsMedicinaEsteticaOpen(!isMedicinaEsteticaOpen);
+  // };
 
   const handleMenuClick = () => {
     setIsOpen(false); // Chiude il menu dopo il click
@@ -71,7 +71,7 @@ const MobileHeader = () => {
                       >
                         {item.label}
                       </Link>
-                      {item.children && (
+                      {/* {item.children && (
                         <button
                           onClick={toggleMedicinaEstetica}
                           className="ml-2 focus:outline-none"
@@ -85,9 +85,9 @@ const MobileHeader = () => {
                             title="Toggle Subcategories"
                           />
                         </button>
-                      )}
+                      )} */}
                     </div>
-                    {item.children && (
+                    {/* {item.children && (
                       <ul
                         ref={medicinaEsteticaRef}
                         style={{
@@ -95,7 +95,6 @@ const MobileHeader = () => {
                         }}
                         className={`${styles.expansion} mt-2 space-y-2 ml-4 overflow-hidden transition-height duration-300`}
                       >
-                        {/* Sub Menu */}
                         {item.children.map((subItem) => (
                           <li key={subItem.href}>
                             <Link 
@@ -108,7 +107,7 @@ const MobileHeader = () => {
                           </li>
                         ))}
                       </ul>
-                    )}
+                    )} */}
                   </>
                 ) : (
                   <Link href={item.href} className="text-white text-xl font-semibold hover:text-tiber transition-colors duration-200 block" onClick={handleMenuClick}>
