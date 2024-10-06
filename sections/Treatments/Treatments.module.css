@@ -1,7 +1,6 @@
 .nav-link {
   position: relative;
   display: inline-block;
-  color: #00695c; /* Puoi modificare il colore secondo le tue esigenze */
 }
 
 .nav-link::before {

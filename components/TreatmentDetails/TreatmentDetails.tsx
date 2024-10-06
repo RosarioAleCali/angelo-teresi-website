@@ -12,58 +12,61 @@ import {
 
 const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment }) => {
   return (
-    <div className="flex items-center justify-center w-full min-h-screen">
-      <div className="bg-tiber p-5 text-white text-sm flex flex-col md:flex-row w-full max-w-7xl rounded-lg gap-8">
-        {/* Sinistra: Titolo, Descrizione e Dettagli */}
-        <div className="md:w-1/2">
-          {/* Titolo al centro */}
-          <div className="w-full mb-4 md:mb-6">
-            <h1 className="text-2xl font-bold text-center md:text-left">{treatment.nome}</h1>
-          </div>
-          {/* Contenuto sottostante */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-            {/* Descrizione a sinistra */}
-            <div className="text-left">
-              <p>{treatment.descrizione}</p>
-            </div>
-
-            {/* Dettagli a destra */}
-            <div className="space-y-3">
-              <div className="flex items-start">
-                <FontAwesomeIcon icon={faClock} className="mr-2" />
-                <p className="text-sm text-start"><strong>Durata:</strong> {treatment.durata}</p>
-              </div>
-              <div className="flex items-start">
-                <FontAwesomeIcon icon={faCalendarDays} className="mr-2" />
-                <p className="text-sm text-start"><strong>Sedute:</strong> {treatment.sedute}</p>
-              </div>
-              <div className="flex items-start">
-                <FontAwesomeIcon icon={faClipboardCheck} className="mr-2" />
-                <p className="text-sm text-start"><strong>Risultati:</strong> {treatment.risultati}</p>
-              </div>
-              <div className="flex items-start">
-                <FontAwesomeIcon icon={faSyringe} className="mr-2" />
-                <p className="text-sm text-start"><strong>Prodotti:</strong> {treatment.prodotti}</p>
-              </div>
-              <div className="flex items-start">
-                <FontAwesomeIcon icon={faClockRotateLeft} className="mr-2" />
-                <p className="text-sm text-start"><strong>Durata Risultati:</strong> {treatment.durataRisultati}</p>
-              </div>
-            </div>
-
-          </div>
+    <div className="bg-tropical p-5 text-white text-sm flex flex-col md:flex-row w-full max-w-7xl rounded-lg gap-8">
+      {/* Sinistra: Titolo, Descrizione e Dettagli */}
+      <div className="md:w-1/2">
+        {/* Titolo al centro */}
+        <div className="w-full mb-4 md:mb-6">
+          <h1 className="text-2xl font-bold text-center md:text-left">{treatment.nome}</h1>
         </div>
-        {/* Destra: Immagini */}
-        <div className="md:w-1/2 flex justify-center items-center">
-            {treatment.immagini.length >= 2 ? (
-                <BeforeAfterSlider
-                beforeImage={treatment.immagini[0]}
-                afterImage={treatment.immagini[1]}
-                />
-          ) : (
-            <p>Immagini non disponibili</p>
-          )}
+        {/* Contenuto sottostante */}
+        <div className="flex flex-wrap gap-4">
+          {/* Descrizione a sinistra */}
+          <div className="text-left">
+            <p>{treatment.descrizione}</p>
+          </div>
+
+          {/* Dettagli a destra */}
+          <div className="flex justify-between w-full gap-6">
+            <div className="flex flex-col items-center text-center gap-1">
+              <FontAwesomeIcon icon={faClock} className="mb-2 text-xl" />
+              <strong>Durata</strong>
+              <p className="text-sm">{treatment.durata}</p>
+            </div>
+            <div className="flex flex-col items-center text-center gap-1">
+              <FontAwesomeIcon icon={faCalendarDays} className="mb-2 text-xl" />
+              <strong>Sedute</strong>
+              <p className="text-sm">{treatment.sedute}</p>
+            </div>
+            <div className="flex flex-col items-center text-center gap-1">
+              <FontAwesomeIcon icon={faClipboardCheck} className="mb-2 text-xl" />
+              <strong>Risultati</strong>
+              <p className="text-sm">{treatment.risultati}</p>
+            </div>
+            <div className="flex flex-col items-center text-center gap-1">
+              <FontAwesomeIcon icon={faSyringe} className="mb-2 text-xl" />
+              <strong>Prodotti</strong>
+              <p className="text-sm">{treatment.prodotti}</p>
+            </div>
+            <div className="flex flex-col items-center text-center gap-1">
+              <FontAwesomeIcon icon={faClockRotateLeft} className="mb-2 text-xl" />
+              <strong>Durata Risultati</strong>
+              <p className="text-sm">{treatment.durataRisultati}</p>
+            </div>
+          </div>
+
         </div>
+      </div>
+      {/* Destra: Immagini */}
+      <div className="md:w-1/2 flex justify-center items-center">
+          {treatment.immagini.length >= 2 ? (
+              <BeforeAfterSlider
+              beforeImage={treatment.immagini[0]}
+              afterImage={treatment.immagini[1]}
+              />
+        ) : (
+          <p>Immagini non disponibili</p>
+        )}
       </div>
     </div>
   );
