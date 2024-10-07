@@ -47,7 +47,7 @@ const Intro = () => {
       <h2 className={`${styles.fadeInElement} text-3xl text-white font-bold mb-4 text-center`}>
       Raggiungi il tuo Equilibrio con Professionalità
       </h2>
-      <p className={`text-lg text-white text-justify mb-5 max-w-4xl mx-auto ${styles.fadeInElement}`}>
+      <p className={`text-lg text-white mb-5 max-w-4xl mx-auto ${styles.fadeInElement}`}>
         Sono il Dott. Angelo Teresi, medico chirurgo iscritto all{"\'"}albo, specializzato nel benessere completo a 360° della persona. Il mio obiettivo è aiutarti a raggiungere la migliore versione di te stesso, attraverso un approccio integrato che unisce alimentazione, allenamento e medicina estetica avanzata. Mi occupo infatti di prescrivere diete personalizzate, schede di allenamento su misura ed eseguo specifici trattamenti di medicina estetica, affinché possa aiutarti a raggiungere obiettivi di salute e bellezza, migliorando il tuo equilibrio psicofisico.<br /><br />La tua bellezza è il mio impegno. Credo fermamente che la bellezza esteriore sia il riflesso di un equilibrio interiore, ed è per questo che offro percorsi personalizzati per prendermi cura del tuo corpo a 360 gradi. Insieme, possiamo lavorare per raggiungere il tuo benessere completo.
       </p>
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
