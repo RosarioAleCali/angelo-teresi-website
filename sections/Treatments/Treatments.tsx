@@ -64,7 +64,7 @@ const Treatments = () => {
         </select>
 
         {/* Colonna destra (contenuto) */}
-        <div className="w-full md:w-4/5 text-justify text-black py-6">
+        <div className="w-full md:w-4/5 text-black py-6">
           <TreatmentDetails treatment={selectedTreatment} />
         </div>
       </div>
