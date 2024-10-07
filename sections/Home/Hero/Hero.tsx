@@ -40,34 +40,53 @@ const Hero = () => {
 
   return (
     <div
-      className="bg-tiber text-white w-full flex flex-col items-center justify-center h-[calc(100vh-4.375rem)] md:h-[calc(100vh-5rem)]"
-    >
+      className="bg-tiber text-white w-full flex flex-col items-center justify-center h-[calc(100vh-4.375rem)] md:h-[calc(100vh-5rem)] relative"
+    > 
       <div className="flex flex-col items-center -mt-[4.375rem] md:-mt-20">
-        <div className={styles.coinContainer}>
-          <div
-            className={`${styles.coin} ${
-              isFlipping ? styles.spin : ''
-            } ${stopRotation ? styles.stopAtBack : ''}`}
-          >
-            <div className={styles.front}>
-              <Image
-                src="/logos/white-pictogram.png"
-                alt="White Pictogram"
-                width={150}
-                height={150}
-              />
-            </div>
-            <div className={styles.back}>
-              <Image
-                src="/logos/coin-teresi.png"
-                alt="Coin Teresi"
-                width={150}
-                height={150}
-              />
+        <div className={styles.imageWrapper}>
+          <div className={styles.coinContainer}>
+            <div
+              className={`${styles.coin} ${
+                isFlipping ? styles.spin : ''
+              } ${stopRotation ? styles.stopAtBack : ''}`}
+            >
+              <div className={styles.front}>
+                <Image
+                  src="/logos/white-pictogram.png"
+                  alt="White Pictogram"
+                  width={150}
+                  height={150}
+                />
+              </div>
+              <div className={styles.back}>
+                <Image
+                  src="/logos/white-pictogram.png"
+                  alt="Coin Teresi"
+                  width={150}
+                  height={150}
+                />
+              </div>
             </div>
           </div>
+          {/* Immagini ai lati del logo */}
+          <Image
+            src="/teresi_shape/angelo-personal.png"
+            alt="Angelo Personal"
+            width={500}    // Specifica larghezza
+            height={500}   // Specifica altezza
+            className={`${styles.leftImage} ${styles.slideInLeft}`}
+          />
+
+          <Image
+            src="/teresi_shape/angelo-estetica.png"
+            alt="Angelo Estetica"
+            width={500}    // Specifica larghezza
+            height={500}   // Specifica altezza
+            className={`${styles.rightImage} ${styles.slideInRight}`}
+          />
         </div>
-        <div className="text-4xl">
+        
+        <div className="text-3xl md:text-7xl">
           <Typewriter
             onInit={(typewriter) => {
               typewriter
@@ -89,7 +108,8 @@ const Hero = () => {
             }}
           />
         </div>
-        <p className="text-sm md:text-2xl">
+        
+        <p className="text-xs md:text-2xl">
           {words.map((word, index) => (
             <span
               key={index}
@@ -104,6 +124,7 @@ const Hero = () => {
           ))}
         </p>
       </div>
+
     </div>
   );
 };

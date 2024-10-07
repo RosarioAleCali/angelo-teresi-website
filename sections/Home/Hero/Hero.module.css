@@ -61,10 +61,10 @@
   transform: rotateY(180deg); /* Faccia posteriore è white-pictogram */
 }
 
-.back {
-  transform: rotateY(0deg); /* Faccia anteriore è coin-teresi */
+/* .back {
+  transform: rotateY(0deg); Faccia anteriore è coin-teresi
   border: 6px solid white;
-}
+} */
   
 .front img,
 .back img {
@@ -82,7 +82,51 @@
   }
 }
 
-/* Animation Teresi Shape */
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  
+}
+
+.leftImage, .rightImage {
+  position: absolute;
+  width: 80vw; /* Dimensione fluida, ridimensiona le immagini in base alla larghezza della viewport */
+  max-width: 300px; /* Limite massimo della larghezza */
+  height: auto; /* Mantiene il rapporto d'aspetto */
+  /* mask-image: linear-gradient(to bottom, black 60%, transparent 100%); */
+  border-bottom: 5px solid white;
+  
+}
+
+.leftImage {
+  top: -42%; /* Posiziona l'immagine in alto rispetto al div genitore */
+  left: -250px; /* Posizionamento assoluto a sinistra rispetto al div */
+}
+
+.rightImage {
+  top: -42%; /* Posiziona l'immagine in alto rispetto al div genitore */
+  right: -250px; /* Posizionamento assoluto a destra rispetto al div */
+}
+
+/* Media query per adattare la posizione e le dimensioni su schermi più piccoli */
+@media (max-width: 768px) {
+  .leftImage, .rightImage {
+    width: 30vw; /* Aumenta la larghezza delle immagini su schermi più piccoli */
+    max-width: 100px;
+  }
+
+  .leftImage {
+    left: -75px; /* Regola la posizione su schermi più piccoli */
+    top: 53%;
+  }
+
+  .rightImage {
+    right: -75px; /* Regola la posizione su schermi più piccoli */
+    top: 53%;
+  }
+}
+
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
@@ -94,11 +138,6 @@
   }
 }
 
-.leftImage {
-  animation: slideInLeft 1s forwards;
-}
-
-/* Animazione per l'immagine destra */
 @keyframes slideInRight {
   from {
     transform: translateX(100%);
@@ -110,7 +149,12 @@
   }
 }
 
-.rightImage {
-  animation: slideInRight 1s forwards;
+.leftImage {
+  /* Aggiungi animazione */
+  animation: slideInLeft 1s forwards;
 }
 
+.rightImage {
+  /* Aggiungi animazione */
+  animation: slideInRight 1s forwards;
+}
