@@ -12,7 +12,7 @@ import {
 
 const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment }) => {
   return (
-    <div className="bg-tropical p-5 text-white text-sm flex flex-col md:flex-row w-full max-w-7xl rounded-lg gap-8">
+    <div className="bg-tropical p-5 text-white flex flex-col md:flex-row w-full max-w-7xl rounded-lg gap-8">
       {/* Sinistra: Titolo, Descrizione e Dettagli */}
       <div className="md:w-1/2">
         {/* Titolo al centro */}
