@@ -52,7 +52,6 @@ const MobileBookingButton = () => {
             <Link
               className="bg-tropical flex justify-center items-center whitespace-nowrap text-white px-4 py-2 rounded-full hover:bg-tiber"
               href={links.online}
-              target="_blank"
               rel="noopener noreferrer"
             >
               Online

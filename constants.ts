@@ -4,8 +4,8 @@ interface Links {
 };
 
 const links: Links = {
-  online: 'https://prenota.alfadocs.com/p/palermo-studio-del-dottor-angelo-teresi-31421',
-  inPerson: '/contacts'
+  online: '/contacts',
+  inPerson: 'https://prenota.alfadocs.com/p/palermo-studio-del-dottor-angelo-teresi-31421'
 };
 
 const menuItems = [

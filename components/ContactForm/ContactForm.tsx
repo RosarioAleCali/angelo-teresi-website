@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import useIsMobile from '@/hooks/useIsMobile';
 import FormData from '@/types/FormData';
 import { serviceOptions, ServiceOptionKey } from '@/types/ServiceOptions';
+import 'react-phone-number-input/style.css';
 
 export default function ContactForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, control, formState: { errors } } = useForm<FormData>();
   const [selectedService, setSelectedService] = useState<ServiceOptionKey | ''>('');
   const [captchaVerified, setCaptchaVerified] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -83,6 +85,29 @@ export default function ContactForm() {
         </div>
       </div>
 
+      {/* Phone Number Field with Automatic Formatting */}
+      <div className="mt-4">
+        <label className="block text-sm font-medium text-gray-700">Telefono</label>
+        <Controller
+          name="phone"
+          control={control}
+          rules={{
+            required: 'Phone number is required',
+            validate: (value) => isValidPhoneNumber(value) || 'Invalid phone number',
+          }}
+          render={({ field }) => (
+            <PhoneInput
+              {...field}
+              defaultCountry="IT"
+              international
+              withCountryCallingCode
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm"
+            />
+          )}
+        />
+        {errors.phone && <p className="text-red-600 text-sm">{errors.phone.message}</p>}
+      </div>
+
       {/* Dropdown for Services */}
       <div className="mt-4">
         <label className="block text-sm font-medium text-gray-700">Seleziona Servizio</label>
@@ -131,7 +156,7 @@ export default function ContactForm() {
         {errors.message && <p className="text-red-600 text-sm">{errors.message.message}</p>}
       </div>
 
-      {/* CAPTCHA - NOT MOBILE RESPONSIVE */}
+      {/* CAPTCHA */}
       <div className="mt-6">
         <ReCAPTCHA
           size={isMobile ? "compact" : "normal"}
