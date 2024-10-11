@@ -53,7 +53,7 @@ const Intro = () => {
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className={`${styles.card} ${styles.fadeInElement}`}>
           <Image
-            src="/imgs_menu_items/labbra.png"
+            src="/home_card/labbra.png"
             alt="Immagine 1"
             width={432}
             height={200}
@@ -80,7 +80,7 @@ const Intro = () => {
 
         <div className={`${styles.card} ${styles.fadeInElement}`}>
           <Image
-            src="/imgs_menu_items/nutrizione-b.png"
+            src="/home_card/nutrizione-allenamento.jpg"
             alt="Immagine 2"
             width={432}
             height={200}

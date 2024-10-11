@@ -74,7 +74,7 @@ const Hero = () => {
             alt="Angelo Personal"
             width={500}    // Specifica larghezza
             height={500}   // Specifica altezza
-            className={`${styles.leftImage} ${styles.slideInLeft}`}
+            className={`${styles.leftImage} hidden md:block ${styles.slideInLeft}`}
           />
 
           <Image
@@ -82,7 +82,7 @@ const Hero = () => {
             alt="Angelo Estetica"
             width={500}    // Specifica larghezza
             height={500}   // Specifica altezza
-            className={`${styles.rightImage} ${styles.slideInRight}`}
+            className={`${styles.rightImage} hidden md:block ${styles.slideInRight}`}
           />
         </div>
         
