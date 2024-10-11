@@ -1,21 +1,21 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useContext, useEffect } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { ComponentsStatusContext } from '@/context/componentsStatusContext';
 import { ComponentsStatusContextType } from '@/types/components-status';
-import styles from './Intro.module.css';;
+import styles from './Intro.module.css';
 
 const Intro = () => {
   const { openModal } = useContext(ComponentsStatusContext) as ComponentsStatusContextType;
 
   useEffect(() => {
     const elements = document.querySelectorAll(`.${styles.fadeInElement}`);
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -30,11 +30,11 @@ const Intro = () => {
         threshold: 0.1,
       }
     );
-    
+
     elements.forEach((el) => {
       observer.observe(el);
     });
-    
+
     return () => {
       elements.forEach((el) => {
         observer.unobserve(el);
@@ -45,11 +45,28 @@ const Intro = () => {
   return (
     <section id="intro" className="bg-tiber w-full flex flex-col justify-start min-h-screen px-5">
       <h2 className={`${styles.fadeInElement} text-3xl text-white font-bold mb-4 text-center`}>
-      Raggiungi il tuo Equilibrio con Professionalità
+        Raggiungi il tuo Equilibrio con Professionalità
       </h2>
-      <p className={`text-white mb-5 max-w-4xl mx-auto ${styles.fadeInElement}`}>
-        Sono il Dott. Angelo Teresi, medico chirurgo iscritto all{"\'"}albo, specializzato nel benessere completo a 360° della persona. Il mio obiettivo è aiutarti a raggiungere la migliore versione di te stesso, attraverso un approccio integrato che unisce alimentazione, allenamento e medicina estetica avanzata. Mi occupo infatti di prescrivere diete personalizzate, schede di allenamento su misura ed eseguo specifici trattamenti di medicina estetica, affinché possa aiutarti a raggiungere obiettivi di salute e bellezza, migliorando il tuo equilibrio psicofisico.<br /><br />La tua bellezza è il mio impegno. Credo fermamente che la bellezza esteriore sia il riflesso di un equilibrio interiore, ed è per questo che offro percorsi personalizzati per prendermi cura del tuo corpo a 360 gradi. Insieme, possiamo lavorare per raggiungere il tuo benessere completo.
-      </p>
+      <div className={`text-white mb-5 max-w-4xl mx-auto ${styles.fadeInElement} ${styles.paragraphWithImage} ${styles.fadeInElement}`}>
+        <img
+          src="/teresi_shape/angelo-estetica.png"
+          alt="Angelo Estetica"
+          className={styles.floatImageRight}
+        />
+        <p>
+          Sono il Dott. Angelo Teresi, medico chirurgo iscritto all{"\'"}albo, specializzato nel benessere completo a 360° della persona. Il mio obiettivo è aiutarti a raggiungere la migliore versione di te stesso, attraverso un approccio integrato che unisce alimentazione, allenamento e medicina estetica avanzata. Mi occupo infatti di prescrivere diete personalizzate, schede di allenamento su misura ed eseguo specifici trattamenti di medicina estetica, affinché possa aiutarti a raggiungere obiettivi di salute e bellezza, migliorando il tuo equilibrio psicofisico.
+        </p>
+      </div>
+      <div className={`text-white mb-5 max-w-4xl mx-auto ${styles.fadeInElement} ${styles.paragraphWithImage} ${styles.fadeInElement}`}>
+        <img
+          src="/teresi_shape/angelo-personal.png"
+          alt="Angelo Personal"
+          className={styles.floatImageLeft}
+        />
+        <p>
+          La tua bellezza è il mio impegno. Credo fermamente che la bellezza esteriore sia il riflesso di un equilibrio interiore, ed è per questo che offro percorsi personalizzati per prendermi cura del tuo corpo a 360 gradi. Insieme, possiamo lavorare per raggiungere il tuo benessere completo.
+        </p>
+      </div>
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className={`${styles.card} ${styles.fadeInElement}`}>
           <Image
@@ -90,7 +107,7 @@ const Intro = () => {
           <div className={`${styles.cardContent} text-tiber`}>
             <h3 className={styles.cardTitle}>Nutrizione & Allenamento</h3>
             <p className={styles.cardText}>
-              La nutrizione e l{"\'"}allenamento sono componenti essenziali per raggiungere il benessere completo. Offro percorsi nutrizionali personalizzati, pensati per rispondere alle tue esigenze specifiche, che si tratti di perdere peso, migliorare le prestazioni fisiche o adottare uno stile di vita più sano. A complemento dell{"\'"}alimentazione, progettiamo schede di allenamento su misura per aiutarti a migliorare forza, resistenza e benessere generale. Che tu preferisca allenarti in studio o a casa, il mio approccio mira a massimizzare l{"\'"}efficacia degli esercizi, riducendo al minimo il rischio di infortuni.
+              La nutrizione e l{"\'"}allenamento sono componenti essenziali per raggiungere il benessere completo. Offro percorsi nutrizionali personalizzati, pensati per rispondere alle tue esigenze specifiche, che si tratti di perdere peso, migliorare le prestazioni fisiche o adottare uno stile di vita più sano. A complemento dell{"\'"}allenamento, progettiamo schede su misura per aiutarti a migliorare forza, resistenza e benessere generale. Che tu preferisca allenarti in studio o a casa, il mio approccio mira a massimizzare l{"\'"}efficacia degli esercizi, riducendo al minimo il rischio di infortuni.
             </p>
             <div className={styles.cardButtons}>
               <button onClick={openModal} className={styles.cardButton}>

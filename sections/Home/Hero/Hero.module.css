@@ -109,24 +109,6 @@
   right: -250px; /* Posizionamento assoluto a destra rispetto al div */
 }
 
-/* Media query per adattare la posizione e le dimensioni su schermi più piccoli */
-/* @media (max-width: 768px) {
-  .leftImage, .rightImage {
-    width: 30vw; 
-    max-width: 100px;
-  }
-
-  .leftImage {
-    left: -75px; 
-    top: 53%;
-  }
-
-  .rightImage {
-    right: -75px; 
-    top: 53%;
-  }
-} */
-
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
