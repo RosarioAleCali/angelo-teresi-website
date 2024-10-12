@@ -60,11 +60,6 @@
 .front {
   transform: rotateY(180deg); /* Faccia posteriore è white-pictogram */
 }
-
-/* .back {
-  transform: rotateY(0deg); Faccia anteriore è coin-teresi
-  border: 6px solid white;
-} */
   
 .front img,
 .back img {
