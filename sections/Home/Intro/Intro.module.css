@@ -20,13 +20,59 @@
   transform: translateY(0);
 }
 
+.paragraphWithImage {
+  position: relative;
+  overflow: hidden; /* Per evitare problemi con il float su dispositivi mobili */
+}
+
+.floatImageRight,
+.floatImageLeft {
+  width: 150px; /* Regola la larghezza secondo le tue necessità */
+  height: auto;
+  display: none; /* Nascosto di default */
+}
+
+@media (max-width: 768px) {
+  .floatImageRight,
+  .floatImageLeft {
+    display: block; /* Mostra le immagini solo su dispositivi mobili */
+    position: relative;
+    z-index: 1;
+    border-bottom: 2px solid white;
+  }
+
+  .floatImageRight {
+    float: right;
+    shape-outside: url('/teresi_shape/angelo-estetica.png');
+    shape-margin: 10px;
+    margin: 0 0 10px 10px;
+    clear: both;
+  }
+
+  .floatImageLeft {
+    float: left;
+    position: relative;
+    top: -20px; /* Usa top per spostare l'immagine verso l'alto */
+    shape-outside: url('/teresi_shape/angelo-personal.png');
+    shape-margin: 58px;
+    margin-left: 0;
+    margin-right: 10px;
+    clear: both;
+    text-align: justify;
+  }
+  
+  .paragraphWithImage p {
+    margin-top: 30px;
+    overflow: visible; /* Permette al testo di fluttuare attorno all'immagine */
+  }
+  
+}
+
 .card {
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* transform: translateY(20px); 
-  opacity: 0;  */
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -34,11 +80,6 @@
   opacity: 1; /* Visibile quando entra nella viewport */
   transform: translateY(0); /* Ritorna alla posizione originale */
 }
-
-/* .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-} */
 
 .cardImage {
   width: 100%;
@@ -79,7 +120,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   
-  /* Aggiungi il flexbox per allineare l'icona e il testo orizzontalmente */
+  /* Allinea l'icona e il testo orizzontalmente */
   display: inline-flex;
   align-items: center; /* Allinea verticalmente l'icona con il testo */
   justify-content: center; /* Allinea l'icona e il testo al centro */
