@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import Typewriter from 'typewriter-effect';
 import styles from './Hero.module.css';
@@ -86,43 +87,55 @@ const Hero = () => {
           />
         </div>
         
-        <div className="text-3xl md:text-7xl">
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString('Dr. Angelo Teresi')
-                .pauseFor(0)
-                .callFunction(() => {
-                  const cursorElement = document.querySelector('.Typewriter__cursor');
-                  if (cursorElement) {
-                    cursorElement.classList.add(styles.cursorHidden);
-                  }
-                  setShowWords(true);
-                })
-                .start();
-            }}
-            options={{
-              cursor: '|',
-              loop: false,
-              delay: 50,
-            }}
-          />
-        </div>
-        
-        <p className="text-xs md:text-2xl">
-          {words.map((word, index) => (
-            <span
-              key={index}
-              className={visibleWords > index ? styles.fadeIn : styles.hidden}
-              style={{
-                animationDelay: `${index * 0.5}s`,
+        <div className="w-fit flex flex-col items-center justify-center">
+          <div className="text-5xl md:text-7xl">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString('Dr. Angelo Teresi')
+                  .pauseFor(0)
+                  .callFunction(() => {
+                    const cursorElement = document.querySelector('.Typewriter__cursor');
+                    if (cursorElement) {
+                      cursorElement.classList.add(styles.cursorHidden);
+                    }
+                    setShowWords(true);
+                  })
+                  .start();
               }}
-            >
-              {index > 0 && ' \u2022 '}
-              {word}
-            </span>
-          ))}
-        </p>
+              options={{
+                cursor: '|',
+                loop: false,
+                delay: 50,
+              }}
+            />
+          </div>
+        
+          <p className="w-full flex items-center justify-between text-base md:text-2xl">
+            {words.map((word, index) => (
+              <React.Fragment key={index}>
+                {index > 0 && (
+                  <span
+                    className={`font-sans ${visibleWords > index ? styles.fadeIn : styles.hidden}`}
+                    style={{
+                      animationDelay: `${index * 0.5}s`,
+                    }}
+                  >
+                    &bull;
+                  </span>
+                )}
+                <span
+                  className={visibleWords > index ? styles.fadeIn : styles.hidden}
+                  style={{
+                    animationDelay: `${index * 0.5}s`,
+                  }}
+                >
+                  {word}
+                </span>
+              </React.Fragment>
+            ))}
+          </p>
+        </div>
       </div>
 
     </div>

@@ -8,6 +8,8 @@
   visibility: visible;
   transition: opacity 0.4s ease, visibility 0.4s ease;
   will-change: opacity, visibility;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .arrow-scroll.show {
@@ -31,6 +33,9 @@
   transform: translateX(-50%) rotate(45deg);
   -webkit-transform: translateX(-50%) rotate(45deg); /* Safari */
   will-change: top, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: top 0.4s ease, opacity 0.4s ease;
 }
 
 .arrow:nth-child(2) {

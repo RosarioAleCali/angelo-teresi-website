@@ -77,7 +77,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-96 overflow-hidden select-none touch-none"
+      className="relative w-full h-96 overflow-hidden select-none touch-none rounded-lg"
       onMouseMove={handleMouseMove}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
@@ -92,7 +92,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
         alt="After"
         layout="fill"
         objectFit="cover"
-        className="absolute inset-0 rounded-lg"
+        className="absolute inset-0"
       />
 
       {/* Immagine "Before" sopra, con clipping dinamico */}
@@ -101,7 +101,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
         alt="Before"
         layout="fill"
         objectFit="cover"
-        className="absolute inset-0 rounded-lg"
+        className="absolute inset-0"
         style={{
           clipPath: `polygon(0 0, ${position}% 0, ${position}% 100%, 0% 100%)`,
         }}

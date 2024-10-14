@@ -165,6 +165,16 @@ export default function ContactForm() {
         />
       </div>
 
+      {/* Privacy Policy Notice */}
+      <div className="mt-4 text-sm text-gray-600">
+        <p>
+          Inviando questo modulo, accetti la nostra{' '}
+          <a href="/privacy-policy" className="text-tropical underline" target="_blank" rel="noopener noreferrer">
+            Informativa sulla Privacy
+          </a>.
+        </p>
+      </div>
+
       {/* Submit Button */}
       <div className="flex justify-end mt-6">
         <button

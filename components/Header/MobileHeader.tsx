@@ -26,7 +26,7 @@ const MobileHeader = () => {
   useDisableScroll(isOpen);
 
   return (
-    <header className="bg-tiber sticky top-0 w-full flex items-center justify-between px-4 py-2.5 z-50">
+    <header className="bg-tiber sticky top-0 w-full flex items-center justify-between px-4 py-2.5 z-[1000]">
       <div className="flex-shrink-0">
         <Link href="/" className="text-white text-lg font-bold">
           <Image
