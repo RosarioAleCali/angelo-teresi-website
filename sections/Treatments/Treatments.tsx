@@ -22,7 +22,7 @@ const Treatments = () => {
   return (
     <section
       id="treatments"
-      className="flex flex-col w-full items-start mt-5"
+      className="flex flex-col w-full items-start mt-5 md:px-56"
     >
       <div className="flex flex-col md:flex-row w-full items-center justify-between">
         {/* Colonna sinistra (menu) */}
@@ -64,7 +64,7 @@ const Treatments = () => {
         </select>
 
         {/* Colonna destra (contenuto) */}
-        <div className="w-full md:w-4/5 text-black py-6">
+        <div className="flex items-center justify-center w-full md:w-4/5 text-black py-6">
           <TreatmentDetails treatment={selectedTreatment} />
         </div>
       </div>

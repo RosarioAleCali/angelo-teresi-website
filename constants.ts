@@ -72,7 +72,7 @@ const menuItems = [
 const treatmentDetails = [
   {
     "nome": "Biostimolazione",
-    "descrizione": "Trattamento che stimola la rigenerazione cellulare e la produzione di collagene.",
+    "descrizione": "Un trattamento che mira a rivitalizzare la pelle attraverso l'iniezione di sostanze come vitamine, minerali e acido ialuronico. Queste sostanze stimolano la produzione di collagene e di elastina, migliorando il tono, l'elasticità e la luminosità della pelle. Questo trattamento aiuta anche a prevenire l'invecchiamento cutaneo, donando al viso un aspetto più fresco e vitale. È particolarmente indicato per chi vuole contrastare i segni di stanchezza e disidratazione, restituendo al volto un aspetto più giovane e sano.",
     "immagini": ["/before_after/2-prima-dopo-2.png", "/before_after/2-prima-dopo-3.png"],
     "durata": "30 minuti",
     "sedute": "3-4 sedute",
@@ -82,17 +82,17 @@ const treatmentDetails = [
   },
   {
     "nome": "Botox",
-    "descrizione": "Trattamento che riduce le rughe d'espressione con iniezioni di tossina botulinica.",
+    "descrizione": "Un trattamento iniettivo per ridurre rughe e linee d'espressione, principalmente nella zona della fronte, degli occhi e tra le sopracciglia. Il botox agisce rilassando i muscoli responsabili della formazione delle pieghe, offrendo un effetto distensivo e rendendo la pelle più liscia. È ideale per chi desidera un aspetto più rilassato e riposato, senza ricorrere a interventi chirurgici. I risultati sono temporanei ma molto efficaci e durano generalmente alcuni mesi, dopo i quali il trattamento può essere ripetuto.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "20 minuti",
     "sedute": "1 seduta",
     "risultati": "Rughe ridotte e pelle distesa",
     "prodotti": "Tossina botulinica",
-    "durataRisultati": "3-4 mesi"
+    "durataRisultati": "5-6 mesi"
   },
   {
     "nome": "Filler Labbra",
-    "descrizione": "Iniezioni di filler per aumentare il volume delle labbra e migliorarne la forma.",
+    "descrizione": "Una procedura per aumentare il volume e definire il contorno delle labbra, utilizzando acido ialuronico per ottenere un risultato naturale e armonioso. Questo trattamento è ideale per chi desidera labbra più piene e ben definite, correggendo asimmetrie o semplicemente donando maggiore volume. Inoltre, il filler labbra aiuta a migliorare l'idratazione della zona, rendendo le labbra più morbide e levigate. I risultati sono immediati e durano diversi mesi, a seconda del tipo di prodotto utilizzato.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "30 minuti",
     "sedute": "1 seduta",
@@ -102,7 +102,7 @@ const treatmentDetails = [
   },
   {
     "nome": "Filler Mandibolare",
-    "descrizione": "Rimodellamento del contorno mandibolare con filler per un profilo più definito.",
+    "descrizione": "Un trattamento per migliorare la definizione della linea mandibolare, dando al viso un aspetto più scolpito e ridefinito. È spesso utilizzato per contrastare il rilassamento cutaneo e migliorare la simmetria del volto, rendendo la linea mandibolare più marcata e armoniosa. Questo tipo di filler è particolarmente indicato per chi vuole ottenere un aspetto più deciso e strutturato, senza ricorrere alla chirurgia. I risultati sono naturali e aiutano a migliorare l'equilibrio complessivo del viso.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "40 minuti",
     "sedute": "1 seduta",
@@ -112,7 +112,7 @@ const treatmentDetails = [
   },
   {
     "nome": "Filler Occhiaie",
-    "descrizione": "Trattamento che riduce le occhiaie con iniezioni di filler sotto gli occhi.",
+    "descrizione": "Un trattamento per ridurre la visibilità delle occhiaie, riempiendo la zona sotto gli occhi con acido ialuronico per un aspetto più riposato e giovane. Questo trattamento aiuta a correggere le depressioni sotto gli occhi, che possono far apparire il viso stanco e invecchiato. Il filler occhiaie migliora il colorito e l'aspetto generale della zona perioculare, donando un aspetto più fresco e riposato. I risultati sono immediati e molto apprezzati da chi soffre di occhiaie persistenti.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "30 minuti",
     "sedute": "1 seduta",
@@ -122,7 +122,7 @@ const treatmentDetails = [
   },
   {
     "nome": "Filler Zigomi",
-    "descrizione": "Iniezioni di filler per aumentare il volume degli zigomi e migliorare la definizione del viso.",
+    "descrizione": "Una procedura per aumentare il volume degli zigomi, migliorando la struttura del viso e restituendo un aspetto più giovane e armonioso. Gli zigomi ben definiti contribuiscono a dare al volto un aspetto più sollevato e tonico, migliorando la simmetria e l'equilibrio del viso. Questo trattamento è indicato per chi desidera recuperare volume perso con l'età o semplicemente accentuare la prominenza degli zigomi, ottenendo un risultato sofisticato e naturale. I risultati sono immediati e durano per molti mesi.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "30 minuti",
     "sedute": "1 seduta",
@@ -132,7 +132,7 @@ const treatmentDetails = [
   },
   {
     "nome": "Full Face",
-    "descrizione": "Trattamento completo di ringiovanimento del viso con l'uso combinato di filler e botox.",
+    "descrizione": "Un trattamento completo che prevede l'utilizzo di filler e botox per migliorare l'aspetto globale del viso. Questo approccio consente di ridefinire i contorni del viso, riempire le rughe, migliorare la simmetria e donare un aspetto complessivamente più giovane e armonioso. Il Full Face è ideale per chi desidera un ringiovanimento globale senza interventi chirurgici invasivi, affrontando diverse problematiche estetiche in un'unica seduta. I risultati sono visibili immediatamente e migliorano ulteriormente nei giorni successivi al trattamento.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "1 ora",
     "sedute": "1-2 sedute",
@@ -142,7 +142,7 @@ const treatmentDetails = [
   },
   {
     "nome": "Microneedling",
-    "descrizione": "Trattamento che stimola la produzione di collagene attraverso micro-perforazioni nella pelle.",
+    "descrizione": "Una tecnica che utilizza microaghi per stimolare la produzione di collagene ed elastina, migliorando la texture della pelle e riducendo cicatrici, macchie e pori dilatati. Il microneedling è efficace per trattare una vasta gamma di problematiche cutanee, inclusi segni di acne, iperpigmentazione e perdita di elasticità. La pelle appare più liscia, compatta e luminosa dopo il trattamento. È adatto a chi desidera un miglioramento generale della qualità della pelle senza ricorrere a trattamenti invasivi.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "45 minuti",
     "sedute": "4-6 sedute",
@@ -152,7 +152,7 @@ const treatmentDetails = [
   },
   {
     "nome": "Peeling",
-    "descrizione": "Trattamento esfoliante per rigenerare la pelle e ridurre le macchie.",
+    "descrizione": "Un trattamento che utilizza soluzioni chimiche per esfoliare la pelle, rimuovendo le cellule morte e stimolando la rigenerazione per una pelle più luminosa e uniforme. Esistono diversi tipi di peeling, da quelli superficiali a quelli più profondi, che vengono scelti in base alle esigenze specifiche del paziente. Il peeling aiuta a migliorare la texture, il tono e la luminosità della pelle, riducendo macchie, rughe sottili e imperfezioni. È un'ottima soluzione per chi desidera un aspetto più fresco e rinnovato senza tempi di recupero lunghi.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "30 minuti",
     "sedute": "3-4 sedute",
@@ -162,7 +162,7 @@ const treatmentDetails = [
   },
   {
     "nome": "Rinofiller",
-    "descrizione": "Rimodellamento del naso senza chirurgia tramite iniezioni di filler.",
+    "descrizione": "Una procedura non chirurgica per migliorare la forma del naso utilizzando filler dermici, correggendo imperfezioni come gobbe o asimmetrie e migliorando la simmetria senza intervento invasivo. Il rinofiller è ideale per chi desidera apportare modifiche estetiche al naso senza affrontare i rischi e i tempi di recupero di una rinoplastica chirurgica. I risultati sono immediati e possono durare diversi mesi, con un miglioramento significativo dell'armonia del volto.",
     "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
     "durata": "30 minuti",
     "sedute": "1 seduta",

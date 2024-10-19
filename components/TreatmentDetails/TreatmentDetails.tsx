@@ -20,35 +20,35 @@ const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment 
           <h1 className="text-2xl font-bold text-center md:text-left text-wrap break-words">{treatment.nome}</h1>
         </div>
         {/* Contenuto sottostante */}
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 md:flex-col md:justify-between md:min-h-[calc(100%-3.5rem)]">
           {/* Descrizione a sinistra */}
-          <div className="text-left">
+          <div className="text-left md:min-h-56">
             <p>{treatment.descrizione}</p>
           </div>
 
           {/* Dettagli a destra */}
-          <div className="flex flex-wrap justify-start w-full gap-1 md:gap-6">
-            <div className="flex flex-col items-center text-center gap-1 w-24">
+          <div className="flex flex-wrap justify-start w-full md:min-h-36 gap-1 md:gap-4">
+            <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faClock} className="mb-2 text-xl" />
               <strong>Durata</strong>
               <p className="text-sm">{treatment.durata}</p>
             </div>
-            <div className="flex flex-col items-center text-center gap-1 w-24">
+            <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faCalendarDays} className="mb-2 text-xl" />
               <strong>Sedute</strong>
               <p className="text-sm">{treatment.sedute}</p>
             </div>
-            <div className="flex flex-col items-center text-center gap-1 w-24">
+            <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faClipboardCheck} className="mb-2 text-xl" />
               <strong>Risultati</strong>
               <p className="text-sm">{treatment.risultati}</p>
             </div>
-            <div className="flex flex-col items-center text-center gap-1 w-24">
+            <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faSyringe} className="mb-2 text-xl" />
               <strong>Prodotti</strong>
               <p className="text-sm">{treatment.prodotti}</p>
             </div>
-            <div className="flex flex-col items-center text-center gap-1 w-24">
+            <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faClockRotateLeft} className="mb-2 text-xl" />
               <strong>Durata Risultati</strong>
               <p className="text-sm">{treatment.durataRisultati}</p>
