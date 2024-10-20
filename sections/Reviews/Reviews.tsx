@@ -10,6 +10,7 @@ import { ReviewType } from '@/types/review';
 import { useReviews } from '@/context/reviewsContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useFadeInOnScroll from '@/hooks/useFadeInOnScroll'; 
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
@@ -72,8 +73,10 @@ const Reviews = () => {
     }
   }, [data, reviews, setReviews]);
 
+  useFadeInOnScroll();
+
   return (
-    <section id="reviews" className="flex flex-col w-full justify-center items-center bg-tiber">
+    <section id="reviews" className="fadeInElement flex flex-col w-full justify-center items-center bg-tiber">
       {reviews && reviews?.length > 0 && (
         <Slider className='w-11/12' {...settings}>
           {reviews.map((review: ReviewType) => (
@@ -81,7 +84,7 @@ const Reviews = () => {
           ))}
         </Slider>
       )}
-      <div className="flex justify-center my-7">
+      <div className="fadeInElement flex justify-center my-7">
         <Link
           href="https://maps.app.goo.gl/Wy4t5npXsJmcvK7T6"
           target="_blank"

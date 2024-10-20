@@ -14,15 +14,15 @@ const Intro = () => {
   const { openModal } = useContext(ComponentsStatusContext) as ComponentsStatusContextType;
 
   useEffect(() => {
-    const elements = document.querySelectorAll(`.${styles.fadeInElement}`);
+    const elements = document.querySelectorAll(`.fadeInElement`);
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add(styles.fadeInVisible);
+            entry.target.classList.add(`fadeInVisible`);
           } else {
-            entry.target.classList.remove(styles.fadeInVisible);
+            entry.target.classList.remove(`fadeInVisible`);
           }
         });
       },
@@ -44,10 +44,10 @@ const Intro = () => {
 
   return (
     <section id="intro" className="bg-tiber w-full flex flex-col justify-start min-h-screen px-5">
-      <h2 className={`${styles.fadeInElement} text-3xl text-white font-bold mb-4 text-center`}>
+      <h2 className="fadeInElement text-3xl text-white font-bold mb-4 text-center">
         Raggiungi il tuo Equilibrio con Professionalità
       </h2>
-      <div className={`text-white mb-5 max-w-4xl mx-auto ${styles.fadeInElement} ${styles.paragraphWithImage} ${styles.fadeInElement}`}>
+      <div className={`text-white mb-5 max-w-4xl mx-auto fadeInElement ${styles.paragraphWithImage} fadeInElement`}>
         <img
           src="/teresi_shape/angelo-estetica.png"
           alt="Angelo Estetica"
@@ -57,7 +57,7 @@ const Intro = () => {
           Sono il Dott. Angelo Teresi, medico chirurgo iscritto all{"\'"}albo, specializzato nel benessere completo a 360° della persona. Il mio obiettivo è aiutarti a raggiungere la migliore versione di te stesso, attraverso un approccio integrato che unisce alimentazione, allenamento e medicina estetica avanzata. Mi occupo infatti di prescrivere diete personalizzate, schede di allenamento su misura ed eseguo specifici trattamenti di medicina estetica, affinché possa aiutarti a raggiungere obiettivi di salute e bellezza, migliorando il tuo equilibrio psicofisico.
         </p>
       </div>
-      <div className={`text-white mb-5 max-w-4xl mx-auto ${styles.fadeInElement} ${styles.paragraphWithImage} ${styles.fadeInElement}`}>
+      <div className={`text-white mb-5 max-w-4xl mx-auto fadeInElement ${styles.paragraphWithImage} fadeInElement`}>
         <img
           src="/teresi_shape/angelo-personal.png"
           alt="Angelo Personal"
@@ -68,7 +68,7 @@ const Intro = () => {
         </p>
       </div>
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className={`${styles.card} ${styles.fadeInElement}`}>
+        <div className={`${styles.card} fadeInElement`}>
           <Image
             src="/home_card/labbra.png"
             alt="Immagine 1"
@@ -95,7 +95,7 @@ const Intro = () => {
           </div>
         </div>
 
-        <div className={`${styles.card} ${styles.fadeInElement}`}>
+        <div className={`${styles.card} fadeInElement`}>
           <Image
             src="/home_card/nutrizione-allenamento.jpg"
             alt="Immagine 2"
@@ -127,3 +127,4 @@ const Intro = () => {
 };
 
 export default Intro;
+

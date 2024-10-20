@@ -5,6 +5,7 @@ import TreatmentDetails from "@/components/TreatmentDetails/TreatmentDetails";
 import { menuItems } from "@/constants";
 import { treatmentDetails } from "@/constants";
 import styles from './Treatments.module.css';
+import useFadeInOnScroll from '@/hooks/useFadeInOnScroll'; 
 
 const Treatments = () => {
   const filteredChildren = menuItems
@@ -19,10 +20,12 @@ const Treatments = () => {
     }
   };
 
+  useFadeInOnScroll();
+
   return (
     <section
       id="treatments"
-      className="flex flex-col w-full items-start mt-5 md:px-56"
+      className="fadeInElement flex flex-col w-full items-start mt-5 md:px-56"
     >
       <div className="flex flex-col md:flex-row w-full items-center justify-between">
         {/* Colonna sinistra (menu) */}

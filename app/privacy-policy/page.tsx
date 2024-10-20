@@ -1,8 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+// src/components/PrivacyPolicy.tsx
+
+"use client";
+
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import useFadeInOnScroll from '@/hooks/useFadeInOnScroll'; 
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: React.FC = () => {
   const markdown = `
 # Informativa sulla Privacy
 
@@ -57,15 +62,19 @@ La presente informativa potrebbe essere soggetta a modifiche o aggiornamenti. In
 **Ultimo aggiornamento:** 14 Ottobre 2024.
 `;
 
+  // Utilizzo del Custom Hook per animare gli elementi durante lo scroll
+  useFadeInOnScroll();
+
   return (
-    <div className="max-w-3xl mx-auto my-8 p-4">
+    <div className="fadeInElement text-white max-w-3xl mx-auto my-8 p-4">
       <ReactMarkdown
         className="prose prose-lg leading-relaxed"
         components={{
-          h1: ({node, ...props}) => <h1 className="mb-8 mt-12 font-bold" {...props} />,
-          h2: ({node, ...props}) => <h2 className="mb-6 mt-8 font-bold" {...props} />,
-          h3: ({node, ...props}) => <h3 className="mb-6 mt-8 font-bold" {...props} />,
-          p: ({node, ...props}) => <p className="mb-6" {...props} />,
+          h1: ({ node, ...props }) => <h1 className="fadeInElement mb-8 mt-12 font-bold" {...props} />,
+          h2: ({ node, ...props }) => <h2 className="fadeInElement mb-6 mt-8 font-bold" {...props} />,
+          h3: ({ node, ...props }) => <h3 className="fadeInElement mb-6 mt-8 font-bold" {...props} />,
+          p: ({ node, ...props }) => <p className="fadeInElement mb-6" {...props} />,
+          // Puoi aggiungere ulteriori elementi se necessario
         }}
       >
         {markdown}

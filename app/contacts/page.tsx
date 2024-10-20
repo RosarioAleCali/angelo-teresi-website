@@ -1,26 +1,38 @@
+// src/components/Contacts.tsx
+
 "use client";
 
+import React from 'react';
 import { Map } from "@/components/Map/index";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faMapPin, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import openMaps from "@/utils/openMaps";
 import ContactForm from "@/components/ContactForm/ContactForm";
+import useFadeInOnScroll from '@/hooks/useFadeInOnScroll'; 
 
-export default function Contacts() {
+const Contacts: React.FC = () => {
+  // Utilizzo del Custom Hook per animare i tre div principali durante lo scroll
+  useFadeInOnScroll();
+
   return (
     <div className="flex flex-col w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] bg-tiber p-10">
       <h2 className="text-3xl text-white font-bold mb-4 text-center">
         Contatti
       </h2>
       <div className="flex flex-col md:flex-row w-full flex-grow gap-6 text-black">
-        <div id="map" className="flex-1 p-4 bg-white border rounded-lg shadow z-10 order-3 md:order-1">
+        {/* Div della Mappa */}
+        <div 
+          id="map" 
+          className="fadeInElement flex-1 p-4 bg-white border rounded-lg shadow z-10 order-3 md:order-1"
+        >
           <Map />
         </div>
 
+        {/* Div dei Contatti */}
         <div
           id="contacts"
-          className="flex-1 flex flex-col p-4 gap-6 bg-white border rounded-lg shadow order-2"
+          className="fadeInElement flex-1 flex flex-col p-4 gap-6 bg-white border rounded-lg shadow order-2"
         >
           <div id="address">
             <h3 className="text-xl font-semibold mb-2 text-gray-800">Indirizzo</h3>
@@ -69,10 +81,13 @@ export default function Contacts() {
           </div>
         </div>
 
-        <div id="contact-form" className="flex-1 p-4 bg-white border rounded-lg shadow order-1 md:order-3">
+        {/* Div del Modulo di Contatto */}
+        <div id="contact-form" className="fadeInElement flex-1 p-4 bg-white border rounded-lg shadow order-1 md:order-3">
           <ContactForm />
         </div>
       </div>
     </div>
   );
 }
+
+export default Contacts;
