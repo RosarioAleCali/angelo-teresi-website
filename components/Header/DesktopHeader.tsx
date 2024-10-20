@@ -23,7 +23,7 @@ const DesktopHeader = () => {
       <Link href="/" className="flex-shrink-0">
         <Image
           src="/logos/white-pictogram.png"
-          alt="Dr. Angelo Teresi Logo"
+          alt="Dr. Angelo Teresi"
           className="transition-all duration-300 ease-in-out"
           width={60}
           height={60}

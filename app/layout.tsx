@@ -27,6 +27,26 @@ export const metadata: Metadata = {
     siteName: "Dr. Angelo Teresi | Medicina Estetica - Nutrizione - Allenamento",
     type: "website",
   },
+  icons: {
+    icon: "https://www.drangeloteresi.com/favicon.ico",
+  },
+  keywords: [
+    "medicina estetica",
+    "nutrizione",
+    "allenamento",
+    "Dr. Angelo Teresi",
+    "filler dermici",
+    "peeling chimici",
+    "botox",
+    "biostimolazione",
+    "Palermo",
+    "online",
+    "medico chirurgo estetico",
+    "piani alimentari",
+    "schede allenamento",
+    "consulente scientifico",
+    "net integratori"
+  ],
 };
 
 export default function RootLayout({

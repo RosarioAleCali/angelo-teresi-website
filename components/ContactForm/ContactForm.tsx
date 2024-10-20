@@ -45,6 +45,7 @@ export default function ContactForm() {
   };
 
   const onCaptchaChange = (value: string | null) => {
+    console.log(value)
     setCaptchaVerified(!!value);
   };
 
