@@ -10,6 +10,8 @@ import { ComponentsStatusContext } from '@/context/componentsStatusContext';
 import { ComponentsStatusContextType } from '@/types/components-status';
 import styles from './Intro.module.css';
 
+import FadeInSection from "@/components/FadeInSection/FadeInSection";
+
 const Intro = () => {
   const { openModal } = useContext(ComponentsStatusContext) as ComponentsStatusContextType;
 
@@ -44,10 +46,14 @@ const Intro = () => {
 
   return (
     <section id="intro" className="bg-tiber w-full flex flex-col justify-start min-h-screen px-5">
-      <h2 className="fadeInElement text-3xl text-white font-bold mb-4 text-center">
+      <FadeInSection>
+      <h2 className="text-3xl text-white font-bold mb-4 text-center">
         Raggiungi il tuo Equilibrio con Professionalità
       </h2>
-      <div className={`text-white mb-5 max-w-4xl mx-auto fadeInElement ${styles.paragraphWithImage} fadeInElement`}>
+      </FadeInSection>
+
+      <FadeInSection>
+      <div className={`text-white mb-5 max-w-4xl mx-auto ${styles.paragraphWithImage}`}>
         <img
           src="/teresi_shape/angelo-estetica.png"
           alt="Angelo Estetica"
@@ -57,7 +63,10 @@ const Intro = () => {
           Sono il Dott. Angelo Teresi, medico chirurgo iscritto all{"\'"}albo, specializzato nel benessere completo a 360° della persona. Il mio obiettivo è aiutarti a raggiungere la migliore versione di te stesso, attraverso un approccio integrato che unisce alimentazione, allenamento e medicina estetica avanzata. Mi occupo infatti di prescrivere diete personalizzate, schede di allenamento su misura ed eseguo specifici trattamenti di medicina estetica, affinché possa aiutarti a raggiungere obiettivi di salute e bellezza, migliorando il tuo equilibrio psicofisico.
         </p>
       </div>
-      <div className={`text-white mb-5 max-w-4xl mx-auto fadeInElement ${styles.paragraphWithImage} fadeInElement`}>
+      </FadeInSection>
+
+      <FadeInSection>
+      <div className={`text-white mb-5 max-w-4xl mx-auto ${styles.paragraphWithImage}`}>
         <img
           src="/teresi_shape/angelo-personal.png"
           alt="Angelo Personal"
@@ -67,8 +76,12 @@ const Intro = () => {
           La tua bellezza è il mio impegno. Credo fermamente che la bellezza esteriore sia il riflesso di un equilibrio interiore, ed è per questo che offro percorsi personalizzati per prendermi cura del tuo corpo a 360 gradi. Insieme, possiamo lavorare per raggiungere il tuo benessere completo.
         </p>
       </div>
+      </FadeInSection>
+
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className={`${styles.card} fadeInElement`}>
+
+        <FadeInSection>
+        <div className={`${styles.card}`}>
           <Image
             src="/home_card/labbra.png"
             alt="Immagine 1"
@@ -94,8 +107,10 @@ const Intro = () => {
             </div>
           </div>
         </div>
+        </FadeInSection>
 
-        <div className={`${styles.card} fadeInElement`}>
+        <FadeInSection>
+        <div className={`${styles.card}`}>
           <Image
             src="/home_card/nutrizione-allenamento.jpg"
             alt="Immagine 2"
@@ -121,6 +136,7 @@ const Intro = () => {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </div>
     </section>
   );

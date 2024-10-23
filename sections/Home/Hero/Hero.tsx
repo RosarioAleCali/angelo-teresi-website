@@ -6,6 +6,8 @@ import Typewriter from 'typewriter-effect';
 import styles from './Hero.module.css';
 import { useState, useEffect } from 'react';
 
+import FadeInSection from "@/components/FadeInSection/FadeInSection";
+
 const Hero = () => {
   const [showWords, setShowWords] = useState(false);
   const [visibleWords, setVisibleWords] = useState(0);
@@ -43,6 +45,7 @@ const Hero = () => {
     <div
       className="bg-tiber text-white w-full flex flex-col items-center justify-center h-[calc(100vh-4.375rem)] md:h-[calc(100vh-5rem)] relative"
     > 
+      <FadeInSection>
       <div className="flex flex-col items-center -mt-[4.375rem] md:-mt-20">
         <div className={styles.imageWrapper}>
           <div className={styles.coinContainer}>
@@ -137,6 +140,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
+      </FadeInSection>
 
     </div>
   );
