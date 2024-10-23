@@ -1,5 +1,3 @@
-// src/components/Contacts.tsx
-
 "use client";
 
 import React from 'react';
@@ -9,18 +7,22 @@ import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faMapPin, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import openMaps from "@/utils/openMaps";
 import ContactForm from "@/components/ContactForm/ContactForm";
-import useFadeInOnScroll from '@/hooks/useFadeInOnScroll'; 
+
+import FadeInSection from '@/components/FadeInSection/FadeInSection';
 
 const Contacts: React.FC = () => {
-  // Utilizzo del Custom Hook per animare i tre div principali durante lo scroll
-  useFadeInOnScroll();
 
   return (
     <div className="flex flex-col w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] bg-tiber p-10">
+
+      <FadeInSection>
       <h2 className="text-3xl text-white font-bold mb-4 text-center">
         Contatti
       </h2>
+      </FadeInSection>
+
       <div className="flex flex-col md:flex-row w-full flex-grow gap-6 text-black">
+        <FadeInSection>
         {/* Div della Mappa */}
         <div 
           id="map" 
@@ -28,7 +30,9 @@ const Contacts: React.FC = () => {
         >
           <Map />
         </div>
+        </FadeInSection>
 
+        <FadeInSection>
         {/* Div dei Contatti */}
         <div
           id="contacts"
@@ -80,11 +84,14 @@ const Contacts: React.FC = () => {
             </ul>
           </div>
         </div>
+        </FadeInSection>
 
+        <FadeInSection>
         {/* Div del Modulo di Contatto */}
         <div id="contact-form" className="fadeInElement flex-1 p-4 bg-white border rounded-lg shadow order-1 md:order-3">
           <ContactForm />
         </div>
+        </FadeInSection>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import TreatmentDetails from "@/components/TreatmentDetails/TreatmentDetails";
 import { menuItems } from "@/constants";
 import { treatmentDetails } from "@/constants";
 import styles from './Treatments.module.css';
-import useFadeInOnScroll from '@/hooks/useFadeInOnScroll'; 
+import FadeInSection from '@/components/FadeInSection/FadeInSection';
 
 const Treatments = () => {
   const filteredChildren = menuItems
@@ -20,15 +20,15 @@ const Treatments = () => {
     }
   };
 
-  useFadeInOnScroll();
-
   return (
+    <FadeInSection>
     <section
       id="treatments"
-      className="fadeInElement flex flex-col w-full items-start mt-5 md:px-56"
+      className="flex flex-col w-full items-start mt-5 md:px-56"
     >
       <div className="flex flex-col md:flex-row w-full items-center justify-between">
         {/* Colonna sinistra (menu) */}
+        <FadeInSection>
         <div
           className="w-full md:w-1/5 hidden flex-col justify-center items-center text-center p-4 md:flex"
         >
@@ -45,6 +45,7 @@ const Treatments = () => {
             ))}
           </ul>
         </div>
+        </FadeInSection>
 
         {/* Menu Mobile (mostrato solo su dispositivi mobili) */}
         <select
@@ -72,6 +73,7 @@ const Treatments = () => {
         </div>
       </div>
     </section>
+    </FadeInSection>
   );
 };
 

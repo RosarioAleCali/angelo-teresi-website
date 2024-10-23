@@ -9,6 +9,10 @@ import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndi
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
 
+import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
+
+
+
 // To prevent icons from becoming huge on page refresh
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa i CSS
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -26,6 +30,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
@@ -37,6 +42,7 @@ export default function RootLayout({
             <BookingModal />
             <MobileBookingButton />
             <ScrollDownIndicator />
+            <ScrollProgress />
             <main
               id="main"
               className="flex flex-col w-full"

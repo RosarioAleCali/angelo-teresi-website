@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const useFadeInOnScroll = (
   selector: string = '.fadeInElement',
-  threshold: number = 0.4
+  threshold: number = 0.1
 ): void => {
   useEffect(() => {
     const elements: NodeListOf<Element> = document.querySelectorAll(selector);
@@ -10,6 +10,7 @@ const useFadeInOnScroll = (
     const observer: IntersectionObserver = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry: IntersectionObserverEntry) => {
+          console.log(entry.isIntersecting)
           if (entry.isIntersecting) {
             entry.target.classList.add('fadeInVisible');
           } else {

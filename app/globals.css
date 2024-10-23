@@ -31,7 +31,7 @@ body, html {
 }
 
 /* FadeInOnScroll Animation */
-@keyframes fadeInUp {
+/* @keyframes fadeInUp {
   0% {
     opacity: 0;
     transform: translateY(20px);
@@ -45,11 +45,11 @@ body, html {
 .fadeInElement {
   opacity: 0;
   transform: translateY(20px);
-  will-change: transform, opacity; /* for more fluidity */
+  will-change: transform, opacity;
 }
 
 .fadeInVisible {
   opacity: 1;
   transform: translateY(0);
   animation: fadeInUp 0.6s ease forwards;
-}
+} */

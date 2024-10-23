@@ -10,11 +10,12 @@ import { ReviewType } from '@/types/review';
 import { useReviews } from '@/context/reviewsContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import useFadeInOnScroll from '@/hooks/useFadeInOnScroll'; 
+import FadeInSection from "@/components/FadeInSection/FadeInSection";
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
 const ReviewCard = ({ review }: { review: ReviewType }) => (
+  <FadeInSection>
   <div className="max-w-md mx-4 py-4 px-8 bg-white shadow-lg rounded-lg my-20">
     <div className="flex justify-center md:justify-end -mt-16">
       <Image
@@ -47,6 +48,7 @@ const ReviewCard = ({ review }: { review: ReviewType }) => (
       </div>
     </div>
   </div>
+  </FadeInSection>
 );
 
 const Reviews = () => {
@@ -73,10 +75,8 @@ const Reviews = () => {
     }
   }, [data, reviews, setReviews]);
 
-  useFadeInOnScroll();
-
   return (
-    <section id="reviews" className="fadeInElement flex flex-col w-full justify-center items-center bg-tiber">
+    <section id="reviews" className="flex flex-col w-full justify-center items-center bg-tiber">
       {reviews && reviews?.length > 0 && (
         <Slider className='w-11/12' {...settings}>
           {reviews.map((review: ReviewType) => (
@@ -84,7 +84,8 @@ const Reviews = () => {
           ))}
         </Slider>
       )}
-      <div className="fadeInElement flex justify-center my-7">
+      <FadeInSection>
+      <div className="flex justify-center my-7">
         <Link
           href="https://maps.app.goo.gl/Wy4t5npXsJmcvK7T6"
           target="_blank"
@@ -101,6 +102,7 @@ const Reviews = () => {
           />
         </Link>
       </div>
+      </FadeInSection>
     </section>
   );
 };
