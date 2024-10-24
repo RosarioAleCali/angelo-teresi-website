@@ -79,7 +79,7 @@ const MobileHeader = () => {
         <Link href="/" className="text-white text-lg font-bold">
           <Image
             src="/logos/white-pictogram.png"
-            alt="Dr. Angelo Teresi Logo"
+            alt="Dr. Angelo Teresi"
             className="transition-all duration-300 ease-in-out"
             width={50}
             height={50}
