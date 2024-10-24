@@ -12,7 +12,7 @@ export default function NutritionAndExercising() {
       <Head>
         <meta property="og:title" content="Nutrizione e Allenamento - Dr. Angelo Teresi" key="title" />
       </Head>
-      <div className="flex flex-col text-center justify-start items-center w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] bg-tiber text-black py-10 px-6 md:px-14">
+      <div className="flex flex-col justify-start items-center w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] bg-tiber text-black py-10 px-6 md:px-14">
 
         {/* Animazione del titolo */}
         <FadeInSection>

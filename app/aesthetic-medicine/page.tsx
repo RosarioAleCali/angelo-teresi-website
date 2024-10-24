@@ -23,19 +23,19 @@ export default function AestheticMedicine() {
           </FadeInSection>
 
           <FadeInSection>
-            <p className="text-white mb-4 max-w-4xl leading-relaxed text-lg text-center md:text-justify">
+            <p className="text-white mb-4 max-w-4xl leading-relaxed text-lg text-left md:text-left">
               Nel mio approccio al benessere, la Medicina Estetica Avanzata gioca un ruolo fondamentale nel valorizzare e mantenere la tua bellezza naturale. Credo che ogni trattamento debba essere in perfetta armonia con la tua unicità, per garantire risultati che siano tanto efficaci quanto naturali. Grazie a tecniche all{"\'"}avanguardia e a prodotti di alta qualità, i miei trattamenti sono mirati a migliorare l{"\'"}aspetto del viso e del corpo, donandoti un{"\'"}immagine fresca e giovane.
             </p>
           </FadeInSection>
 
           <FadeInSection>
-            <p className="text-white mb-4 max-w-4xl leading-relaxed text-lg text-center md:text-justify">
+            <p className="text-white mb-4 max-w-4xl leading-relaxed text-lg text-left md:text-left">
               Offro una varietà di trattamenti, tra cui filler dermici per ridefinire i volumi e correggere le imperfezioni evidenziando la tua bellezza naturale, peeling chimici per una pelle liscia, luminosa e uniforme eliminando macchie e segni del tempo, biostimolazione per stimolare la produzione naturale di collagene ed elastina e restituire tonicità e luminosità alla pelle, e botox per attenuare le rughe d{"\'"}espressione mantenendo la naturalezza delle espressioni.
             </p>
           </FadeInSection>
 
           <FadeInSection>
-            <p className="text-white mb-4 max-w-4xl leading-relaxed text-lg text-center md:text-justify">
+            <p className="text-white mb-4 max-w-4xl leading-relaxed text-lg text-left md:text-left">
               Il mio obiettivo è offrirti un percorso completo e personalizzato, in cui ogni trattamento risponde alle tue esigenze specifiche, garantendo risultati armoniosi e duraturi.
             </p>
           </FadeInSection>
