@@ -1,12 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Typewriter from 'typewriter-effect';
-import styles from './Hero.module.css';
-import { useState, useEffect } from 'react';
-
 import FadeInSection from "@/components/FadeInSection/FadeInSection";
+import styles from './Hero.module.css';
 
 const Hero = () => {
   const [showWords, setShowWords] = useState(false);

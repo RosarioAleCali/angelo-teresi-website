@@ -6,12 +6,9 @@ import Header from '@/components/Header/Header';
 import BookingModal from '@/components/BookingModal/BookingModal';
 import MobileBookingButton from '@/components/MobileBookingButton/MobileBookingButton'
 import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndicator';
+import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
-
-import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
-
-
 
 // To prevent icons from becoming huge on page refresh
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa i CSS
@@ -30,7 +27,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body

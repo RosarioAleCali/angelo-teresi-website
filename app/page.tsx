@@ -4,7 +4,6 @@ import Intro from '@/sections/Home/Intro/Intro';
 import Reviews from '@/sections/Reviews/Reviews';
 
 export default function Home() {
-
   return (
     <div className="bg-tiber">
       <Hero />

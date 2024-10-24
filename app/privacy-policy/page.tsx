@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-// src/components/PrivacyPolicy.tsx
 
 "use client";
 

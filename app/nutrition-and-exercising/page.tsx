@@ -1,10 +1,9 @@
 "use client";
 
 import React from 'react';
-import Reviews from "@/sections/Reviews/Reviews";
 import Image from "next/image";
+import Reviews from "@/sections/Reviews/Reviews";
 import FadeInSection from '@/components/FadeInSection/FadeInSection';
-
 
 export default function NutritionAndExercising() {
   return (
@@ -44,7 +43,6 @@ export default function NutritionAndExercising() {
         </FadeInSection>
       </FadeInSection>
 
-
       {/* Animazione della seconda sezione con immagine e descrizione */}
       <FadeInSection className="flex flex-col-reverse md:flex-row md:gap-4 md:max-w-4xl">
         {/* Animazione solo del paragrafo */}
@@ -64,7 +62,6 @@ export default function NutritionAndExercising() {
           />
         </FadeInSection>
       </FadeInSection>
-
 
       <Reviews />
     </div>

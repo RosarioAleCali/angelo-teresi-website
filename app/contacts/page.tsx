@@ -5,10 +5,9 @@ import { Map } from "@/components/Map/index";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faMapPin, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import openMaps from "@/utils/openMaps";
-import ContactForm from "@/components/ContactForm/ContactForm";
-
 import FadeInSection from '@/components/FadeInSection/FadeInSection';
+import ContactForm from "@/components/ContactForm/ContactForm";
+import openMaps from "@/utils/openMaps";
 
 const Contacts: React.FC = () => {
   return (
