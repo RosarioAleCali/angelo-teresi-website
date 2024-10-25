@@ -4,8 +4,7 @@
 
 import React from 'react';
 import Head from "next/head";
-import ReactMarkdown from 'react-markdown';
-import useFadeInOnScroll from '@/hooks/useFadeInOnScroll'; 
+import ReactMarkdown from 'react-markdown'; 
 import FadeInSection from '@/components/FadeInSection/FadeInSection';
 
 const PrivacyPolicy: React.FC = () => {
@@ -62,9 +61,6 @@ La presente informativa potrebbe essere soggetta a modifiche o aggiornamenti. In
 
 **Ultimo aggiornamento:** 14 Ottobre 2024.
 `;
-
-  // Utilizzo del Custom Hook per animare gli elementi durante lo scroll
-  useFadeInOnScroll();
 
   return (
     <>
