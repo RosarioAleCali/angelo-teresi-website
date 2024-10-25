@@ -1,9 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+
+"use client";
+
 import React from 'react';
 import Head from "next/head";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown'; 
+import FadeInSection from '@/components/FadeInSection/FadeInSection';
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: React.FC = () => {
   const markdown = `
 # Informativa sulla Privacy
 
@@ -63,19 +67,21 @@ La presente informativa potrebbe essere soggetta a modifiche o aggiornamenti. In
       <Head>
         <meta property="og:title" content="Informativa sulla Privacy - Dr. Angelo Teresi" key="title" />
       </Head>
-      <div className="max-w-3xl mx-auto my-8 p-4">
-        <ReactMarkdown
-          className="prose prose-lg leading-relaxed"
-          components={{
-            h1: ({node, ...props}) => <h1 className="mb-8 mt-12 font-bold" {...props} />,
-            h2: ({node, ...props}) => <h2 className="mb-6 mt-8 font-bold" {...props} />,
-            h3: ({node, ...props}) => <h3 className="mb-6 mt-8 font-bold" {...props} />,
-            p: ({node, ...props}) => <p className="mb-6" {...props} />,
-          }}
-        >
-          {markdown}
-        </ReactMarkdown>
-      </div>
+      <FadeInSection>
+        <div className="text-white max-w-3xl mx-auto my-8 p-4">
+          <ReactMarkdown
+            className="prose prose-lg leading-relaxed"
+            components={{
+              h1: ({ node, ...props }) => <h1 className="mb-8 mt-12 font-bold" {...props} />,
+              h2: ({ node, ...props }) => <h2 className="mb-6 mt-8 font-bold" {...props} />,
+              h3: ({ node, ...props }) => <h3 className="mb-6 mt-8 font-bold" {...props} />,
+              p: ({ node, ...props }) => <p className="mb-6" {...props} />,
+            }}
+          >
+            {markdown}
+          </ReactMarkdown>
+        </div>
+      </FadeInSection>
     </>
   );
 };

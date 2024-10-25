@@ -6,6 +6,7 @@ import Header from '@/components/Header/Header';
 import BookingModal from '@/components/BookingModal/BookingModal';
 import MobileBookingButton from '@/components/MobileBookingButton/MobileBookingButton'
 import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndicator';
+import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
 
@@ -65,6 +66,7 @@ export default function RootLayout({
             <BookingModal />
             <MobileBookingButton />
             <ScrollDownIndicator />
+            <ScrollProgress />
             <main
               id="main"
               className="flex flex-col w-full"
