@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,35 +13,6 @@ import styles from './Intro.module.css';
 
 const Intro = () => {
   const { openModal } = useContext(ComponentsStatusContext) as ComponentsStatusContextType;
-
-  useEffect(() => {
-    const elements = document.querySelectorAll(`.fadeInElement`);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(`fadeInVisible`);
-          } else {
-            entry.target.classList.remove(`fadeInVisible`);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    elements.forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => {
-      elements.forEach((el) => {
-        observer.unobserve(el);
-      });
-    };
-  }, []);
 
   return (
     <section id="intro" className="bg-tiber w-full flex flex-col justify-start min-h-screen px-5">
