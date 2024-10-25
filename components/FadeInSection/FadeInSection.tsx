@@ -9,10 +9,8 @@ interface FadeInSectionProps {
   duration?: number;
   direction?: 'up' | 'down' | 'left' | 'right';
   distance?: number;
-  threshold?: number;
   once?: boolean;
   className?: string;
-  rootMargin?: string;      // Rinominato da margin a rootMargin
   scrollThreshold?: number;
   exitDuration?: number;
 }
@@ -23,10 +21,8 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
   duration = 0.6,
   direction = 'up',
   distance = 50,
-  threshold = 0.1,
   once = false,
   className = '',
-  rootMargin = '-100px 0px -100px 0px',  // Modificato per maggiore stabilità
   scrollThreshold = 150,     // Aumentato il default
   exitDuration = 0.15,
 }) => {
@@ -39,9 +35,7 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
   const animationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const isInView = useInView(ref, {
-    threshold,
     once: false,
-    rootMargin,    // Ora usando rootMargin invece di margin
   });
 
   const getInitialOffset = () => {
