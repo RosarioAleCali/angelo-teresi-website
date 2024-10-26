@@ -73,7 +73,7 @@ const treatmentDetails = [
   {
     "nome": "Biostimolazione",
     "descrizione": "Un trattamento che mira a rivitalizzare la pelle attraverso l'iniezione di sostanze come vitamine, minerali e acido ialuronico. Queste sostanze stimolano la produzione di collagene e di elastina, migliorando il tono, l'elasticità e la luminosità della pelle. Questo trattamento aiuta anche a prevenire l'invecchiamento cutaneo, donando al viso un aspetto più fresco e vitale. È particolarmente indicato per chi vuole contrastare i segni di stanchezza e disidratazione, restituendo al volto un aspetto più giovane e sano.",
-    "immagini": ["/before_after/2-prima-dopo-2.png", "/before_after/2-prima-dopo-3.png"],
+    "immagini": ["/before_after/biostimolazione-prima.png", "/before_after/biostimolazione-dopo.png"],
     "durata": "30 minuti",
     "sedute": "3-4 sedute",
     "risultati": "Pelle più tonica e idratata",
@@ -83,7 +83,7 @@ const treatmentDetails = [
   {
     "nome": "Botox",
     "descrizione": "Un trattamento iniettivo per ridurre rughe e linee d'espressione, principalmente nella zona della fronte, degli occhi e tra le sopracciglia. Il botox agisce rilassando i muscoli responsabili della formazione delle pieghe, offrendo un effetto distensivo e rendendo la pelle più liscia. È ideale per chi desidera un aspetto più rilassato e riposato, senza ricorrere a interventi chirurgici. I risultati sono temporanei ma molto efficaci e durano generalmente alcuni mesi, dopo i quali il trattamento può essere ripetuto.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/botox-prima.png", "/before_after/botox-dopo.png"],
     "durata": "20 minuti",
     "sedute": "1 seduta",
     "risultati": "Rughe ridotte e pelle distesa",
@@ -93,7 +93,7 @@ const treatmentDetails = [
   {
     "nome": "Filler Labbra",
     "descrizione": "Una procedura per aumentare il volume e definire il contorno delle labbra, utilizzando acido ialuronico per ottenere un risultato naturale e armonioso. Questo trattamento è ideale per chi desidera labbra più piene e ben definite, correggendo asimmetrie o semplicemente donando maggiore volume. Inoltre, il filler labbra aiuta a migliorare l'idratazione della zona, rendendo le labbra più morbide e levigate. I risultati sono immediati e durano diversi mesi, a seconda del tipo di prodotto utilizzato.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/filler-labbra-prima.png", "/before_after/filler-labbra-dopo.png"],
     "durata": "30 minuti",
     "sedute": "1 seduta",
     "risultati": "Labbra più voluminose e definite",
@@ -123,7 +123,7 @@ const treatmentDetails = [
   {
     "nome": "Filler Zigomi",
     "descrizione": "Una procedura per aumentare il volume degli zigomi, migliorando la struttura del viso e restituendo un aspetto più giovane e armonioso. Gli zigomi ben definiti contribuiscono a dare al volto un aspetto più sollevato e tonico, migliorando la simmetria e l'equilibrio del viso. Questo trattamento è indicato per chi desidera recuperare volume perso con l'età o semplicemente accentuare la prominenza degli zigomi, ottenendo un risultato sofisticato e naturale. I risultati sono immediati e durano per molti mesi.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/zigomo_filler-prima.png", "/before_after/zigomo_filler-dopo.png"],
     "durata": "30 minuti",
     "sedute": "1 seduta",
     "risultati": "Zigomi più pieni e definiti",
@@ -163,7 +163,7 @@ const treatmentDetails = [
   {
     "nome": "Rinofiller",
     "descrizione": "Una procedura non chirurgica per migliorare la forma del naso utilizzando filler dermici, correggendo imperfezioni come gobbe o asimmetrie e migliorando la simmetria senza intervento invasivo. Il rinofiller è ideale per chi desidera apportare modifiche estetiche al naso senza affrontare i rischi e i tempi di recupero di una rinoplastica chirurgica. I risultati sono immediati e possono durare diversi mesi, con un miglioramento significativo dell'armonia del volto.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/rino_filler-prima.png", "/before_after/rino_filler-dopo.png"],
     "durata": "30 minuti",
     "sedute": "1 seduta",
     "risultati": "Profilo nasale migliorato",

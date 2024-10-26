@@ -1,6 +1,3 @@
-import TreatmentDetail from "@/types/TreatmentDetail";
-import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faSyringe, 
@@ -9,6 +6,8 @@ import {
   faClipboardCheck,
   faCalendarDays
 } from '@fortawesome/free-solid-svg-icons';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
+import TreatmentDetail from "@/types/TreatmentDetail";
 
 const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment }) => {
   return (

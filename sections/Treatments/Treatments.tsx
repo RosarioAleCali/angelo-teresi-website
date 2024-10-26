@@ -1,10 +1,10 @@
 "use client"
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TreatmentDetails from "@/components/TreatmentDetails/TreatmentDetails";
 import { menuItems } from "@/constants";
 import { treatmentDetails } from "@/constants";
-import styles from './Treatments.module.css';
 import FadeInSection from '@/components/FadeInSection/FadeInSection';
 import { ChevronDown } from 'lucide-react';
 
