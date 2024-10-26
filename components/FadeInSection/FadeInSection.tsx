@@ -29,7 +29,6 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
   const ref = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
   const lastScrollTime = useRef(0);
   const lastScrollY = useRef(0);
   const animationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -97,41 +96,35 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
     };
   }, [handleScroll]);
 
-  useEffect(() => {
-    const handleAnimation = async () => {
-      if (isInView && (!once || !hasAnimated)) {
-        // Cancella eventuali timeout pendenti
+  const handleAnimation = useCallback(async () => {
+    if (isInView && (!once || !hasAnimated)) {
+      if (animationTimeoutRef.current) {
+        clearTimeout(animationTimeoutRef.current);
+      }
+
+      await controls.start('visible');
+      setHasAnimated(true);
+    } else if (!isInView && !once) {
+      const currentScrollY = window.scrollY;
+      const scrollingUp = currentScrollY < lastScrollY.current;
+
+      if (scrollingUp) {
         if (animationTimeoutRef.current) {
           clearTimeout(animationTimeoutRef.current);
         }
 
-        setIsAnimating(true);
-        await controls.start('visible');
-        setHasAnimated(true);
-        setIsAnimating(false);
-      } else if (!isInView && !once) {
-        // Se stiamo scrollando verso l'alto, aggiungiamo un delay
-        const currentScrollY = window.scrollY;
-        const scrollingUp = currentScrollY < lastScrollY.current;
-
-        if (scrollingUp) {
-          if (animationTimeoutRef.current) {
-            clearTimeout(animationTimeoutRef.current);
-          }
-
-          animationTimeoutRef.current = setTimeout(() => {
-            if (!isAnimating) {
-              controls.start('hidden');
-            }
-          }, scrollThreshold);
-        } else {
+        animationTimeoutRef.current = setTimeout(() => {
           controls.start('hidden');
-        }
+        }, scrollThreshold);
+      } else {
+        controls.start('hidden');
       }
-    };
-
+    }
+  }, [isInView, once, hasAnimated, scrollThreshold, controls]);
+  
+  useEffect(() => {
     handleAnimation();
-  }, [isInView, controls, once, hasAnimated, isAnimating, scrollThreshold]);
+  }, [handleAnimation]);
 
   return (
     <motion.div

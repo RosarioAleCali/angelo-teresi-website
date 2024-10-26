@@ -75,7 +75,6 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
     };
   }, [isDragging]);
 
-  // Il resto del componente rimane invariato...
   return (
     <div 
       ref={containerRef}
@@ -97,8 +96,9 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         <Image
           src={afterImage}
           alt={afterLabel}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
         />
       </div>
@@ -112,8 +112,9 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         <Image
           src={beforeImage}
           alt={beforeLabel}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
         />
       </div>

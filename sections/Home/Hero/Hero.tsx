@@ -72,6 +72,7 @@ const Hero = () => {
             width={500}
             height={500}
             className={`${styles.leftImage} hidden md:block ${styles.slideInLeft} z-20`} // Aggiunto z-index per assicurare la posizione sopra
+            priority
           />
           <Image
             src="/teresi_shape/angelo-estetica.png"
@@ -79,6 +80,7 @@ const Hero = () => {
             width={500}
             height={500}
             className={`${styles.rightImage} hidden md:block ${styles.slideInRight} z-20`} // Aggiunto z-index per assicurare la posizione sopra
+            priority
           />
         </div>
 
