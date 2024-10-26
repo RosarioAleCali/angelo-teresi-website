@@ -35,6 +35,12 @@ export default function NutritionAndExercising() {
           </h2>
         </FadeInSection>
 
+        <FadeInSection>
+          <p className="text-white text-lg mb-4 md:max-w-4xl">
+            La nutrizione e l{"'"}allenamento sono elementi fondamentali e complementari per raggiungere un benessere duraturo. Offro piani nutrizionali personalizzati per soddisfare le esigenze individuali, aiutando le persone a perdere peso, migliorare le prestazioni fisiche o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Allo stesso modo, progetto schede di allenamento su misura, adattabili a diversi livelli di forma fisica e obiettivi personali, che mirano a massimizzare l{"'"}efficacia degli esercizi e a ridurre il rischio di infortuni. Combinando una corretta alimentazione con un allenamento efficace, mi impegno a supportare il benessere fisico e la qualità di vita di ogni persona, sviluppando abitudini sostenibili e integrate nello stile di vita quotidiano.
+          </p>
+        </FadeInSection>
+
         <FadeInSection className="flex flex-col md:flex-row md:gap-4 mb-6 md:max-w-4xl">
           <div className="md:w-1/2 w-full flex justify-center">
           <AnimatePresence mode="wait">
