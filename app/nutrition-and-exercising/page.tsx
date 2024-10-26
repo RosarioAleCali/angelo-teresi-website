@@ -43,25 +43,27 @@ export default function NutritionAndExercising() {
 
         <FadeInSection className="flex flex-col md:flex-row md:gap-4 mb-6 md:max-w-4xl">
           <div className="md:w-1/2 w-full flex justify-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentImage}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="w-full h-auto md:max-w-[80%]"
-            >
-              <Image
-                src={nutrition_images[currentImage]}
-                alt="Nutrizione"
-                width={500}
-                height={500}
-                priority
-                className="w-full h-auto object-cover rounded-lg border-solid border-white border-4"
-              />
-            </motion.div>
-          </AnimatePresence>
+          <FadeInSection className="md:w-1/2 w-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImage}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                className="w-full h-auto md:max-w-[80%]"
+              >
+                <Image
+                  src={nutrition_images[currentImage]}
+                  alt="Nutrizione"
+                  width={500}
+                  height={500}
+                  priority
+                  className="w-full h-auto object-cover rounded-lg border-solid border-white border-4"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </FadeInSection>
           </div>
 
           <FadeInSection className="text-white text-lg md:w-1/2 w-full md:pl-4">
