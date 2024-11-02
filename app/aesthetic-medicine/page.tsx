@@ -5,6 +5,7 @@ import Reviews from "@/sections/Reviews/Reviews";
 import Treatments from "@/sections/Treatments/Treatments"; 
 
 import FadeInSection from "@/components/FadeInSection/FadeInSection";
+import BookingButton from "@/components/BookingButton/BookingButton";
 
 export default function AestheticMedicine() {
   return (
@@ -24,13 +25,13 @@ export default function AestheticMedicine() {
 
           <FadeInSection>
             <p className="text-white mb-4 max-w-4xl leading-relaxed text-lg text-left md:text-left">
-              Nel mio approccio al benessere, la Medicina Estetica Avanzata gioca un ruolo fondamentale nel valorizzare e mantenere la tua bellezza naturale. Credo che ogni trattamento debba essere in perfetta armonia con la tua unicità, per garantire risultati che siano tanto efficaci quanto naturali. Grazie a tecniche all{"\'"}avanguardia e a prodotti di alta qualità, i miei trattamenti sono mirati a migliorare l{"\'"}aspetto del viso e del corpo, donandoti un{"\'"}immagine fresca e giovane.
+              La Medicina Estetica Avanzata valorizza la tua bellezza naturale, con trattamenti armonizzati alla tua unicità per risultati efficaci e naturali. Utilizzo tecniche all{"\'"}avanguardia e prodotti di alta qualità per migliorare l{"\'"}aspetto di viso e corpo, donando un{"\'"}immagine fresca e giovane
             </p>
           </FadeInSection>
 
           <FadeInSection>
             <p className="text-white mb-4 max-w-4xl leading-relaxed text-lg text-left md:text-left">
-              Offro una varietà di trattamenti, tra cui filler dermici per ridefinire i volumi e correggere le imperfezioni evidenziando la tua bellezza naturale, peeling chimici per una pelle liscia, luminosa e uniforme eliminando macchie e segni del tempo, biostimolazione per stimolare la produzione naturale di collagene ed elastina e restituire tonicità e luminosità alla pelle, e botox per attenuare le rughe d{"\'"}espressione mantenendo la naturalezza delle espressioni.
+            Offro trattamenti come filler dermici per ridefinire i volumi, peeling chimici per una pelle liscia e uniforme, biostimolazione per stimolare collagene ed elastina, e botox per attenuare le rughe mantenendo la naturalezza delle espressioni
             </p>
           </FadeInSection>
 
@@ -41,6 +42,11 @@ export default function AestheticMedicine() {
           </FadeInSection>
 
           <Treatments />
+
+          <FadeInSection className="flex justify-center mt-10">
+            <BookingButton size='lg' />
+          </FadeInSection>
+
           <Reviews />
         </div>
       </FadeInSection>

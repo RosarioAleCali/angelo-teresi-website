@@ -6,6 +6,7 @@ import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
 import Reviews from "@/sections/Reviews/Reviews";
 import FadeInSection from '@/components/FadeInSection/FadeInSection';
+import BookingButton from '@/components/BookingButton/BookingButton';
 
 const nutrition_images = [
   "/nutrizione_allenamento/nutrizione-1.jpg",
@@ -18,7 +19,7 @@ export default function NutritionAndExercising() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % nutrition_images.length);
-    }, 10000);
+    }, 7000);
     return () => clearInterval(interval);
   }, []);
 
@@ -28,7 +29,6 @@ export default function NutritionAndExercising() {
         <meta property="og:title" content="Nutrizione e Allenamento - Dr. Angelo Teresi" key="title" />
       </Head>
       <div className="flex flex-col justify-start items-center w-full min-h-[calc(100vh-70px)] md:min-h-[calc(100vh-80px)] bg-tiber text-black py-10 px-6 md:px-14">
-
         <FadeInSection>
           <h2 className="text-3xl text-white font-bold mb-4 text-center">
             Nutrizione e Allenamento
@@ -37,14 +37,109 @@ export default function NutritionAndExercising() {
 
         <FadeInSection>
           <p className="text-white text-lg mb-4 md:max-w-4xl">
-            La nutrizione e l{"'"}allenamento sono elementi fondamentali e complementari per raggiungere un benessere duraturo. Offro piani nutrizionali personalizzati per soddisfare le esigenze individuali, aiutando le persone a perdere peso, migliorare le prestazioni fisiche o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Allo stesso modo, progetto schede di allenamento su misura, adattabili a diversi livelli di forma fisica e obiettivi personali, che mirano a massimizzare l{"'"}efficacia degli esercizi e a ridurre il rischio di infortuni. Combinando una corretta alimentazione con un allenamento efficace, mi impegno a supportare il benessere fisico e la qualità di vita di ogni persona, sviluppando abitudini sostenibili e integrate nello stile di vita quotidiano.
+            La <strong>nutrizione e l{"'"}allenamento</strong> sono fondamentali per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Progetto schede di allenamento su misura per diversi livelli e obiettivi, massimizzando l{"'"}efficacia degli esercizi e riducendo il rischio di infortuni. Combinando alimentazione e allenamento, supporto il benessere fisico e lo sviluppo di abitudini sostenibili.
           </p>
         </FadeInSection>
 
-        <FadeInSection className="flex flex-col md:flex-row md:gap-4 mb-6 md:max-w-4xl">
+        {/* Container con versione mobile e desktop */}
+        <div className="w-full max-w-4xl">
+          {/* Versione Mobile */}
+          <div className="flex flex-col md:hidden">
+            <FadeInSection className="mb-6">
+              <div className="relative w-full border-4 border-[#31ACA6] rounded-lg overflow-hidden">
+                <Image
+                  src="/Teresi2.jpg"
+                  alt="Nutrizione"
+                  width={2949}
+                  height={4128}
+                  priority
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </FadeInSection>
 
-          <FadeInSection className="md:w-1/2 w-full flex justify-center">
-              <div className="relative w-full h-auto md:max-w-[80%] border-solid border-white border-4 rounded-lg overflow-hidden">
+            <FadeInSection className="text-white text-lg mb-6">
+              <p>
+                La <strong>nutrizione</strong> è essenziale per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Supporto lo sviluppo di abitudini alimentari sostenibili per migliorare la qualità di vita e il benessere fisico.
+              </p>
+            </FadeInSection>
+
+            <FadeInSection className="mb-6">
+              <div className="relative w-full border-4 border-[#31ACA6] rounded-lg overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImage}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                  >
+                    <Image
+                      src={nutrition_images[currentImage]}
+                      alt="Nutrizione"
+                      width={2949}
+                      height={4128}
+                      priority
+                      className="w-full h-auto object-cover"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </FadeInSection>
+
+            <FadeInSection className="text-white text-lg">
+              <p>
+                L{"'"}<strong>allenamento</strong> è fondamentale per il benessere completo. Progetto schede su misura, adattabili al tuo livello di forma fisica e obiettivi, sia per aumentare massa muscolare, migliorare la resistenza o sentirti meglio nel tuo corpo. Ogni programma è studiato per massimizzare l{"'"}efficacia degli esercizi e ridurre il rischio di infortuni, sia in studio che a casa. L{"'"}obiettivo è sviluppare una routine integrata nel tuo stile di vita, migliorando salute fisica e benessere generale.
+              </p>
+            </FadeInSection>
+
+            {/* BookingButton Solo per Mobile */}
+            <FadeInSection className="flex justify-center mt-10">
+              <BookingButton size='lg' />
+            </FadeInSection>
+          </div>
+
+          {/* Versione Desktop */}
+          <FadeInSection className="hidden md:block md:aspect-square">
+            <div className="grid grid-cols-2 grid-rows-2 border-4 rounded-lg border-[#31ACA6] h-full">
+
+              {/* Prima Immagine con Hover Effect */}
+              <div className="relative w-full h-full border-[#31ACA6] group">
+                <Image
+                  src="/Teresi2.jpg"
+                  alt="Nutrizione"
+                  width={2949}
+                  height={4128}
+                  priority
+                  className="w-full h-full object-cover"
+                />
+
+                {/* Overlay con Effetto Hover */}
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex justify-center items-center">
+                  {/* BookingButton Visibile al Hover */}
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <BookingButton />
+                  </div>
+                </div>
+              </div>
+
+              {/* Testo Allenamento */}
+              <div className="text-white p-6 flex items-center border-l-4 border-[#31ACA6]">
+                <p className="text-lg">
+                  L{"'"}<strong>allenamento</strong> è fondamentale per il benessere completo. Progetto schede su misura, adattabili al tuo livello di forma fisica e obiettivi, sia per aumentare massa muscolare, migliorare la resistenza o sentirti meglio nel tuo corpo. Ogni programma è studiato per massimizzare l{"'"}efficacia degli esercizi e ridurre il rischio di infortuni, sia in studio che a casa. L{"'"}obiettivo è sviluppare una routine integrata nel tuo stile di vita, migliorando salute fisica e benessere generale.
+                </p>
+
+              </div>
+
+              {/* Testo Nutrizione */}
+              <div className="text-white p-6 flex items-center border-t-4 border-[#31ACA6]">
+                <p className="text-lg">
+                  La <strong>nutrizione</strong> è essenziale per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Supporto lo sviluppo di abitudini alimentari sostenibili per migliorare la qualità di vita e il benessere fisico.
+                </p>
+              </div>
+
+              {/* Immagine Animata con Hover Effect */}
+              <div className="relative w-full h-full border-l-4 border-t-4 border-[#31ACA6] group">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentImage}
@@ -60,50 +155,23 @@ export default function NutritionAndExercising() {
                       width={2949}
                       height={4128}
                       priority
-                      className="w-full h-auto object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </motion.div>
                 </AnimatePresence>
+
+                {/* Overlay con Effetto Hover */}
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex justify-center items-center">
+                  {/* BookingButton Visibile al Hover */}
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <BookingButton />
+                  </div>
+                </div>
               </div>
-          </FadeInSection>
 
-          <FadeInSection className="text-white text-lg mt-4 md:w-1/2 w-full md:pl-4">
-            La nutrizione e l{"'"}allenamento sono elementi fondamentali e complementari per raggiungere un benessere duraturo. Offro piani nutrizionali personalizzati per soddisfare le esigenze individuali, aiutando le persone a perdere peso, migliorare le prestazioni fisiche o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Allo stesso modo, progetto schede di allenamento su misura, adattabili a diversi livelli di forma fisica e obiettivi personali, che mirano a massimizzare l{"'"}efficacia degli esercizi e a ridurre il rischio di infortuni. Combinando una corretta alimentazione con un allenamento efficace, mi impegno a supportare il benessere fisico e la qualità di vita di ogni persona, sviluppando abitudini sostenibili e integrate nello stile di vita quotidiano.
-          </FadeInSection>
-
-        </FadeInSection>
-
-        <FadeInSection className="flex flex-col-reverse md:flex-row md:gap-4 md:max-w-4xl">
-          
-          <FadeInSection className="text-white text-lg mt-4 md:mt-0 md:w-1/2 w-full">
-            L{"'"}allenamento è un altro elemento essenziale del percorso verso il benessere completo. Progetto schede di allenamento su misura, adattabili al tuo livello di forma fisica e ai tuoi obiettivi personali. Che tu voglia aumentare la massa muscolare, migliorare la resistenza o semplicemente sentirti meglio nel tuo corpo, ogni programma è studiato nei minimi dettagli per massimizzare l{"'"}efficacia degli esercizi e ridurre al minimo il rischio di infortuni. Offro soluzioni adatte sia per chi preferisce allenarsi in studio sia per chi preferisce farlo a casa, garantendo un allenamento sicuro e produttivo. Il mio obiettivo è aiutarti a sviluppare una routine di allenamento che diventi parte integrante del tuo stile di vita, contribuendo a migliorare la tua salute fisica e il tuo benessere generale.
-          </FadeInSection>
-
-          <FadeInSection className="md:w-1/2 w-full flex justify-center">
-            <div className="relative w-full h-auto md:max-w-[80%] border-solid border-white border-4 rounded-lg overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentImage}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
-                  className="w-full h-full"
-                >
-                  <Image
-                    src={nutrition_images[currentImage]}
-                    alt="Nutrizione"
-                    width={2949}
-                    height={4128}
-                    priority
-                    className="w-full h-auto object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
             </div>
           </FadeInSection>
-
-        </FadeInSection>
+        </div>
 
         <Reviews />
       </div>
