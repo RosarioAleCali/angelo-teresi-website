@@ -55,7 +55,7 @@ const Intro = () => {
             <Link href="/aesthetic-medicine">
               <Image
                 src="/home_card/labbra.png"
-                alt="Immagine 1"
+                alt="Medicina Estetica"
                 width={432}
                 height={200}
                 className={styles.cardImage}
@@ -86,7 +86,7 @@ const Intro = () => {
             <Link href="/nutrition-and-exercising">
               <Image
                 src="/home_card/nutrizione-allenamento.jpg"
-                alt="Immagine 2"
+                alt="Nutrizione e Allenamento"
                 width={432}
                 height={200}
                 className={styles.cardImage}
