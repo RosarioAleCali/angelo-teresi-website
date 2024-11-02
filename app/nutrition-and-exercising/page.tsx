@@ -37,7 +37,7 @@ export default function NutritionAndExercising() {
 
         <FadeInSection>
           <p className="text-white text-lg mb-4 md:max-w-4xl">
-            La nutrizione e l{"'"}allenamento sono fondamentali per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Progetto schede di allenamento su misura per diversi livelli e obiettivi, massimizzando l{"'"}efficacia degli esercizi e riducendo il rischio di infortuni. Combinando alimentazione e allenamento, supporto il benessere fisico e lo sviluppo di abitudini sostenibili.
+            La <strong>nutrizione e l{"'"}allenamento</strong> sono fondamentali per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Progetto schede di allenamento su misura per diversi livelli e obiettivi, massimizzando l{"'"}efficacia degli esercizi e riducendo il rischio di infortuni. Combinando alimentazione e allenamento, supporto il benessere fisico e lo sviluppo di abitudini sostenibili.
           </p>
         </FadeInSection>
 
@@ -60,7 +60,7 @@ export default function NutritionAndExercising() {
 
             <FadeInSection className="text-white text-lg mb-6">
               <p>
-                La nutrizione è essenziale per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Supporto lo sviluppo di abitudini alimentari sostenibili per migliorare la qualità di vita e il benessere fisico.
+                La <strong>nutrizione</strong> è essenziale per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Supporto lo sviluppo di abitudini alimentari sostenibili per migliorare la qualità di vita e il benessere fisico.
               </p>
             </FadeInSection>
 
@@ -89,7 +89,7 @@ export default function NutritionAndExercising() {
 
             <FadeInSection className="text-white text-lg">
               <p>
-                L{"'"}allenamento è fondamentale per il benessere completo. Progetto schede su misura, adattabili al tuo livello di forma fisica e obiettivi, sia per aumentare massa muscolare, migliorare la resistenza o sentirti meglio nel tuo corpo. Ogni programma è studiato per massimizzare l{"'"}efficacia degli esercizi e ridurre il rischio di infortuni, sia in studio che a casa. L{"'"}obiettivo è sviluppare una routine integrata nel tuo stile di vita, migliorando salute fisica e benessere generale.
+                L{"'"}<strong>allenamento</strong> è fondamentale per il benessere completo. Progetto schede su misura, adattabili al tuo livello di forma fisica e obiettivi, sia per aumentare massa muscolare, migliorare la resistenza o sentirti meglio nel tuo corpo. Ogni programma è studiato per massimizzare l{"'"}efficacia degli esercizi e ridurre il rischio di infortuni, sia in studio che a casa. L{"'"}obiettivo è sviluppare una routine integrata nel tuo stile di vita, migliorando salute fisica e benessere generale.
               </p>
             </FadeInSection>
 
@@ -100,7 +100,7 @@ export default function NutritionAndExercising() {
           </div>
 
           {/* Versione Desktop */}
-          <div className="hidden md:block md:aspect-square">
+          <FadeInSection className="hidden md:block md:aspect-square">
             <div className="grid grid-cols-2 grid-rows-2 border-4 rounded-lg border-[#31ACA6] h-full">
 
               {/* Prima Immagine con Hover Effect */}
@@ -126,7 +126,7 @@ export default function NutritionAndExercising() {
               {/* Testo Allenamento */}
               <div className="text-white p-6 flex items-center border-l-4 border-[#31ACA6]">
                 <p className="text-lg">
-                  L{"'"}allenamento è fondamentale per il benessere completo. Progetto schede su misura, adattabili al tuo livello di forma fisica e obiettivi, sia per aumentare massa muscolare, migliorare la resistenza o sentirti meglio nel tuo corpo. Ogni programma è studiato per massimizzare l{"'"}efficacia degli esercizi e ridurre il rischio di infortuni, sia in studio che a casa. L{"'"}obiettivo è sviluppare una routine integrata nel tuo stile di vita, migliorando salute fisica e benessere generale.
+                  L{"'"}<strong>allenamento</strong> è fondamentale per il benessere completo. Progetto schede su misura, adattabili al tuo livello di forma fisica e obiettivi, sia per aumentare massa muscolare, migliorare la resistenza o sentirti meglio nel tuo corpo. Ogni programma è studiato per massimizzare l{"'"}efficacia degli esercizi e ridurre il rischio di infortuni, sia in studio che a casa. L{"'"}obiettivo è sviluppare una routine integrata nel tuo stile di vita, migliorando salute fisica e benessere generale.
                 </p>
 
               </div>
@@ -134,7 +134,7 @@ export default function NutritionAndExercising() {
               {/* Testo Nutrizione */}
               <div className="text-white p-6 flex items-center border-t-4 border-[#31ACA6]">
                 <p className="text-lg">
-                  La nutrizione è essenziale per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Supporto lo sviluppo di abitudini alimentari sostenibili per migliorare la qualità di vita e il benessere fisico.
+                  La <strong>nutrizione</strong> è essenziale per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Supporto lo sviluppo di abitudini alimentari sostenibili per migliorare la qualità di vita e il benessere fisico.
                 </p>
               </div>
 
@@ -170,7 +170,7 @@ export default function NutritionAndExercising() {
               </div>
 
             </div>
-          </div>
+          </FadeInSection>
         </div>
 
         <Reviews />
