@@ -52,14 +52,16 @@ const Intro = () => {
 
         <FadeInSection>
           <div className={`${styles.card}`}>
-            <Image
-              src="/home_card/labbra.png"
-              alt="Immagine 1"
-              width={432}
-              height={200}
-              className={styles.cardImage}
-              priority
-            />
+            <Link href="/aesthetic-medicine">
+              <Image
+                src="/home_card/labbra.png"
+                alt="Immagine 1"
+                width={432}
+                height={200}
+                className={styles.cardImage}
+                priority
+              />
+            </Link>
             <div className={`${styles.cardContent} text-tiber`}>
               <h3 className={styles.cardTitle}>Medicina Estetica</h3>
               <p className={styles.cardText}>
@@ -81,14 +83,16 @@ const Intro = () => {
 
         <FadeInSection>
           <div className={`${styles.card}`}>
-            <Image
-              src="/home_card/nutrizione-allenamento.jpg"
-              alt="Immagine 2"
-              width={432}
-              height={200}
-              className={styles.cardImage}
-              priority
-            />
+            <Link href="/nutrition-and-exercising">
+              <Image
+                src="/home_card/nutrizione-allenamento.jpg"
+                alt="Immagine 2"
+                width={432}
+                height={200}
+                className={styles.cardImage}
+                priority
+              />
+            </Link>
             <div className={`${styles.cardContent} text-tiber`}>
               <h3 className={styles.cardTitle}>Nutrizione & Allenamento</h3>
               <p className={styles.cardText}>
