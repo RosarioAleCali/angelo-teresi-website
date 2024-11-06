@@ -54,7 +54,7 @@ const Intro = () => {
           <div className={`${styles.card}`}>
             <Link href="/aesthetic-medicine">
               <Image
-                src="/home_card/labbra.png"
+                src="/home_card/card_medicina-estetica.png"
                 alt="Medicina Estetica"
                 width={432}
                 height={200}
@@ -85,7 +85,7 @@ const Intro = () => {
           <div className={`${styles.card}`}>
             <Link href="/nutrition-and-exercising">
               <Image
-                src="/home_card/nutrizione-allenamento.jpg"
+                src="/home_card/card_nutrizione-allenamento.jpg"
                 alt="Nutrizione e Allenamento"
                 width={432}
                 height={200}
