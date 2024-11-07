@@ -62,6 +62,7 @@ const Intro = () => {
                 priority
               />
             </Link>
+            
             <div className={`${styles.cardContent} text-tiber`}>
               <h3 className={styles.cardTitle}>Medicina Estetica</h3>
               <p className={styles.cardText}>
