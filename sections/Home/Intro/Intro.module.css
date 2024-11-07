@@ -31,6 +31,7 @@
   /* Immagine angelo-estetica: testo a sinistra, immagine a destra */
   .floatImageRight {
     order: 1;
+    transform: translateY(-50px);
   }
 
   /* Immagine angelo-personal: immagine a sinistra, testo a destra */
