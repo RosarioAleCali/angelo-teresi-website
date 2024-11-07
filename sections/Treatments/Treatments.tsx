@@ -24,6 +24,50 @@ const Treatments = () => {
     }
   };
 
+  // Varianti di animazione per il menu mobile
+  const menuVariants = {
+    closed: {
+      height: 0,
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+        when: "afterChildren"
+      }
+    },
+    open: {
+      height: "auto",
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+        when: "beforeChildren"
+      }
+    }
+  };
+
+  // Varianti di animazione per gli elementi del menu
+  const menuItemVariants = {
+    closed: {
+      opacity: 0,
+      x: -20,
+      transition: {
+        duration: 0.2
+      }
+    },
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.2
+      }
+    }
+  };
+
   return (
     <FadeInSection>
       <section id="treatments" className="flex flex-col w-full items-start mt-5 md:px-56">
@@ -64,12 +108,24 @@ const Treatments = () => {
               <motion.button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="w-full flex items-center justify-between p-4 bg-white text-[#31ACA6] font-medium border-b border-[#31ACA6]/20"
+                whileHover={{ backgroundColor: "rgba(49, 172, 166, 0.05)" }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span>{activeTab}</span>
+                <motion.span
+                  layout
+                  className="flex-1"
+                >
+                  {activeTab}
+                </motion.span>
                 <motion.div
-                  animate={{ rotate: isMenuOpen ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
+                  animate={{ 
+                    rotate: isMenuOpen ? 180 : 0,
+                    scale: isMenuOpen ? 1.1 : 1
+                  }}
+                  transition={{ 
+                    duration: 0.3,
+                    ease: "anticipate"
+                  }}
                 >
                   <ChevronDown className="w-5 h-5" />
                 </motion.div>
@@ -78,21 +134,26 @@ const Treatments = () => {
               <AnimatePresence>
                 {isMenuOpen && (
                   <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    variants={menuVariants}
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
                     className="border-b border-[#31ACA6]/20 bg-white overflow-hidden"
                   >
                     {filteredChildren.map((child, idx) => (
                       <motion.button
                         key={idx}
+                        variants={menuItemVariants}
                         onClick={() => handleTreatmentClick(child.label)}
                         className={`w-full text-left p-4 text-sm transition-colors ${
                           activeTab === child.label 
                             ? 'text-[#31ACA6] bg-[#31ACA6]/5' 
                             : 'text-gray-600 hover:bg-[#31ACA6]/5'
                         }`}
+                        whileHover={{ 
+                          backgroundColor: "rgba(49, 172, 166, 0.1)",
+                          x: 4
+                        }}
                         whileTap={{ scale: 0.98 }}
                       >
                         {child.label}
