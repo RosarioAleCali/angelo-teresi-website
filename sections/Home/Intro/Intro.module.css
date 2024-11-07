@@ -14,7 +14,7 @@
   .paragraphWithImage {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1px;
     margin-bottom: 20px;
   }
 
@@ -37,6 +37,7 @@
   /* Immagine angelo-personal: immagine a sinistra, testo a destra */
   .floatImageLeft {
     order: -1;
+    transform: translateY(-15px);
   }
 
   .paragraphWithImage p {
