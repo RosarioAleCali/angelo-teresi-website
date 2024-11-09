@@ -1,13 +1,18 @@
 "use client"
 
+import React, { useEffect } from 'react';
 import Head from "next/head";
 import Reviews from "@/sections/Reviews/Reviews";
 import Treatments from "@/sections/Treatments/Treatments"; 
-
 import FadeInSection from "@/components/FadeInSection/FadeInSection";
 import BookingButton from "@/components/BookingButton/BookingButton";
+import { trackMetaPixelEvent } from '@/utils/metaPixel';
 
 export default function AestheticMedicine() {
+  useEffect(() => {
+    trackMetaPixelEvent('MedicinaEsteticaLead');
+  }, []);
+
   return (
     <>
       <Head>

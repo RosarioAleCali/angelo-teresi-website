@@ -9,6 +9,7 @@ import FadeInSection from '@/components/FadeInSection/FadeInSection';
 import BookingButton from '@/components/BookingButton/BookingButton';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
 import useIsMobile from '@/hooks/useIsMobile';
+import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -26,6 +27,10 @@ export default function NutritionAndExercising() {
       setCurrentImage((prevImage) => (prevImage + 1) % nutrition_images.length);
     }, 7000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    trackMetaPixelEvent('Nutrizione&AllenamentoLead');
   }, []);
 
   const isMobile = useIsMobile();

@@ -6,6 +6,7 @@ import TreatmentDetails from "@/components/TreatmentDetails/TreatmentDetails";
 import { menuItems } from "@/constants";
 import { treatmentDetails } from "@/constants";
 import FadeInSection from '@/components/FadeInSection/FadeInSection';
+import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import { ChevronDown } from 'lucide-react';
 
 const Treatments = () => {
@@ -15,12 +16,13 @@ const Treatments = () => {
   const [activeTab, setActiveTab] = useState(filteredChildren[0]?.label);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleTreatmentClick = (label: string) => {
+  const handleTreatmentClick = (label: string, origin: string) => {
     const selected = treatmentDetails.find(treatment => treatment.nome === label);
     if (selected) {
       setSelectedTreatment(selected);
       setActiveTab(label);
       setIsMenuOpen(false);
+      trackMetaPixelEvent('ViewTreatmentDetail', { treatment: label, origin });
     }
   };
 
@@ -77,7 +79,7 @@ const Treatments = () => {
             {filteredChildren.map((child, idx) => (
               <motion.button
                 key={idx}
-                onClick={() => handleTreatmentClick(child.label)}
+                onClick={() => handleTreatmentClick(child.label, 'desktop')}
                 className={`relative px-6 py-4 text-sm font-medium transition-colors ${
                   activeTab === child.label ? 'text-[#31ACA6]' : 'text-white hover:text-[#31ACA6]'
                 }`}
@@ -144,7 +146,7 @@ const Treatments = () => {
                       <motion.button
                         key={idx}
                         variants={menuItemVariants}
-                        onClick={() => handleTreatmentClick(child.label)}
+                        onClick={() => handleTreatmentClick(child.label, 'mobile')}
                         className={`w-full text-left p-4 text-sm transition-colors ${
                           activeTab === child.label 
                             ? 'text-[#31ACA6] bg-[#31ACA6]/5' 

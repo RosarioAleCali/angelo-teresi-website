@@ -1,5 +1,3 @@
-"use client"
-
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import { ReviewsProvider } from '@/context/reviewsContext';
@@ -10,18 +8,13 @@ import MobileBookingButton from '@/components/MobileBookingButton/MobileBookingB
 import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndicator';
 import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
 import Footer from "@/components/Footer/Footer";
+import MetaPixel from "@/components/MetaPixel/MetaPixel";
 import "./globals.css";
 
 // To prevent icons from becoming huge on page refresh
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa i CSS
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
-
-// Cookie import
-import { useEffect } from 'react';
-import CookieConsent from '@/components/CookieConsent/CookieConsent';
-import MetaPixel from "@/components/MetaPixel/MetaPixel";
-import { initializeCookieManager } from '@/utils/cookieManager';
 
 const syne = Syne({ subsets: ['latin'] })
 
@@ -63,21 +56,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  useEffect(() => {
-    initializeCookieManager();
-  }, []);
-
-  const handleCookieAccept = () => {
-    // Ricarica la pagina per attivare il pixel
-    window.location.reload();
-  };
-
-  const handleCookieDecline = () => {
-    // Ricarica la pagina per assicurarsi che il pixel sia disattivato
-    window.location.reload();
-  };
-
   return (
     <html lang="en">
       <body
@@ -98,14 +76,8 @@ export default function RootLayout({
             </main>
             <Footer />
           </ComponentsStatusProvider>
-
-          <MetaPixel />
-          <CookieConsent 
-            onAccept={handleCookieAccept}
-            onDecline={handleCookieDecline}
-          />
-
         </ReviewsProvider>
+        <MetaPixel />
       </body>
     </html>
   );

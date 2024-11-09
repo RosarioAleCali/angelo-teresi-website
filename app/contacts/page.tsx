@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from "next/head";
 import { Map } from "@/components/Map/index";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,9 +8,14 @@ import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faMapPin, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import FadeInSection from '@/components/FadeInSection/FadeInSection';
 import ContactForm from "@/components/ContactForm/ContactForm";
+import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import openMaps from "@/utils/openMaps";
 
 const Contacts: React.FC = () => {
+  useEffect(() => {
+    trackMetaPixelEvent('ContattiLead');
+  }, []);
+
   return (
     <>
       <Head>
@@ -49,7 +54,13 @@ const Contacts: React.FC = () => {
                   <h3 className="text-xl font-semibold mb-2 text-gray-800">Indirizzo</h3>
                   <ul>
                     <li>
-                      <button onClick={openMaps} className="flex items-start text-left text-gray-600 hover:text-teal-600 transition">
+                      <button
+                        onClick={() => {
+                          trackMetaPixelEvent('OpenMaps');
+                          openMaps();
+                        }}
+                        className="flex items-start text-left text-gray-600 hover:text-teal-600 transition"
+                      >
                         <FontAwesomeIcon icon={faMapPin} className="mr-2" size="xl" color="#31ACA6" />
                         <span>Via Santo Filippo 12, 90125 Palermo</span>
                       </button>
@@ -60,19 +71,43 @@ const Contacts: React.FC = () => {
                   <h3 className="text-xl font-semibold mb-2 text-gray-800">Contatti</h3>
                   <ul className="text-gray-700 flex flex-col gap-2">
                     <li>
-                      <a href="https://wa.me/393333219346" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
+                      <a
+                        onClick={() => {
+                          trackMetaPixelEvent('OpenWhatsApp');
+                        }}
+                        href="https://wa.me/393333219346"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-600 hover:text-teal-600 transition"
+                      >
                         <FontAwesomeIcon icon={faWhatsapp} className="mr-2" size="xl" color="#31ACA6" />
                         WhatsApp
                       </a>
                     </li>
                     <li>
-                      <a href="tel:+393333219346" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
+                      <a
+                        onClick={() => {
+                          trackMetaPixelEvent('OpenCellular');
+                        }}
+                        href="tel:+393333219346"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-600 hover:text-teal-600 transition"
+                      >
                         <FontAwesomeIcon icon={faPhone} className="mr-2" size="lg" color="#31ACA6" />
                         Telefono
                       </a>
                     </li>
                     <li>
-                      <a href="mailto:dr.angeloteresi@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
+                      <a
+                        onClick={() => {
+                          trackMetaPixelEvent('OpenE-Mail');
+                        }}
+                        href="mailto:dr.angeloteresi@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-600 hover:text-teal-600 transition"
+                      >
                         <FontAwesomeIcon icon={faEnvelope} className="mr-2" size="lg" color="#31ACA6" />
                         dr.angeloteresi@gmail.com
                       </a>
@@ -83,7 +118,15 @@ const Contacts: React.FC = () => {
                   <h3 className="text-xl font-semibold mb-2 text-gray-800">Social Media</h3>
                   <ul className="text-gray-700">
                     <li>
-                      <a href="https://www.instagram.com/dr.angeloteresi?igsh=cXowN2I1MmphZDh0" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-teal-600 transition">
+                      <a
+                        onClick={() => {
+                          trackMetaPixelEvent('OpenInstagram');
+                        }}
+                        href="https://www.instagram.com/dr.angeloteresi?igsh=cXowN2I1MmphZDh0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-600 hover:text-teal-600 transition"
+                      >
                         <FontAwesomeIcon icon={faInstagram} className="mr-2" size="xl" color="#31ACA6" />
                         Instagram
                       </a>
