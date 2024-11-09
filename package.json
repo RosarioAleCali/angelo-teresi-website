@@ -16,6 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "framer-motion": "^11.11.9",
     "intersection-observer": "^0.12.2",
+    "js-cookie": "^3.0.5",
     "leaflet": "^1.9.4",
     "lodash": "^4.17.21",
     "lucide-react": "^0.453.0",
