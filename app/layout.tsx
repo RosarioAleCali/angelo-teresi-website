@@ -8,6 +8,7 @@ import MobileBookingButton from '@/components/MobileBookingButton/MobileBookingB
 import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndicator';
 import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
 import Footer from "@/components/Footer/Footer";
+import CookieConsentBanner from "@/components/CookieConsentBanner/CookieConsentBanner";
 import MetaPixel from "@/components/MetaPixel/MetaPixel";
 import "./globals.css";
 
@@ -75,9 +76,10 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <CookieConsentBanner />
+            <MetaPixel />
           </ComponentsStatusProvider>
         </ReviewsProvider>
-        <MetaPixel />
       </body>
     </html>
   );
