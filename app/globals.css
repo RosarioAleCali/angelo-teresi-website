@@ -22,3 +22,9 @@ body, html {
     text-wrap: balance;
   }
 }
+
+p {
+  text-align: justify;
+  hyphens: auto;
+}
+

@@ -5,6 +5,7 @@ import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import useIsMobile from '@/hooks/useIsMobile';
 import FormData from '@/types/FormData';
 import { serviceOptions, ServiceOptionKey } from '@/types/ServiceOptions';
+import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import 'react-phone-number-input/style.css';
 
 export default function ContactForm() {
@@ -178,6 +179,9 @@ export default function ContactForm() {
       {/* Submit Button */}
       <div className="flex justify-end mt-6">
         <button
+          onClick={() => {
+            trackMetaPixelEvent('ContactFormSubmission');
+          }}
           type="submit"
           disabled={isSubmitting}
           className="bg-tropical text-white font-bold py-2 px-6 rounded-lg border border-transparent transition-colors duration-200 ease-in-out hover:bg-[#2a8d8a] hover:border-[#28a097] hover:text-white active:bg-[#228e8d] focus:outline-none focus:ring-2 focus:ring-tropical focus:ring-opacity-30"

@@ -18,7 +18,13 @@ const BookingButton: React.FC<BookingButtonProps> = ({ size }) => {
     : "py-2 px-6 text-base"; // Dimensioni originali
 
   return (
-    <button onClick={openModal} className={`${baseClasses} ${sizeClasses}`}>
+    <button
+      onClick={() =>openModal({
+        modalName: 'Booking',
+        origin: 'Tasto Prenota' })
+      }
+      className={`${baseClasses} ${sizeClasses}`}
+    >
       Prenota
     </button>
   );

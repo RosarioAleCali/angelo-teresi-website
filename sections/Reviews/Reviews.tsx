@@ -9,6 +9,7 @@ import FadeInSection from "@/components/FadeInSection/FadeInSection";
 import useIsMobile from '@/hooks/useIsMobile';
 import { ReviewType } from '@/types/review';
 import { useReviews } from '@/context/reviewsContext';
+import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -87,6 +88,9 @@ const Reviews = () => {
       <FadeInSection>
         <div className="flex justify-center my-7">
           <Link
+            onClick={() => {
+              trackMetaPixelEvent('ClickLasciaRecensione');
+            }}
             href="https://maps.app.goo.gl/Wy4t5npXsJmcvK7T6"
             target="_blank"
             rel="noopener noreferrer"

@@ -1,71 +1,49 @@
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px); /* Inizia con una leggera traslazione verso il basso */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Riporta la card alla sua posizione originale */
-  }
-}
-
-.fadeInElement {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fadeInVisible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .paragraphWithImage {
   position: relative;
-  overflow: hidden; /* Per evitare problemi con il float su dispositivi mobili */
+  overflow: hidden;
 }
 
 .floatImageRight,
 .floatImageLeft {
-  width: 150px; /* Regola la larghezza secondo le tue necessità */
+  width: 150px;
   height: auto;
-  display: none; /* Nascosto di default */
+  display: none;
 }
 
 @media (max-width: 768px) {
+  .paragraphWithImage {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    margin-bottom: 20px;
+  }
+
   .floatImageRight,
   .floatImageLeft {
-    display: block; /* Mostra le immagini solo su dispositivi mobili */
+    display: block;
     position: relative;
     z-index: 1;
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid white; */
+    margin: 0;
+    float: none;
   }
 
+  /* Immagine angelo-estetica: testo a sinistra, immagine a destra */
   .floatImageRight {
-    float: right;
-    shape-outside: url('/teresi_shape/angelo-estetica.png');
-    shape-margin: 10px;
-    margin: 0 0 10px 10px;
-    clear: both;
+    order: 1;
+    transform: translateY(-50px);
   }
 
+  /* Immagine angelo-personal: immagine a sinistra, testo a destra */
   .floatImageLeft {
-    float: left;
-    position: relative;
-    top: -20px; /* Usa top per spostare l'immagine verso l'alto */
-    shape-outside: url('/teresi_shape/angelo-personal.png');
-    shape-margin: 58px;
-    margin-left: 0;
-    margin-right: 10px;
-    clear: both;
-    text-align: justify;
+    order: -1;
+    transform: translateY(-15px);
   }
-  
+
   .paragraphWithImage p {
-    margin-top: 30px;
-    overflow: visible; /* Permette al testo di fluttuare attorno all'immagine */
+    margin: 0;
+    flex: 1;
   }
-  
 }
 
 .card {
@@ -74,11 +52,6 @@
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.cardVisible {
-  opacity: 1; /* Visibile quando entra nella viewport */
-  transform: translateY(0); /* Ritorna alla posizione originale */
 }
 
 .cardImage {
@@ -112,26 +85,24 @@
 
 .cardButton {
   background-color: #28a097;
-  color: white; /* Colore del testo iniziale */
+  color: white;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 8px;
   border: 2px solid transparent;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-  
-  /* Allinea l'icona e il testo orizzontalmente */
   display: inline-flex;
-  align-items: center; /* Allinea verticalmente l'icona con il testo */
-  justify-content: center; /* Allinea l'icona e il testo al centro */
-  gap: 8px; /* Spazio tra l'icona e il testo */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .cardButton:hover {
-  background-color: #2a8d8a; /* Cambia lo sfondo quando si passa sopra */
-  border-color: #28a097; /* Cambia il colore del bordo */
-  color: white; /* Assicura che il testo rimanga bianco durante l'hover */
-  transform: translateY(-4px); /* Leggero sollevamento */
+  background-color: #2a8d8a;
+  border-color: #28a097;
+  color: white;
+  transform: translateY(-4px);
 }
 
 .cardButton:active {

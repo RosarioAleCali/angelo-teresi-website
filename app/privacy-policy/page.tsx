@@ -21,30 +21,29 @@ La presente Informativa sulla Privacy descrive le modalità di trattamento dei d
 Il titolare del trattamento dei dati è **Angelo Teresi**, con sede legale in Via S. Filippo, 12, 90125 Palermo PA, Italia. Per qualsiasi informazione relativa al trattamento dei dati personali, puoi contattarci tramite email all’indirizzo: **dr.angeloteresi@gmail.com**.
 
 ## 2. Tipologie di Dati Raccolti
-Attraverso il sito web non vengono utilizzati cookie. Tuttavia, tramite il **modulo di contatto**, raccogliamo le seguenti informazioni personali:
+Attraverso il sito web raccogliamo dati personali tramite il **modulo di contatto** e tramite **Meta Pixel** per fini statistici e analisi. Le informazioni raccolte includono:
 
 - Nome
 - Numero di telefono
 - Indirizzo email
 - Messaggio inviato dall’utente
 - Servizio di interesse selezionato dall’utente
-
-L’utente è libero di fornire o meno tali dati, tuttavia, l’eventuale mancato conferimento potrebbe impedire di ottenere il servizio richiesto.
+- Dati anonimi relativi al comportamento di navigazione
 
 ## 3. Finalità del Trattamento dei Dati
-I dati personali forniti tramite il modulo di contatto verranno trattati esclusivamente per le seguenti finalità:
+I dati personali forniti tramite il modulo di contatto verranno trattati esclusivamente per:
 
 - Gestire e rispondere alle richieste di informazioni inviate dagli utenti;
 - Fornire dettagli sui servizi offerti;
 - Contattare l’utente per appuntamenti o informazioni relative ai servizi di interesse.
 
-I dati non saranno utilizzati per finalità di marketing, né saranno ceduti a terzi senza il consenso esplicito dell’utente.
+I dati anonimi raccolti tramite Meta Pixel vengono utilizzati per migliorare l’esperienza utente e per fini di analisi statistica, senza identificare gli utenti individualmente.
 
 ## 4. Modalità del Trattamento dei Dati
-Il trattamento dei dati personali avviene con l’adozione di misure di sicurezza adeguate a garantire la riservatezza e l’integrità dei dati, nel rispetto delle normative vigenti. I dati saranno trattati sia con strumenti informatici che manuali per il tempo strettamente necessario a conseguire gli scopi per cui sono stati raccolti.
+Il trattamento dei dati personali avviene con l’adozione di misure di sicurezza adeguate, nel rispetto delle normative vigenti. I dati saranno trattati con strumenti informatici e manuali per il tempo strettamente necessario a conseguire gli scopi per cui sono stati raccolti.
 
 ## 5. Conservazione dei Dati
-I dati personali saranno conservati per il tempo necessario a fornire riscontro alle richieste degli utenti o per gestire le prenotazioni. I dati potranno essere conservati per un periodo più lungo, qualora richiesto dalla normativa vigente.
+I dati personali saranno conservati per il tempo necessario a fornire riscontro alle richieste degli utenti o per gestire le prenotazioni. I dati raccolti tramite Meta Pixel sono conservati secondo le policy di Meta Platforms, Inc.
 
 ## 6. Diritti degli Interessati
 Gli utenti hanno il diritto di:
@@ -56,10 +55,13 @@ Gli utenti hanno il diritto di:
 
 Per esercitare tali diritti, è possibile inviare una richiesta via email all’indirizzo **dr.angeloteresi@gmail.com**. Gli utenti hanno inoltre il diritto di proporre reclamo all’Autorità Garante per la Protezione dei Dati Personali.
 
-## 7. Modifiche alla Presente Informativa
+## 7. Meta Pixel
+Questo sito utilizza **Meta Pixel**, uno strumento di tracciamento fornito da Meta Platforms, Inc. (Facebook), che raccoglie dati anonimi sulle visite al sito per fini statistici e di analisi. Puoi scegliere di disabilitare il tracciamento tramite le impostazioni del tuo browser o tramite le impostazioni di Meta.
+
+## 8. Modifiche alla Presente Informativa
 La presente informativa potrebbe essere soggetta a modifiche o aggiornamenti. Invitiamo gli utenti a consultare regolarmente questa pagina per essere informati su eventuali modifiche.
 
-**Ultimo aggiornamento:** 14 Ottobre 2024.
+**Ultimo aggiornamento:** 9 Novembre 2024.
 `;
 
   return (

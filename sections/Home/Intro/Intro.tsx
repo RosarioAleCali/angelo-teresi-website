@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,10 +9,15 @@ import { faCalendar, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons
 import { ComponentsStatusContext } from '@/context/componentsStatusContext';
 import { ComponentsStatusContextType } from '@/types/components-status';
 import FadeInSection from "@/components/FadeInSection/FadeInSection";
+import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import styles from './Intro.module.css';
 
 const Intro = () => {
   const { openModal } = useContext(ComponentsStatusContext) as ComponentsStatusContextType;
+
+  useEffect(() => {
+    trackMetaPixelEvent('HomepageLead');
+  }, []);
 
   return (
     <section id="intro" className="bg-tiber w-full flex flex-col justify-start min-h-screen px-5">
@@ -54,7 +59,7 @@ const Intro = () => {
           <div className={`${styles.card}`}>
             <Link href="/aesthetic-medicine">
               <Image
-                src="/home_card/labbra.png"
+                src="/home_card/card_medicina-estetica.png"
                 alt="Medicina Estetica"
                 width={432}
                 height={200}
@@ -62,17 +67,30 @@ const Intro = () => {
                 priority
               />
             </Link>
+            
             <div className={`${styles.cardContent} text-tiber`}>
               <h3 className={styles.cardTitle}>Medicina Estetica</h3>
               <p className={styles.cardText}>
                 La medicina estetica avanzata è un elemento fondamentale del mio approccio al benessere. I trattamenti che offro, come filler dermici, peeling chimici, biostimolazione e botox, sono pensati per valorizzare e mantenere la tua bellezza naturale, donando freschezza, luminosità e un aspetto più rilassato al viso. Ogni trattamento è studiato per garantire risultati che migliorano l’aspetto esteriore e favoriscono il benessere interiore. Sono qui per aiutarti a valorizzare la tua bellezza naturale con trattamenti personalizzati ed efficaci.
               </p>
               <div className={styles.cardButtons}>
-                <button onClick={openModal} className={styles.cardButton}>
+                <button
+                  onClick={() =>openModal({
+                    modalName: 'Booking',
+                    origin: 'Card Medicina Estetica' })
+                  }
+                  className={styles.cardButton}
+                >
                   <FontAwesomeIcon icon={faCalendar} />
                   Prenota
                 </button>
-                <Link href="/aesthetic-medicine" className={styles.cardButton}>
+                <Link
+                  onClick={() => {
+                    trackMetaPixelEvent('ViewMedicinaEstetica', { origin: 'Card Medicina Estetica' });
+                  }}
+                  href="/aesthetic-medicine"
+                  className={styles.cardButton}
+                >
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                   Scopri di più
                 </Link>
@@ -85,7 +103,7 @@ const Intro = () => {
           <div className={`${styles.card}`}>
             <Link href="/nutrition-and-exercising">
               <Image
-                src="/home_card/nutrizione-allenamento.jpg"
+                src="/home_card/card_nutrizione-allenamento.jpg"
                 alt="Nutrizione e Allenamento"
                 width={432}
                 height={200}
@@ -99,11 +117,23 @@ const Intro = () => {
                 La nutrizione e l{"\'"}allenamento sono componenti essenziali per raggiungere il benessere completo. Offro percorsi nutrizionali personalizzati, pensati per rispondere alle tue esigenze specifiche, che si tratti di perdere peso, migliorare le prestazioni fisiche o adottare uno stile di vita più sano. A complemento dell{"\'"}allenamento, progettiamo schede su misura per aiutarti a migliorare forza, resistenza e benessere generale. Che tu preferisca allenarti in studio o a casa, il mio approccio mira a massimizzare l{"\'"}efficacia degli esercizi, riducendo al minimo il rischio di infortuni.
               </p>
               <div className={styles.cardButtons}>
-                <button onClick={openModal} className={styles.cardButton}>
+                <button
+                  onClick={() =>openModal({
+                    modalName: 'Booking',
+                    origin: 'Card Nutrizione & Allenamento' })
+                  }
+                  className={styles.cardButton}
+                >
                   <FontAwesomeIcon icon={faCalendar} />
                   Prenota
                 </button>
-                <Link href="/nutrition-and-exercising" className={styles.cardButton}>
+                <Link
+                  onClick={() => {
+                    trackMetaPixelEvent('ViewNutrizione&Allenamento', { origin: 'Card Nutrizione & Allenamento' });
+                  }}
+                  href="/nutrition-and-exercising"
+                  className={styles.cardButton}
+                >
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                   Scopri di più
                 </Link>
