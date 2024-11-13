@@ -32,10 +32,6 @@ const menuItems = [
         label: 'Filler Mandibolare' 
       },
       { 
-        href: '/aesthetic-medicine#filler-occhiaie', 
-        label: 'Filler Occhiaie' 
-      },
-      { 
         href: '/aesthetic-medicine#filler-zigomi', 
         label: 'Filler Zigomi' 
       },
@@ -73,7 +69,7 @@ const treatmentDetails = [
   {
     "nome": "Biostimolazione",
     "descrizione": "Un trattamento che mira a rivitalizzare la pelle attraverso l'iniezione di sostanze come vitamine, minerali e acido ialuronico. Queste sostanze stimolano la produzione di collagene e di elastina, migliorando il tono, l'elasticità e la luminosità della pelle. Questo trattamento aiuta anche a prevenire l'invecchiamento cutaneo, donando al viso un aspetto più fresco e vitale. È particolarmente indicato per chi vuole contrastare i segni di stanchezza e disidratazione, restituendo al volto un aspetto più giovane e sano.",
-    "immagini": ["/before_after/biostimolazione-prima.png", "/before_after/biostimolazione-dopo.png"],
+    "immagini": ["/before_after/biostimolazione-prima.jpg", "/before_after/biostimolazione-dopo.jpg"],
     "durata": "30 minuti",
     "sedute": "3-4 sedute",
     "risultati": "Pelle più tonica e idratata",
@@ -103,20 +99,10 @@ const treatmentDetails = [
   {
     "nome": "Filler Mandibolare",
     "descrizione": "Un trattamento per migliorare la definizione della linea mandibolare, dando al viso un aspetto più scolpito e ridefinito. È spesso utilizzato per contrastare il rilassamento cutaneo e migliorare la simmetria del volto, rendendo la linea mandibolare più marcata e armoniosa. Questo tipo di filler è particolarmente indicato per chi vuole ottenere un aspetto più deciso e strutturato, senza ricorrere alla chirurgia. I risultati sono naturali e aiutano a migliorare l'equilibrio complessivo del viso.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/mandibola_filler-prima.png", "/before_after/mandibola_filler-dopo.png"],
     "durata": "40 minuti",
     "sedute": "1 seduta",
     "risultati": "Profilo mandibolare più definito",
-    "prodotti": "Acido ialuronico",
-    "durataRisultati": "12 mesi"
-  },
-  {
-    "nome": "Filler Occhiaie",
-    "descrizione": "Un trattamento per ridurre la visibilità delle occhiaie, riempiendo la zona sotto gli occhi con acido ialuronico per un aspetto più riposato e giovane. Questo trattamento aiuta a correggere le depressioni sotto gli occhi, che possono far apparire il viso stanco e invecchiato. Il filler occhiaie migliora il colorito e l'aspetto generale della zona perioculare, donando un aspetto più fresco e riposato. I risultati sono immediati e molto apprezzati da chi soffre di occhiaie persistenti.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
-    "durata": "30 minuti",
-    "sedute": "1 seduta",
-    "risultati": "Occhiaie ridotte e sguardo più fresco",
     "prodotti": "Acido ialuronico",
     "durataRisultati": "12 mesi"
   },
@@ -133,7 +119,7 @@ const treatmentDetails = [
   {
     "nome": "Full Face",
     "descrizione": "Un trattamento completo che prevede l'utilizzo di filler e botox per migliorare l'aspetto globale del viso. Questo approccio consente di ridefinire i contorni del viso, riempire le rughe, migliorare la simmetria e donare un aspetto complessivamente più giovane e armonioso. Il Full Face è ideale per chi desidera un ringiovanimento globale senza interventi chirurgici invasivi, affrontando diverse problematiche estetiche in un'unica seduta. I risultati sono visibili immediatamente e migliorano ulteriormente nei giorni successivi al trattamento.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/tmp_img.jpg", "/before_after/tmp_img.jpg"],
     "durata": "1 ora",
     "sedute": "1-2 sedute",
     "risultati": "Viso ringiovanito e armonico",
@@ -143,7 +129,7 @@ const treatmentDetails = [
   {
     "nome": "Microneedling",
     "descrizione": "Una tecnica che utilizza microaghi per stimolare la produzione di collagene ed elastina, migliorando la texture della pelle e riducendo cicatrici, macchie e pori dilatati. Il microneedling è efficace per trattare una vasta gamma di problematiche cutanee, inclusi segni di acne, iperpigmentazione e perdita di elasticità. La pelle appare più liscia, compatta e luminosa dopo il trattamento. È adatto a chi desidera un miglioramento generale della qualità della pelle senza ricorrere a trattamenti invasivi.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/tmp_img.jpg", "/before_after/tmp_img.jpg"],
     "durata": "45 minuti",
     "sedute": "4-6 sedute",
     "risultati": "Pelle più compatta e luminosa",
@@ -153,7 +139,7 @@ const treatmentDetails = [
   {
     "nome": "Peeling",
     "descrizione": "Un trattamento che utilizza soluzioni chimiche per esfoliare la pelle, rimuovendo le cellule morte e stimolando la rigenerazione per una pelle più luminosa e uniforme. Esistono diversi tipi di peeling, da quelli superficiali a quelli più profondi, che vengono scelti in base alle esigenze specifiche del paziente. Il peeling aiuta a migliorare la texture, il tono e la luminosità della pelle, riducendo macchie, rughe sottili e imperfezioni. È un'ottima soluzione per chi desidera un aspetto più fresco e rinnovato senza tempi di recupero lunghi.",
-    "immagini": ["/imgs_menu_items/nutrizione-a.png", "/imgs_menu_items/nutrizione-b.png"],
+    "immagini": ["/before_after/tmp_img.jpg", "/before_after/tmp_img.jpg"],
     "durata": "30 minuti",
     "sedute": "3-4 sedute",
     "risultati": "Pelle levigata e più uniforme",
