@@ -74,7 +74,8 @@ const treatmentDetails = [
     "sedute": "3-4 sedute",
     "risultati": "Pelle più tonica e idratata",
     "prodotti": "Vitamine, acido ialuronico",
-    "durataRisultati": "3-6 mesi"
+    "durataRisultati": "3-6 mesi",
+    "initialPosition": 50
   },
   {
     "nome": "Botox",
@@ -84,7 +85,8 @@ const treatmentDetails = [
     "sedute": "1 seduta",
     "risultati": "Rughe ridotte e pelle distesa",
     "prodotti": "Tossina botulinica",
-    "durataRisultati": "5-6 mesi"
+    "durataRisultati": "5-6 mesi",
+    "initialPosition": 39
   },
   {
     "nome": "Filler Labbra",
@@ -94,7 +96,8 @@ const treatmentDetails = [
     "sedute": "1 seduta",
     "risultati": "Labbra più voluminose e definite",
     "prodotti": "Acido ialuronico",
-    "durataRisultati": "6-9 mesi"
+    "durataRisultati": "6-9 mesi",
+    "initialPosition": 50
   },
   {
     "nome": "Filler Mandibolare",
@@ -104,7 +107,8 @@ const treatmentDetails = [
     "sedute": "1 seduta",
     "risultati": "Profilo mandibolare più definito",
     "prodotti": "Acido ialuronico",
-    "durataRisultati": "12 mesi"
+    "durataRisultati": "12 mesi",
+    "initialPosition": 30
   },
   {
     "nome": "Filler Zigomi",
@@ -114,7 +118,8 @@ const treatmentDetails = [
     "sedute": "1 seduta",
     "risultati": "Zigomi più pieni e definiti",
     "prodotti": "Acido ialuronico",
-    "durataRisultati": "9-12 mesi"
+    "durataRisultati": "9-12 mesi",
+    "initialPosition": 31
   },
   {
     "nome": "Full Face",
@@ -139,12 +144,13 @@ const treatmentDetails = [
   {
     "nome": "Peeling",
     "descrizione": "Un trattamento che utilizza soluzioni chimiche per esfoliare la pelle, rimuovendo le cellule morte e stimolando la rigenerazione per una pelle più luminosa e uniforme. Esistono diversi tipi di peeling, da quelli superficiali a quelli più profondi, che vengono scelti in base alle esigenze specifiche del paziente. Il peeling aiuta a migliorare la texture, il tono e la luminosità della pelle, riducendo macchie, rughe sottili e imperfezioni. È un'ottima soluzione per chi desidera un aspetto più fresco e rinnovato senza tempi di recupero lunghi.",
-    "immagini": ["/before_after/tmp_img.jpg", "/before_after/tmp_img.jpg"],
+    "immagini": ["/before_after/acne-prima.jpg", "/before_after/acne-dopo.jpg"],
     "durata": "30 minuti",
     "sedute": "3-4 sedute",
     "risultati": "Pelle levigata e più uniforme",
     "prodotti": "Acidi esfolianti",
-    "durataRisultati": "6-12 mesi"
+    "durataRisultati": "6-12 mesi",
+    "initialPosition": 28
   },
   {
     "nome": "Rinofiller",
@@ -154,7 +160,8 @@ const treatmentDetails = [
     "sedute": "1 seduta",
     "risultati": "Profilo nasale migliorato",
     "prodotti": "Acido ialuronico",
-    "durataRisultati": "9-12 mesi"
+    "durataRisultati": "9-12 mesi",
+    "initialPosition": 50
   } 
 ];
 

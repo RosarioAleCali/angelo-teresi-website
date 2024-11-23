@@ -30,27 +30,27 @@ const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment 
             <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faClock} className="mb-2 text-xl" />
               <strong>Durata</strong>
-              <p className="text-sm">{treatment.durata}</p>
+              <p className="text-sm text-left hyphens-none">{treatment.durata}</p>
             </div>
             <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faCalendarDays} className="mb-2 text-xl" />
               <strong>Sedute</strong>
-              <p className="text-sm">{treatment.sedute}</p>
+              <p className="text-sm text-left hyphens-none">{treatment.sedute}</p>
             </div>
             <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faClipboardCheck} className="mb-2 text-xl" />
               <strong>Risultati</strong>
-              <p className="text-sm">{treatment.risultati}</p>
+              <p className="text-sm text-left hyphens-none">{treatment.risultati}</p>
             </div>
             <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faSyringe} className="mb-2 text-xl" />
               <strong>Prodotti</strong>
-              <p className="text-sm">{treatment.prodotti}</p>
+              <p className="text-sm text-left hyphens-none">{treatment.prodotti}</p>
             </div>
             <div className="flex flex-col items-center text-center gap-1 w-20">
               <FontAwesomeIcon icon={faClockRotateLeft} className="mb-2 text-xl" />
               <strong>Durata Risultati</strong>
-              <p className="text-sm">{treatment.durataRisultati}</p>
+              <p className="text-sm text-left hyphens-none">{treatment.durataRisultati}</p>
             </div>
           </div>
 
@@ -62,6 +62,7 @@ const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment 
               <BeforeAfterSlider
               beforeImage={treatment.immagini[0]}
               afterImage={treatment.immagini[1]}
+              initialPosition={treatment?.initialPosition??50}
               />
         ) : (
           <p>Immagini non disponibili</p>
