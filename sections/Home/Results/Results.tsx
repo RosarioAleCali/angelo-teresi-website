@@ -19,24 +19,26 @@ const Results = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <FadeInSection>
             <BeforeAfterSlider
-              beforeImage={treatmentDetails[1].immagini[0]}
-              afterImage={treatmentDetails[1].immagini[1]}
+              beforeImage={treatmentDetails[2].immagini[0]}
+              afterImage={treatmentDetails[2].immagini[1]}
+              initialPosition={treatmentDetails[2].initialPosition}
               beforeLabel="Prima"
               afterLabel="Dopo"
               className="h-80 md:h-[500px]"
             />
-            <h3 className="text-white font-bold mt-4">{treatmentDetails[1].nome}</h3>
+            <h3 className="text-white font-bold mt-4">{treatmentDetails[2].nome}</h3>
           </FadeInSection>
 
           <FadeInSection>
             <BeforeAfterSlider
-              beforeImage={treatmentDetails[5].immagini[0]}
-              afterImage={treatmentDetails[5].immagini[1]}
+              beforeImage={treatmentDetails[8].immagini[0]}
+              afterImage={treatmentDetails[8].immagini[1]}
+              initialPosition={treatmentDetails[8].initialPosition}
               beforeLabel="Prima"
               afterLabel="Dopo"
               className="h-80 md:h-[500px]"
             />
-            <h3 className="text-white font-bold mt-4">{treatmentDetails[5].nome}</h3>
+            <h3 className="text-white font-bold mt-4">{treatmentDetails[8].nome}</h3>
           </FadeInSection>
 
           <FadeInSection>
@@ -57,7 +59,6 @@ const Results = () => {
               beforeLabel="Prima"
               afterLabel="Dopo"
               className="h-[500px] md:h-[800px]"
-              initialPosition={70}
             />
             <h3 className="text-white font-bold mt-4">Body Transformation</h3>
           </FadeInSection>

@@ -7,4 +7,5 @@ export default interface TreatmentDetail {
     risultati: string;
     prodotti: string;
     durataRisultati: string;
+    initialPosition?: number;
   }
