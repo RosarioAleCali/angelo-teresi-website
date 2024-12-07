@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import { ReviewsProvider } from '@/context/reviewsContext';
 import ComponentsStatusProvider from "@/context/componentsStatusContext";
 import Header from '@/components/Header/Header';
@@ -78,6 +79,7 @@ export default function RootLayout({
             <Footer />
             <CookieConsentBanner />
             <MetaPixel />
+            <Analytics />
           </ComponentsStatusProvider>
         </ReviewsProvider>
       </body>
