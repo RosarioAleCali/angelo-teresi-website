@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
 
     // Prepare the email
     const mailOptions = {
-      from: process.env.EMAIL_USERNAME,
+      from: process.env.EMAIL_USER,
       to: process.env.CONTACT_EMAIL,
       subject: `Nuova richiesta da ${name}`,
       text: `Hai un nuovo messaggio dal modulo di contatto:
