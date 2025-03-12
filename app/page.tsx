@@ -2,7 +2,7 @@
 import Hero from '@/sections/Home/Hero/Hero'
 import Intro from '@/sections/Home/Intro/Intro';
 import Results from '@/sections/Home/Results/Results';
-import Reviews from '@/sections/Reviews/Reviews';
+// import Reviews from '@/sections/Reviews/Reviews';
 
 export default function Home() {
   return (
@@ -10,9 +10,9 @@ export default function Home() {
       <Hero />
       <Intro />
       <Results />
-      <div className="px-6 md:px-14">
+      {/* <div className="px-6 md:px-14">
         <Reviews />
-      </div>
+      </div> */}
     </div>
   );
 }

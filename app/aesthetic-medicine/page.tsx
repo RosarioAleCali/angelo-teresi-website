@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Head from "next/head";
-import Reviews from "@/sections/Reviews/Reviews";
+// import Reviews from "@/sections/Reviews/Reviews";
 import Treatments from "@/sections/Treatments/Treatments"; 
 import FadeInSection from "@/components/FadeInSection/FadeInSection";
 import BookingButton from "@/components/BookingButton/BookingButton";
@@ -52,7 +52,7 @@ export default function AestheticMedicine() {
             <BookingButton size='lg' />
           </FadeInSection>
 
-          <Reviews />
+          {/* <Reviews /> */}
         </div>
       </FadeInSection>
     </>

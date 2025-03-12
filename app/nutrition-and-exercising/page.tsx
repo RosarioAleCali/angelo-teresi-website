@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
-import Reviews from "@/sections/Reviews/Reviews";
+// import Reviews from "@/sections/Reviews/Reviews";
 import FadeInSection from '@/components/FadeInSection/FadeInSection';
 import BookingButton from '@/components/BookingButton/BookingButton';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider/BeforeAfterSlider';
@@ -234,7 +234,7 @@ export default function NutritionAndExercising() {
           </div>
         </section>
 
-        <Reviews />
+        {/* <Reviews /> */}
       </div>
     </>
   );
