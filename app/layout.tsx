@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { ReviewsProvider } from '@/context/reviewsContext';
+// import { ReviewsProvider } from '@/context/reviewsContext';
 import ComponentsStatusProvider from "@/context/componentsStatusContext";
 import Header from '@/components/Header/Header';
 import BookingModal from '@/components/BookingModal/BookingModal';
@@ -64,7 +64,7 @@ export default function RootLayout({
       <body
         className={`${syne.className} antialiased`}
       >
-        <ReviewsProvider>
+        {/* <ReviewsProvider> */}
           <ComponentsStatusProvider>
             <Header />
             <BookingModal />
@@ -83,7 +83,7 @@ export default function RootLayout({
             <Analytics />
             <SpeedInsights />
           </ComponentsStatusProvider>
-        </ReviewsProvider>
+        {/* </ReviewsProvider> */}
       </body>
     </html>
   );

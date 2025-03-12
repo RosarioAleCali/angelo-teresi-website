@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from 'next/link';
-import useSWR from 'swr';
+// import useSWR from 'swr';
 import { useEffect } from 'react';
 import Slider from "react-slick";
 import FadeInSection from "@/components/FadeInSection/FadeInSection";
@@ -13,7 +13,7 @@ import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const fetcher = (url: string) => fetch(url).then(r => r.json())
+// const fetcher = (url: string) => fetch(url).then(r => r.json())
 
 const ReviewCard = ({ review }: { review: ReviewType }) => (
   <FadeInSection>
@@ -54,10 +54,11 @@ const ReviewCard = ({ review }: { review: ReviewType }) => (
 
 const Reviews = () => {
   const { reviews, setReviews } = useReviews();
-  const { data } = useSWR(
-    reviews ? null : `https://places.googleapis.com/v1/places/${process.env.PLACE_ID}?fields=reviews&key=${process.env.GOOGLE_PLACES_API_KEY}`, 
-    fetcher
-  );
+  const data = null;
+  // const { data } = useSWR(
+  //   reviews ? null : `https://places.googleapis.com/v1/places/${process.env.PLACE_ID}?fields=reviews&key=${process.env.GOOGLE_PLACES_API_KEY}`, 
+  //   fetcher
+  // );
 
   const isMobile = useIsMobile();
 
