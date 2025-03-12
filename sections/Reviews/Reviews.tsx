@@ -73,7 +73,7 @@ const Reviews = () => {
 
   useEffect(() => {
     if (data && !reviews) {
-      setReviews(data.reviews);
+      // setReviews(data.reviews);
     }
   }, [data, reviews, setReviews]);
 
