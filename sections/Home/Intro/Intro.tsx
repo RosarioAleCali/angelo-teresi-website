@@ -1,19 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useContext, useEffect } from 'react';
+// import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { ComponentsStatusContext } from '@/context/componentsStatusContext';
-import { ComponentsStatusContextType } from '@/types/components-status';
+// import { ComponentsStatusContext } from '@/context/componentsStatusContext';
+// import { ComponentsStatusContextType } from '@/types/components-status';
 import FadeInSection from "@/components/FadeInSection/FadeInSection";
 import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import styles from './Intro.module.css';
 
 const Intro = () => {
-  const { openModal } = useContext(ComponentsStatusContext) as ComponentsStatusContextType;
+  // const { openModal } = useContext(ComponentsStatusContext) as ComponentsStatusContextType;
 
   useEffect(() => {
     trackMetaPixelEvent('HomepageLead');
@@ -74,7 +75,7 @@ const Intro = () => {
                 La medicina estetica avanzata è un elemento fondamentale del mio approccio al benessere. I trattamenti che offro, come filler dermici, peeling chimici, biostimolazione e botox, sono pensati per valorizzare e mantenere la tua bellezza naturale, donando freschezza, luminosità e un aspetto più rilassato al viso. Ogni trattamento è studiato per garantire risultati che migliorano l’aspetto esteriore e favoriscono il benessere interiore. Sono qui per aiutarti a valorizzare la tua bellezza naturale con trattamenti personalizzati ed efficaci.
               </p>
               <div className={styles.cardButtons}>
-                <button
+                {/* <button
                   onClick={() =>openModal({
                     modalName: 'Booking',
                     origin: 'Card Medicina Estetica' })
@@ -83,7 +84,16 @@ const Intro = () => {
                 >
                   <FontAwesomeIcon icon={faCalendar} />
                   Prenota
-                </button>
+                </button> */}
+                <a
+                  href="https://prenota.alfadocs.com/p/palermo-studio-del-dottor-angelo-teresi-31421"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.cardButton}
+                >
+                  <FontAwesomeIcon icon={faCalendar} />
+                  Prenota
+                </a>
                 <Link
                   onClick={() => {
                     trackMetaPixelEvent('ViewMedicinaEstetica', { origin: 'Card Medicina Estetica' });
@@ -117,7 +127,7 @@ const Intro = () => {
                 La nutrizione e l{"\'"}allenamento sono componenti essenziali per raggiungere il benessere completo. Offro percorsi nutrizionali personalizzati, pensati per rispondere alle tue esigenze specifiche, che si tratti di perdere peso, migliorare le prestazioni fisiche o adottare uno stile di vita più sano. A complemento dell{"\'"}allenamento, progettiamo schede su misura per aiutarti a migliorare forza, resistenza e benessere generale. Che tu preferisca allenarti in studio o a casa, il mio approccio mira a massimizzare l{"\'"}efficacia degli esercizi, riducendo al minimo il rischio di infortuni.
               </p>
               <div className={styles.cardButtons}>
-                <button
+                {/* <button
                   onClick={() =>openModal({
                     modalName: 'Booking',
                     origin: 'Card Nutrizione & Allenamento' })
@@ -126,7 +136,16 @@ const Intro = () => {
                 >
                   <FontAwesomeIcon icon={faCalendar} />
                   Prenota
-                </button>
+                </button> */}
+                <a
+                  href="https://prenota.alfadocs.com/p/palermo-studio-del-dottor-angelo-teresi-31421"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.cardButton}
+                >
+                  <FontAwesomeIcon icon={faCalendar} />
+                  Prenota
+                </a>
                 <Link
                   onClick={() => {
                     trackMetaPixelEvent('ViewNutrizione&Allenamento', { origin: 'Card Nutrizione & Allenamento' });
