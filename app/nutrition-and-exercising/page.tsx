@@ -81,7 +81,7 @@ export default function NutritionAndExercising() {
           <div className="flex flex-col md:hidden">
             {/* Immagine Animata con Hover Effect */}
             <FadeInSection className="mb-6">
-              <div className="relative w-full border-4 border-[#31ACA6] rounded-lg overflow-hidden">
+              <div className="relative w-full border-4 border-tropical rounded-lg overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentImage}
@@ -112,7 +112,7 @@ export default function NutritionAndExercising() {
 
             {/* Immagine Statica */}
             <FadeInSection className="mb-6">
-              <div className="relative w-full border-4 border-[#31ACA6] rounded-lg overflow-hidden">
+              <div className="relative w-full border-4 border-tropical rounded-lg overflow-hidden">
                 <Image
                   src="/Teresi2.jpg"
                   alt="Allenamento"
@@ -139,10 +139,10 @@ export default function NutritionAndExercising() {
 
           {/* Versione Desktop */}
           <FadeInSection className="hidden md:block md:aspect-square">
-            <div className="grid grid-cols-2 grid-rows-2 border-4 rounded-lg border-[#31ACA6] h-full">
+            <div className="grid grid-cols-2 grid-rows-2 border-4 rounded-lg border-tropical h-full">
 
               {/* Immagine Animata con Hover Effect */}
-              <div className="relative w-full h-full border-[#31ACA6] group">
+              <div className="relative w-full h-full border-tropical group">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentImage}
@@ -163,7 +163,7 @@ export default function NutritionAndExercising() {
                   </motion.div>
                 </AnimatePresence>
 
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex justify-center items-center">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition duration-300 flex justify-center items-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <BookingButton />
                   </div>
@@ -171,21 +171,21 @@ export default function NutritionAndExercising() {
               </div>
 
               {/* Testo Nutrizione */}
-              <div className="text-white p-6 flex items-center border-l-4 border-[#31ACA6]">
+              <div className="text-white p-6 flex items-center border-l-4 border-tropical">
                 <p className="text-lg">
                   La <strong>nutrizione</strong> è essenziale per un benessere duraturo. Offro piani nutrizionali personalizzati per perdere peso, migliorare le prestazioni o adottare uno stile di vita sano, garantendo un apporto bilanciato di nutrienti. Supporto lo sviluppo di abitudini alimentari sostenibili per migliorare la qualità di vita e il benessere fisico.
                 </p>
               </div>
 
               {/* Testo Allenamento */}
-              <div className="text-white p-6 flex items-center border-t-4 border-[#31ACA6]">
+              <div className="text-white p-6 flex items-center border-t-4 border-tropical">
                 <p className="text-lg">
                   L{"'"}<strong>allenamento</strong> è fondamentale per il benessere completo. Progetto schede su misura, adattabili al tuo livello di forma fisica e obiettivi, sia per aumentare massa muscolare, migliorare la resistenza o sentirti meglio nel tuo corpo. Ogni programma è studiato per massimizzare l{"'"}efficacia degli esercizi e ridurre il rischio di infortuni, sia in studio che a casa. L{"'"}obiettivo è sviluppare una routine integrata nel tuo stile di vita, migliorando salute fisica e benessere generale.
                 </p>
               </div>
 
               {/* Immagine Statica con Hover Effect */}
-              <div className="relative w-full h-full border-l-4 border-t-4 border-[#31ACA6] group">
+              <div className="relative w-full h-full border-l-4 border-t-4 border-tropical group">
                 <Image
                   src="/Teresi2.jpg"
                   alt="Allenamento"
@@ -195,7 +195,7 @@ export default function NutritionAndExercising() {
                   className="w-full h-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex justify-center items-center">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition duration-300 flex justify-center items-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <BookingButton />
                   </div>

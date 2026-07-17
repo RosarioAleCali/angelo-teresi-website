@@ -16,7 +16,7 @@ const TreatmentDetails: React.FC<{ treatment: TreatmentDetail }> = ({ treatment 
       <div className="md:w-1/2">
         {/* Titolo al centro */}
         <div className="w-full mb-4 md:mb-6">
-          <h1 className="text-2xl font-bold text-center md:text-left text-wrap break-words">{treatment.nome}</h1>
+          <h1 className="text-2xl font-bold text-center md:text-left text-wrap wrap-break-word">{treatment.nome}</h1>
         </div>
         {/* Contenuto sottostante */}
         <div className="flex flex-wrap gap-4 md:flex-col md:justify-between md:min-h-[calc(100%-3.5rem)]">

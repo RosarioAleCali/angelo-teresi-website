@@ -11,7 +11,7 @@ const BookingButton: React.FC<BookingButtonProps> = ({ size }) => {
   // const { openModal } = useContext(ComponentsStatusContext) as ComponentsStatusContextType;
 
   // Definiamo le classi di base
-  const baseClasses = "bg-tropical text-white font-bold rounded-lg border border-transparent transition-colors duration-200 ease-in-out hover:bg-[#2a8d8a] hover:border-[#28a097] hover:text-white active:bg-[#228e8d] focus:outline-none focus:ring-2 focus:ring-tropical focus:ring-opacity-30";
+  const baseClasses = "bg-tropical text-white font-bold rounded-lg border border-transparent transition-colors duration-200 ease-in-out hover:bg-[#2a8d8a] hover:border-[#28a097] hover:text-white active:bg-[#228e8d] focus:outline-hidden focus:ring-2 focus:ring-tropical/30";
 
   // Aggiungiamo le classi condizionali in base alla prop size
   const sizeClasses = size === 'lg' 

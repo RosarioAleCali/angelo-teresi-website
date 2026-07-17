@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 
 const useIsMobile = (breakpoint: number = 768) => {
-  const [isMobile, setIsMobile] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth < breakpoint;
-    }
-    return false; // Default for SSR
-  });
+  // Start with the SSR value on the first client render too, so hydration
+  // matches; the effect below sets the real value right after mount.
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return; // Ensure it only runs on the client

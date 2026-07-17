@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation, useInView, type Variants } from 'framer-motion';
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 interface FadeInSectionProps {
@@ -52,7 +52,7 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
     }
   };
 
-  const variants = {
+  const variants: Variants = {
     hidden: {
       opacity: 0,
       ...getInitialOffset(),

@@ -31,9 +31,9 @@ const CookieConsentBanner: React.FC = () => {
   return (
     <div
       ref={bannerRef}
-      className="fixed bottom-0 left-0 w-full bg-tropical text-white p-4 sm:p-6 z-[1000]"
+      className="fixed bottom-0 left-0 w-full bg-tropical text-white p-4 sm:p-6 z-1000"
     >
-      <div className="max-w-screen-lg mx-auto flex flex-col sm:flex-row items-center">
+      <div className="max-w-(--breakpoint-lg) mx-auto flex flex-col sm:flex-row items-center">
         <p className="text-center sm:text-left mb-4 sm:mb-0">
           Usiamo i cookie per migliorare la tua esperienza. Cliccando su {'"'}Accetta{'"'}, acconsenti al nostro utilizzo dei cookie. Puoi saperne di più nella nostra{' '}
           <Link href="/privacy-policy" className="text-tiber underline">
@@ -43,19 +43,19 @@ const CookieConsentBanner: React.FC = () => {
         <div className="flex gap-4 m-2">
           <button
             onClick={handleAccept}
-            className="bg-tiber text-white py-2 px-4 rounded transition"
+            className="bg-tiber text-white py-2 px-4 rounded-sm transition"
           >
             Accetta
           </button>
           <button
             onClick={handleRefuse}
-            className="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-800 transition"
+            className="bg-gray-600 text-white py-2 px-4 rounded-sm hover:bg-gray-800 transition"
           >
             Rifiuta
           </button>
           <button
             onClick={handleClose}
-            className="bg-transparent text-white py-2 px-4 rounded hover:bg-gray-700 transition"
+            className="bg-transparent text-white py-2 px-4 rounded-sm hover:bg-gray-700 transition"
           >
             X
           </button>

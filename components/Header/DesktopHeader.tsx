@@ -20,7 +20,7 @@ const DesktopHeader = () => {
 
   return (
     <div className="bg-tiber text-white sticky top-0 w-full flex items-center justify-between px-8 py-2.5 z-20">
-      <Link href="/" className="flex-shrink-0">
+      <Link href="/" className="shrink-0">
         <Image
           src="/logos/white-pictogram.png"
           alt="Dr. Angelo Teresi"
@@ -67,7 +67,7 @@ const DesktopHeader = () => {
         ))}
       </nav>
 
-      <div className="flex-shrink-0 ml-5">
+      <div className="shrink-0 ml-5">
         <BookingButton />
       </div>
     </div>

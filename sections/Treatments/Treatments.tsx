@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import TreatmentDetails from "@/components/TreatmentDetails/TreatmentDetails";
 import { menuItems } from "@/constants";
 import { treatmentDetails } from "@/constants";
@@ -27,7 +27,7 @@ const Treatments = () => {
   };
 
   // Varianti di animazione per il menu mobile
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       height: 0,
       opacity: 0,
@@ -53,7 +53,7 @@ const Treatments = () => {
   };
 
   // Varianti di animazione per gli elementi del menu
-  const menuItemVariants = {
+  const menuItemVariants: Variants = {
     closed: {
       opacity: 0,
       x: -20,
@@ -81,7 +81,7 @@ const Treatments = () => {
                 key={idx}
                 onClick={() => handleTreatmentClick(child.label, 'desktop')}
                 className={`relative px-6 py-4 text-sm font-medium transition-colors ${
-                  activeTab === child.label ? 'text-[#31ACA6]' : 'text-white hover:text-[#31ACA6]'
+                  activeTab === child.label ? 'text-tropical' : 'text-white hover:text-tropical'
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -89,7 +89,7 @@ const Treatments = () => {
                 {child.label}
                 {activeTab === child.label && (
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#31ACA6]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-tropical"
                     layoutId="activeTab"
                     initial={false}
                   />
@@ -109,7 +109,7 @@ const Treatments = () => {
             <div className="md:hidden">
               <motion.button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="w-full flex items-center justify-between p-4 bg-white text-[#31ACA6] font-medium border-b border-[#31ACA6]/20"
+                className="w-full flex items-center justify-between p-4 bg-white text-tropical font-medium border-b border-tropical/20"
                 whileHover={{ backgroundColor: "rgba(49, 172, 166, 0.05)" }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -140,7 +140,7 @@ const Treatments = () => {
                     initial="closed"
                     animate="open"
                     exit="closed"
-                    className="border-b border-[#31ACA6]/20 bg-white overflow-hidden"
+                    className="border-b border-tropical/20 bg-white overflow-hidden"
                   >
                     {filteredChildren.map((child, idx) => (
                       <motion.button
@@ -149,8 +149,8 @@ const Treatments = () => {
                         onClick={() => handleTreatmentClick(child.label, 'mobile')}
                         className={`w-full text-left p-4 text-sm transition-colors ${
                           activeTab === child.label 
-                            ? 'text-[#31ACA6] bg-[#31ACA6]/5' 
-                            : 'text-gray-600 hover:bg-[#31ACA6]/5'
+                            ? 'text-tropical bg-tropical/5' 
+                            : 'text-gray-600 hover:bg-tropical/5'
                         }`}
                         whileHover={{ 
                           backgroundColor: "rgba(49, 172, 166, 0.1)",

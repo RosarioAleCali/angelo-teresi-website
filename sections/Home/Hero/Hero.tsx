@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <div className="bg-tiber text-white w-full flex flex-col items-center justify-center h-[calc(100vh-4.375rem)] md:h-[calc(100vh-5rem)] relative">
-      <div className="flex flex-col items-center -mt-[4.375rem] md:-mt-20 relative z-10">
+      <div className="flex flex-col items-center -mt-17.5 md:-mt-20 relative z-10">
         <div className={styles.imageWrapper}>
           <FadeInSection>
             <div className={styles.coinContainer}>

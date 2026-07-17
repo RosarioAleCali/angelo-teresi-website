@@ -30,7 +30,7 @@ const Contacts: React.FC = () => {
           </h2>
         </FadeInSection>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 w-full flex-grow gap-6 text-black">
+        <div className="flex flex-col md:grid md:grid-cols-2 w-full grow gap-6 text-black">
           
           {/* First Column (Map and Contacts) */}
           <div className="flex flex-col gap-6 order-1">
@@ -38,7 +38,7 @@ const Contacts: React.FC = () => {
             <FadeInSection className="flex-1">
               <div 
                 id="map" 
-                className="h-full p-4 bg-white border rounded-lg shadow z-10"
+                className="h-full p-4 bg-white border rounded-lg shadow-sm z-10"
               >
                 <Map />
               </div>
@@ -48,7 +48,7 @@ const Contacts: React.FC = () => {
             <FadeInSection className="flex-1">
               <div
                 id="contacts"
-                className="flex flex-col p-4 gap-6 bg-white border rounded-lg shadow"
+                className="flex flex-col p-4 gap-6 bg-white border rounded-lg shadow-sm"
               >
                 <div id="address">
                   <h3 className="text-xl font-semibold mb-2 text-gray-800">Indirizzo</h3>
@@ -139,7 +139,7 @@ const Contacts: React.FC = () => {
 
           {/* Second Column (Contact Form) */}
           <FadeInSection className="flex-1 order-2">
-            <div id="contact-form" className="h-full p-4 bg-white border rounded-lg shadow">
+            <div id="contact-form" className="h-full p-4 bg-white border rounded-lg shadow-sm">
               <ContactForm />
             </div>
           </FadeInSection>

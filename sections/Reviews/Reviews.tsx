@@ -95,7 +95,7 @@ const Reviews = () => {
             href="https://maps.app.goo.gl/Wy4t5npXsJmcvK7T6"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-tropical text-lg text-white px-4 py-2 rounded flex justify-center items-center"
+            className="bg-tropical text-lg text-white px-4 py-2 rounded-sm flex justify-center items-center"
           >
             Lascia una recensione su
             <Image

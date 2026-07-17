@@ -38,7 +38,7 @@ export default function ContactForm() {
       } else {
         setFormStatus('Qualcosa è andato storto. Per favore riprova.');
       }
-    } catch (error) {
+    } catch {
       setFormStatus('Qualcosa è andato storto. Per favore riprova.');
     } finally {
       setIsSubmitting(false);
@@ -69,7 +69,7 @@ export default function ContactForm() {
           <input
             type="text"
             {...register('name', { required: 'Name is required' })}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:ring-tropical focus:border-tropical sm:text-sm"
           />
           {errors.name && <p className="text-red-600 text-sm">{errors.name.message}</p>}
         </div>
@@ -80,7 +80,7 @@ export default function ContactForm() {
           <input
             type="email"
             {...register('email', { required: 'Email is required', pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' } })}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:ring-tropical focus:border-tropical sm:text-sm"
           />
           {errors.email && <p className="text-red-600 text-sm">{errors.email.message}</p>}
         </div>
@@ -102,7 +102,7 @@ export default function ContactForm() {
               defaultCountry="IT"
               international
               withCountryCallingCode
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:ring-tropical focus:border-tropical sm:text-sm"
             />
           )}
         />
@@ -115,7 +115,7 @@ export default function ContactForm() {
         <select
           {...register('service', { required: 'Please select a service' })}
           onChange={onServiceChange}
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm"
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:ring-tropical focus:border-tropical sm:text-sm"
         >
           <option value="">-- Seleziona Servizio --</option>
           {Object.keys(serviceOptions).map((service) => (
@@ -133,7 +133,7 @@ export default function ContactForm() {
           <label className="block text-sm font-medium text-gray-700">Seleziona Sottoservizio</label>
           <select
             {...register('subService', { required: 'Please select a sub-service' })}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:ring-tropical focus:border-tropical sm:text-sm"
           >
             <option value="">-- Seleziona Sottoservizio --</option>
             {serviceOptions[selectedService as ServiceOptionKey].map((subService) => (
@@ -152,7 +152,7 @@ export default function ContactForm() {
         <textarea
           {...register('message', { required: 'Message is required' })}
           rows={5}
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tropical focus:border-tropical sm:text-sm resize-none"
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:ring-tropical focus:border-tropical sm:text-sm resize-none"
         ></textarea>
         {errors.message && <p className="text-red-600 text-sm">{errors.message.message}</p>}
       </div>
@@ -184,7 +184,7 @@ export default function ContactForm() {
           }}
           type="submit"
           disabled={isSubmitting}
-          className="bg-tropical text-white font-bold py-2 px-6 rounded-lg border border-transparent transition-colors duration-200 ease-in-out hover:bg-[#2a8d8a] hover:border-[#28a097] hover:text-white active:bg-[#228e8d] focus:outline-none focus:ring-2 focus:ring-tropical focus:ring-opacity-30"
+          className="bg-tropical text-white font-bold py-2 px-6 rounded-lg border border-transparent transition-colors duration-200 ease-in-out hover:bg-[#2a8d8a] hover:border-[#28a097] hover:text-white active:bg-[#228e8d] focus:outline-hidden focus:ring-2 focus:ring-tropical/30"
         >
           {isSubmitting ? 'In Invio...' : 'Invio'}
         </button>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import useDisableScroll from '@/hooks/useDisableScroll';
 import { menuItems } from '@/constants';
-import { motion, AnimatePresence } from 'framer-motion'; // Aggiunto AnimatePresence
+import { motion, AnimatePresence, type Variants } from 'framer-motion'; // Aggiunto AnimatePresence
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -26,7 +26,7 @@ const MobileHeader = () => {
   useDisableScroll(isOpen);
 
   // Varianti per le animazioni
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       x: "100%",
       opacity: 0,
@@ -49,12 +49,12 @@ const MobileHeader = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     closed: { x: 20, opacity: 0 },
     open: { x: 0, opacity: 1 }
   };
 
-  const hamburgerLineVariants = {
+  const hamburgerLineVariants: Variants = {
     closed: (custom: number) => ({
       rotate: 0,
       y: custom === 1 ? -8 : custom === 3 ? 8 : 0,
@@ -70,9 +70,9 @@ const MobileHeader = () => {
   };
 
   return (
-    <header className="bg-tiber sticky top-0 w-full flex items-center justify-between px-4 py-2.5 z-[1000]">
+    <header className="bg-tiber sticky top-0 w-full flex items-center justify-between px-4 py-2.5 z-1000">
       <motion.div 
-        className="flex-shrink-0"
+        className="shrink-0"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -101,7 +101,7 @@ const MobileHeader = () => {
               custom={line}
               variants={hamburgerLineVariants}
               animate={isOpen ? "open" : "closed"}
-              className="bg-white h-0.5 w-6 rounded absolute"
+              className="bg-white h-0.5 w-6 rounded-sm absolute"
               style={{ y: (line - 2) * 6 }}
             />
           ))}
@@ -116,7 +116,7 @@ const MobileHeader = () => {
                 initial="closed"
                 animate="open"
                 exit="closed"
-                className="fixed top-0 right-0 w-2/3.1 h-full bg-gradient-to-br from-teal-500 via-tropical to-cyan-500 z-40 overflow-y-auto"
+                className="fixed top-0 right-0 w-2/3.1 h-full bg-linear-to-br from-teal-500 via-tropical to-cyan-500 z-40 overflow-y-auto"
                 aria-hidden={!isOpen}
               >
                 <motion.ul
@@ -143,7 +143,7 @@ const MobileHeader = () => {
                             {/* {item.children && (
                               <button
                                 onClick={toggleMedicinaEstetica}
-                                className="ml-2 focus:outline-none"
+                                className="ml-2 focus:outline-hidden"
                                 aria-label="Toggle sub-menu"
                               >
                                 <FontAwesomeIcon
@@ -194,7 +194,7 @@ const MobileHeader = () => {
 
               {/* Overlay with improved animation */}
               <motion.div
-                className="fixed inset-0 bg-black bg-opacity-50 z-30"
+                className="fixed inset-0 bg-black/50 z-30"
                 onClick={toggleMenu}
                 aria-hidden="true"
                 initial={{ opacity: 0 }}

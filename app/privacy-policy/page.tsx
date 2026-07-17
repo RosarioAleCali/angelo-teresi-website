@@ -70,9 +70,8 @@ La presente informativa potrebbe essere soggetta a modifiche o aggiornamenti. In
         <meta property="og:title" content="Informativa sulla Privacy - Dr. Angelo Teresi" key="title" />
       </Head>
       <FadeInSection>
-        <div className="text-white max-w-3xl mx-auto my-8 p-4">
+        <div className="text-white max-w-3xl mx-auto my-8 p-4 prose prose-lg leading-relaxed">
           <ReactMarkdown
-            className="prose prose-lg leading-relaxed"
             components={{
               h1: ({ node, ...props }) => <h1 className="mb-8 mt-12 font-bold" {...props} />,
               h2: ({ node, ...props }) => <h2 className="mb-6 mt-8 font-bold" {...props} />,
