@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
@@ -9,11 +9,12 @@ import { trackMetaPixelEvent } from '@/utils/metaPixel';
 import 'react-phone-number-input/style.css';
 
 export default function ContactForm() {
-  const { register, handleSubmit, control, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, control, reset, formState: { errors } } = useForm<FormData>();
   const [selectedService, setSelectedService] = useState<ServiceOptionKey | ''>('');
   const [captchaVerified, setCaptchaVerified] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [formStatus, setFormStatus] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const isMobile = useIsMobile();
 
@@ -35,6 +36,10 @@ export default function ContactForm() {
       
       if (response.ok) {
         setFormStatus('Il tuo messaggio è stato inviato con successo!');
+        reset();
+        setSelectedService('');
+        recaptchaRef.current?.reset();
+        setCaptchaVerified(false);
       } else {
         setFormStatus('Qualcosa è andato storto. Per favore riprova.');
       }
@@ -160,6 +165,7 @@ export default function ContactForm() {
       {/* CAPTCHA */}
       <div className="mt-6">
         <ReCAPTCHA
+          ref={recaptchaRef}
           size={isMobile ? "compact" : "normal"}
           sitekey={process.env.RECAPTCHA_SITE_KEY as string}
           onChange={onCaptchaChange}
